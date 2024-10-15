@@ -1,0 +1,140 @@
+
+@media (max-width: 1200px) {
+    .findout-img img{
+        width: 80%;
+        aspect-ratio: 3/2;
+        object-fit: contain;
+        display: flex;
+        align-items: center;
+      }
+
+      .findout-img-cards {
+        align-items: center;
+      }
+
+      .cards {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0px;
+      }
+
+      .product-cards{
+        gap: 20px;
+      }
+
+      .join-other-btns{
+        justify-content: flex-end;
+      }
+      
+  }
+
+@media (max-width: 992px) {
+    .hero-text-area{
+        margin: 0px 0px 40px 0px;
+    }
+    .cards {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0px;
+      }
+      .findout-img-cards {
+        align-items: center;
+      }
+
+
+      .findout-img img{
+        width: 80%;
+        aspect-ratio: 3/2;
+        object-fit: contain;
+        display: flex;
+        align-items: center;
+      }
+
+      .product-cards{
+        gap: 20px;
+      }
+
+      /* .AM-container .AM-vid video {
+        max-width: 400px;
+      } */
+
+      .join-other-btns{
+        justify-content: flex-end;
+      }
+    
+  }
+ 
+ @media (max-width: 768px) {
+    .navbar-nav {
+      font-size: 0.9rem;
+    }
+
+    .findout-img img{
+        width: 100%;
+        aspect-ratio: 3/2;
+        object-fit: contain;
+        display: flex;
+        align-items: center;
+      }
+
+      .findout-img-cards {
+        align-items: center;
+      }
+
+      .product-cards{
+        gap: 20px;
+      }
+
+      .AM-container .AM-vid video {
+        max-width: 500px;
+      }
+      
+      .AM-vid video {
+        max-width: 500px;
+      }
+
+      .join-other-btns{
+        justify-content: flex-end;
+      }
+
+  }
+  
+  @media (max-width: 576px) {
+
+    .findout-img img{
+        width: 100%;
+        aspect-ratio: 3/2;
+        object-fit: contain;
+        display: flex;
+        align-items: center;
+      }
+      
+      .findout-img-cards {
+        align-items: center;
+      }
+
+      .product-cards{
+        gap: 20px;
+      }
+
+    .navbar-brand img {
+      max-width: 100px;
+    }
+
+    .AM-container .AM-vid video {
+      max-width: 300px;
+    }
+
+    .AM-vid video {
+      max-width: 300px;
+    }
+
+    .join-other-btns{
+      justify-content: center;
+    }
+  }
+  
