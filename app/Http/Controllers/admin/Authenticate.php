@@ -24,21 +24,21 @@ class Authenticate extends Controller
         ]);
         if($validated):
             if(Auth::attempt($request->only('email','password'))):
-                if(Auth::user()->user_type==1):
+                // if(Auth::user()->user_type==1):
                     return response()->json([
                         'status'=>TRUE,
                         'message'=>'Logged In suceessfully!',
                         'redirect'=>'dashboard',
                     ]);
-                else:
-                    Session::flush();
-                    Auth::logout();
-                    return response()->json([
-                            'status'=>FALSE,
-                            'message'=>'Unauthorized Access!',
-                            'redirect'=>'login',
-                        ]);
-                endif;
+                // else:
+                //     Session::flush();
+                //     Auth::logout();
+                    // return response()->json([
+                    //         'status'=>FALSE,
+                    //         'message'=>'Unauthorized Access!',
+                    //         'redirect'=>'login',
+                    //     ]);
+                // endif;
             endif;
             return response()->json([
                     'status'=>FALSE,

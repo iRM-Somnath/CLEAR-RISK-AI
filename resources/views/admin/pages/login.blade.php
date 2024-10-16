@@ -38,6 +38,7 @@
     <script>
         let baseUrl = "{{ url('admin') }}/";
         let lang = "en";
+        let _token = "{{ csrf_token() }}";
     </script>
 </head>
 
@@ -58,9 +59,10 @@
                     <form data-action="user-check" class="adminFrm" method="post">
                         @csrf
                         <div class="form-group mb-lg">
-                            <label>Username</label>
+                            <label>Email</label>
                             <div class="input-group input-group-icon">
-                                <input name="username" type="text" class="form-control input-lg" />
+                                <input name="email" type="email" class="form-control input-lg requiredCheck"
+                                    data-check="Email" />
                                 <span class="input-group-addon">
                                     <span class="icon icon-lg">
                                         <i class="fa fa-user"></i>
@@ -72,10 +74,11 @@
                         <div class="form-group mb-lg">
                             <div class="clearfix">
                                 <label class="pull-left">Password</label>
-                                <a href="pages-recover-password.html" class="pull-right">Lost Password?</a>
+                                <a href="javascript:void(0)" class="pull-right">Lost Password?</a>
                             </div>
                             <div class="input-group input-group-icon">
-                                <input name="pwd" type="password" class="form-control input-lg" />
+                                <input name="password" type="password" class="form-control input-lg requiredCheck"
+                                    data-check="Password" />
                                 <span class="input-group-addon">
                                     <span class="icon icon-lg">
                                         <i class="fa fa-lock"></i>
