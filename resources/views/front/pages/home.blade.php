@@ -4,8 +4,7 @@
     <div class="row flex-lg-row-reverse align-items-center px-5">
         <div class="col-10 col-sm-8 col-lg-6 circlegif">
             <img src="{{ asset('front//assets/images/Optimized-Images/hero image.webp') }}" alt="
-          class="d-block
-                mx-lg-auto img-fluid" alt="ClearRiskGif" loading="lazy" />
+          class="d-block mx-lg-auto img-fluid" alt="ClearRiskGif" loading="lazy" />
         </div>
         <div class="col-lg-6 hero-text-area d-flex flex-column gap-10">
             <h1 class="display-5 fw-bold lh-1 mb-3 main-heading-dark">
