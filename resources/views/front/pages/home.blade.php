@@ -1,6 +1,6 @@
 @extends('front.layouts.master')
 @section('content')
-    <!-- First page -->
+    <!-- First Page -->
     <div class="row flex-lg-row-reverse align-items-center px-5">
         <div class="col-10 col-sm-8 col-lg-6 circlegif">
             <img src="{{ asset('front//assets/images/Optimized-Images/hero image.webp') }}" alt="
@@ -47,7 +47,7 @@
             Industries We Helped
         </h1>
         <div class="logos">
-            <img src="../assets/images/Optimized-Images/Industries2.webp" alt="" />
+            <img src="{{asset('front/assets/images/Optimized-Images/Industries2.webp')}}" alt="" />
             <!-- <img src="../assets/images/Client Logos/acino-logo-66dad3b63bd12.webp" alt="" />
                                         <img src="../assets/images/Client Logos/acwa-power-logo-66dad3b70715d.webp" alt="" />
                                         <img src="../assets/images/Client Logos/adnec-logo-66dad3b73aedf.webp" alt="" />
@@ -74,7 +74,7 @@
         <div class="row findout-img-cards">
 
             <div class="findout-img col-xl-6 col-lg-12 col-md-12 d-flex justify-content-center align-items-center">
-                <img src="../assets/images/Optimized-Images/frame-12-66dad391ab1db.webp" class="" alt="ClearRiskGif"
+                <img src="{{asset('front/assets/images/Optimized-Images/frame-12-66dad391ab1db.webp')}}" class="" alt="ClearRiskGif"
                     width="700" height="500" loading="lazy" />
             </div>
 
@@ -165,7 +165,7 @@
             <div class="card product-card col-xl-5 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="text">
                     <div class="card-heading product-card-heading">
-                        <img src="../assets/svgs/Frame.svg" alt="" />
+                        <img src="{{asset('front/assets/svgs/Frame.svg')}}" alt="" />
                         Audit Management
                     </div>
 
@@ -184,10 +184,10 @@
                     </div>
                 </div>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                    <a href="../html/AM-product-page.html" class="text-decoration-none">
+                    <a href="{{ url('/audit-management') }}" class="text-decoration-none">
                         <button type="button" class="btn btn btn-dark rounded-pill d-flex align-items-center gap-2">
                             View More
-                            <img src="../assets/svgs/Right-Long-Arrow.svg" alt="" />
+                            <img src="{{asset('front/assets/svgs/Right-Long-Arrow.svg')}}" alt="" />
                         </button>
                     </a>
 
@@ -196,7 +196,7 @@
             <div class="card product-card col-xl-5 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="text">
                     <div class="card-heading product-card-heading">
-                        <img src="../assets/svgs/Frame1.svg" alt="" />
+                        <img src="{{asset('front/assets/svgs/Frame1.svg')}}" alt="" />
                         Enterprise Risk Management
                     </div>
 
@@ -213,10 +213,10 @@
                 </div>
 
                 <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                    <a href="../html/ERM-product-page.html" class="text-decoration-none">
+                    <a href="{{ url('/enterprise-risk-management') }}" class="text-decoration-none">
                         <button type="button" class="btn btn btn-dark rounded-pill d-flex align-items-center gap-2">
                             View More
-                            <img src="../assets/svgs/Right-Long-Arrow.svg" alt="" />
+                            <img src="{{asset('front/assets/svgs/Right-Long-Arrow.svg')}}" alt="" />
                         </button>
                     </a>
 

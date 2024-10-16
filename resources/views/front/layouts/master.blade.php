@@ -24,17 +24,17 @@
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand" href="../html/index.html"><img
+            <a class="navbar-brand" href="{{ url('/') }}"><img
                     src="{{ asset('front/assets/images/Optimized-Images/navimage-66dad39351057.webp') }}"
                     alt="logo" /></a>
 
             <div class="collapse navbar-collapse justify-content-center navbar-text" id="navbarSupportedContent">
                 <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="../html/index.html">Home</a>
+                        <a class="nav-link" aria-current="page" href="{{ url('/') }}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../html/about-page.html">About Us</a>
+                        <a class="nav-link" href="{{ url('/about-us') }}">About Us</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown"
@@ -45,17 +45,16 @@
 
                         <ul class="dropdown-menu">
                             <li>
-                                <a class="dropdown-item d-flex" href="../html/AM-product-page.html">Audit Management</a>
+                                <a class="dropdown-item d-flex" href="{{ url('/audit-management') }}">Audit Management</a>
                             </li>
-                            <li><a class="dropdown-item d-flex" href="../html/ERM-product-page.html">Enterprise Risk
-                                    Management</a></li>
+                            <li><a class="dropdown-item d-flex" href="{{ url('/enterprise-risk-management') }}">Enterprise Risk Management</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../html/pricing-page.html">Pricing</a>
+                        <a class="nav-link" href="{{ url('/pricing') }}">Pricing</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../html/contact-page.html">Contact Us</a>
+                        <a class="nav-link" href="{{ url('/contact-us') }}">Contact Us</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown"
@@ -65,10 +64,10 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a class="dropdown-item d-flex" href="../html/blogs-page.html">Blogs</a>
+                                <a class="dropdown-item d-flex" href="{{ url('/blogs') }}">Blogs</a>
                             </li>
                             <li>
-                                <a class="dropdown-item d-flex" href="../html/events-page.html">Events</a>
+                                <a class="dropdown-item d-flex" href="{{ url('/events') }}">Events</a>
                             </li>
                         </ul>
                     </li>
@@ -78,7 +77,7 @@
                 <!-- <button class="btn btn-outline-dark me-2 rounded-pill" type="submit">
             Log In
           </button> -->
-                <a href="../html/contact-page.html">
+                <a href="{{ url('/') }}">
                     <button class="btn btn-dark rounded-pill" type="submit">
                         Get a demo
                     </button>

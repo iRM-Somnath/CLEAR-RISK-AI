@@ -1,6 +1,6 @@
 @extends('front.layouts.master')
 @section('content')
-    <!-- About Us page -->
+    <!-- About Us Page -->
 
     <div class="find-out-container margin40">
       <div class="row findout-img-cards">
@@ -8,7 +8,7 @@
           class="findout-img col-xl-6 col-lg-12 col-md-12 d-flex justify-content-center align-items-center"
         >
           <img
-            src="../assets/images/Optimized-Images/frame-12-66dad391ab1db.webp"
+            src="{{asset('front/assets/images/Optimized-Images/frame-12-66dad391ab1db.webp')}}"
             class=""
             alt="ClearRiskGif"
             width="700"
