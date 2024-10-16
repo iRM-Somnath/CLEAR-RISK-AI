@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\admin\Authenticate;
 
 Route::get('/', function () {
     return view('front.pages.home',['title'=> 'Home']);
@@ -32,4 +33,9 @@ Route::get('/blogs', function () {
 
 Route::get('/events', function () {
     return view('front.pages.events',['title'=> 'Events']);
+});
+
+
+Route::prefix('admin')->group(function(){
+     Route::get('login',[Authenticate::class,'login'])->name('admin-login');
 });
