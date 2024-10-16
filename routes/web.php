@@ -37,5 +37,7 @@ Route::get('/events', function () {
 
 
 Route::prefix('admin')->group(function(){
-     Route::get('login',[Authenticate::class,'login'])->name('admin-login');
+     Route::get('login',[Authenticate::class,'login'])->name('admin.login');
+     Route::post('user-check',[Authenticate::class,'userCheck'])->name('admin.user-check');
+    //  Route::get('logout',[Authenticate::class,'logout'])->name('admin.logout');
 });

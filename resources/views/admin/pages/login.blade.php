@@ -21,7 +21,8 @@
 
     <link rel="stylesheet" href="{{ asset('admin/assets/vendor/font-awesome/css/font-awesome.css') }}" />
     <link rel="stylesheet" href="{{ asset('admin/assets/vendor/magnific-popup/magnific-popup.css') }}" />
-    <link rel="stylesheet" href="{{ asset('admin/assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css') }}" />
+    <link rel="stylesheet"
+        href="{{ asset('admin/assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css') }}" />
 
     <!-- Theme CSS -->
     <link rel="stylesheet" href="{{ asset('admin/assets/stylesheets/theme.css') }}" />
@@ -31,10 +32,13 @@
 
     <!-- Theme Custom CSS -->
     <link rel="stylesheet" href="{{ asset('admin/assets/stylesheets/theme-custom.css') }}">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
     <!-- Head Libs -->
     <script src="{{ asset('admin/assets/vendor/modernizr/modernizr.js') }}"></script>
-
+    <script>
+        let baseUrl = "{{ url('admin') }}/";
+        let lang = "en";
+    </script>
 </head>
 
 <body>
@@ -51,7 +55,8 @@
                     </h2>
                 </div>
                 <div class="panel-body">
-                    <form action="index.html" method="post">
+                    <form data-action="user-check" class="adminFrm" method="post">
+                        @csrf
                         <div class="form-group mb-lg">
                             <label>Username</label>
                             <div class="input-group input-group-icon">
@@ -131,6 +136,8 @@
 
     <!-- Theme Initialization Files -->
     <script src="{{ asset('admin/assets/javascripts/theme.init.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+    <script src="{{ asset('common/js/index.js') }}"></script>
 
 </body>
 
