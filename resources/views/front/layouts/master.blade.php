@@ -105,12 +105,12 @@
             <div class="footer-item padding-40 d-flex flex-column gap-10 col-xl-3 col-lg-6 col-md-12">
                 <h4>Extra Links</h4>
                 <ul>
-                    <li><a href="../html/index.html">Home</a></li>
-                    <li><a href="../html/about-page.html">About</a></li>
-                    <li><a href="../html/pricing-page.html">Pricing</a></li>
-                    <li><a href="../html/contact-page.html">Contact Us</a></li>
-                    <li><a href="../html/blogs-page.html">Blogs</a></li>
-                    <li><a href="../html/events-page.html">Events</a></li>
+                    <li><a href="{{ url('/') }}">Home</a></li>
+                    <li><a href="{{ url('/about-us') }}">About</a></li>
+                    <li><a href="{{ url('/pricing') }}">Pricing</a></li>
+                    <li><a href="{{ url('/contact-us') }}">Contact Us</a></li>
+                    <li><a href="{{ url('/blogs') }}">Blogs</a></li>
+                    <li><a href="{{ url('/events') }}">Events</a></li>
                 </ul>
             </div>
             <div class="footer-item padding-40 d-flex flex-column gap-10 col-xl-3 col-lg-6 col-md-12">
@@ -133,7 +133,7 @@
                     </div>
                     <div class="phoneNumber d-flex align-items-center gap-10">
                         <img src="../assets/svgs/PhoneIcon.svg" alt="" />
-                        <p>++44-7768-012397</p>
+                        <p>+44-7768-012397</p>
                     </div>
                     <div class="mailId d-flex align-items-center gap-10">
                         <img src="../assets/svgs/MailIcon.svg" alt="" />

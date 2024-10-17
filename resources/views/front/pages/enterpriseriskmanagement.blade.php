@@ -6,7 +6,7 @@
       class="AM-container d-flex align-items-center px-5 justify-content-center flex-column gap-20"
     >
       <div class="AM-vid d-flex justify-content-center">
-        <video src="{{asset('front/assets/videos/ERM-Video.mp4')}}" autoplay controls></video>
+        <video src="{{asset('front\assets\videos\GRC_ClearRiskDemo.mp4')}}" autoplay controls></video>
       </div>
       <div class="col-lg-12 d-flex flex-column gap-20">
         <h1 class="display-5 fw-bold lh-1 mb-3 main-heading-dark">
@@ -25,7 +25,7 @@
         </p>
         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
           
-          <a href="{{asset('front/assets/PDFS/ERM pdf ClearRisk 1.pdf')}}" target="_blank">
+          <a href="{{asset('front/assets/PDFS/ERM pdf ClearRisk 2.pdf')}}" target="_blank">
             <button type="button" class="btn btn btn-dark rounded-pill">
             Read More
           </button>

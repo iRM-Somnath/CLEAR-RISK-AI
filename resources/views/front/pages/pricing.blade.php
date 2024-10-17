@@ -62,7 +62,7 @@
                    <button
                   type="button"
                   class="btn btn-outline-dark rounded-pill d-flex align-items-center gap-2 w-100 justify-content-center">
-                  Subscribe
+                  Contact Us
                 </button> 
                 </a>
               </div>
@@ -85,7 +85,7 @@
                     <button
                    type="button"
                    class="btn btn-outline-dark rounded-pill d-flex align-items-center gap-2 w-100 justify-content-center">
-                   Subscribe
+                   Contact Us
                  </button> 
                  </a>
               </div>
@@ -108,7 +108,7 @@
                     <button
                    type="button"
                    class="btn btn-outline-dark rounded-pill d-flex align-items-center gap-2 w-100 justify-content-center">
-                   Subscribe
+                   Contact Us
                  </button> 
                  </a>
               </div>
@@ -137,7 +137,7 @@
                     <button
                    type="button"
                    class="btn btn-outline-dark rounded-pill d-flex align-items-center gap-2 w-100 justify-content-center">
-                   Subscribe
+                   Contact Us
                  </button> 
                  </a>
               </div>
@@ -164,7 +164,7 @@
                     <button
                    type="button"
                    class="btn btn-outline-dark rounded-pill d-flex align-items-center gap-2 w-100 justify-content-center">
-                   Subscribe
+                   Contact Us
                  </button> 
                  </a>
               </div>
