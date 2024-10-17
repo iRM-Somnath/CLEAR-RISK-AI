@@ -133,7 +133,7 @@
                     </div>
                     <div class="phoneNumber d-flex align-items-center gap-10">
                         <img src="../assets/svgs/PhoneIcon.svg" alt="" />
-                        <p>++44-7768-012397</p>
+                        <p>+44-7768-012397</p>
                     </div>
                     <div class="mailId d-flex align-items-center gap-10">
                         <img src="../assets/svgs/MailIcon.svg" alt="" />
