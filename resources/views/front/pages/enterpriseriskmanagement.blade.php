@@ -6,7 +6,7 @@
       class="AM-container d-flex align-items-center px-5 justify-content-center flex-column gap-20"
     >
       <div class="AM-vid d-flex justify-content-center">
-        <video src="{{asset('front/assets/videos/ERM-Video.mp4')}}" autoplay controls></video>
+        <video src="{{asset('front\assets\videos\GRC_ClearRiskDemo.mp4')}}" autoplay controls></video>
       </div>
       <div class="col-lg-12 d-flex flex-column gap-20">
         <h1 class="display-5 fw-bold lh-1 mb-3 main-heading-dark">
