@@ -25,7 +25,7 @@
         </p>
         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
           
-          <a href="{{asset('front/assets/PDFS/ERM pdf ClearRisk 1.pdf')}}" target="_blank">
+          <a href="{{asset('front/assets/PDFS/ERM pdf ClearRisk 2.pdf')}}" target="_blank">
             <button type="button" class="btn btn btn-dark rounded-pill">
             Read More
           </button>
