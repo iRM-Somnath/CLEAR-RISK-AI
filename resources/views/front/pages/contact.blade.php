@@ -7,7 +7,7 @@
 
             <div class="heading d-flex gap-10 justify-content-center">
                 <h1 class="display-5 fw-bold lh-1 mb-3 main-heading-gray">
-                    Contact Clear Risk.AI Today
+                    Contact ClearRisk.AI Today
                 </h1>
             </div>
 
