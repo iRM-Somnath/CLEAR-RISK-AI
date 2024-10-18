@@ -4,37 +4,30 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\Authenticate;
 use App\Http\Controllers\admin\Dashboard;
 
-Route::get('/', function () {
-    return view('front.pages.home',['title'=> 'Home']);
-});
+use App\Http\Controllers\front\Home;
+use App\Http\Controllers\front\About;
+use App\Http\Controllers\front\AuditManagement;
+use App\Http\Controllers\front\EnterpriseRiskManagement;
+use App\Http\Controllers\front\Pricing;
+use App\Http\Controllers\front\Contact;
+use App\Http\Controllers\front\Blogs;
+use App\Http\Controllers\front\Events;
 
-Route::get('/about-us', function () {
-    return view('front.pages.about',['title'=> 'About']);
-});
+Route::get('/', [Home::class, 'index']);
 
-Route::get('/audit-management', function () {
-    return view('front.pages.auditmanagement',['title'=> 'Audit Management']);
-});
+Route::get('/about-us', [About::class, 'index']);
 
-Route::get('/enterprise-risk-management', function () {
-    return view('front.pages.enterpriseriskmanagement',['title'=> 'Enterprise Risk Management']);
-});
+Route::get('/audit-management', [AuditManagement::class, 'index']);
 
-Route::get('/pricing', function () {
-    return view('front.pages.pricing',['title'=> 'Pricing']);
-});
+Route::get('/enterprise-risk-management', [EnterpriseRiskManagement::class, 'index']);
 
-Route::get('/contact-us', function () {
-    return view('front.pages.contact',['title'=> 'Contact Us']);
-});
+Route::get('/pricing', [Pricing::class, 'index']);
 
-Route::get('/blogs', function () {
-    return view('front.pages.blogs',['title'=> 'Blogs']);
-});
+Route::get('/contact-us', [Contact::class, 'index']);
 
-Route::get('/events', function () {
-    return view('front.pages.events',['title'=> 'Events']);
-});
+Route::get('/blogs', [Blogs::class, 'index']);
+
+Route::get('/events', [Events::class, 'index']);
 
 Route::prefix('admin')->group(function(){
      Route::get('login',[Authenticate::class,'login'])->name('admin.login');
