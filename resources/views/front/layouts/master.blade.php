@@ -99,7 +99,7 @@
                         src="{{ asset('front/assets/images/Optimized-Images/footerimage-66dad3902cdcf.webp') }}"
                         alt="logo" /></a>
                 <p>
-                    Choosing TRPGLOBAL means embracing a transformative experience that
+                    Choosing us means embracing a transformative experience that
                     unlocks your business's full potential.
                 </p>
             </div>
@@ -126,15 +126,15 @@
                     </div> --}}
                     <div class="phoneNumber d-flex align-items-center gap-10">
                         <img src="../assets/svgs/PhoneIcon.svg" alt="" />
-                        <p>+1-425-864-2958</p>
+                        <p>US: 1-425-864-2958</p>
                     </div>
                     <div class="phoneNumber d-flex align-items-center gap-10">
                         <img src="../assets/svgs/PhoneIcon.svg" alt="" />
-                        <p>+49-176-2590-8274</p>
+                        <p>Germany: 49-176-2590-8274</p>
                     </div>
                     <div class="phoneNumber d-flex align-items-center gap-10">
                         <img src="../assets/svgs/PhoneIcon.svg" alt="" />
-                        <p>+44-7768-012397</p>
+                        <p>UK: 44-7768-012397</p>
                     </div>
                     <div class="mailId d-flex align-items-center gap-10">
                         <img src="../assets/svgs/MailIcon.svg" alt="" />

@@ -30,27 +30,27 @@
                         We support you to grow your business
                     </h1>
                     <div class="d-flex flex-column gap-20">
-                        <div class="address d-flex align-items-center gap-20">
+                        {{-- <div class="address d-flex align-items-center gap-20">
                             <img src="../assets/svgs/Black-location.svg" alt="" />
                             <p class="lead">
                                 Suite 1 Second Floor EverdeneHouse Deansleigh Road, Bournemouth,
                                 England, BH7 7DU, United Kingdom
                             </p class="lead">
-                        </div>
+                        </div> --}}
 
                         <div class="phoneNumber d-flex align-items-center  gap-10">
                             <img src="../assets/svgs/Black-phone.svg" alt="" />
-                            <p class="lead">+1-425-864-2958</p class="lead">
+                            <p class="lead">US: 1-425-864-2958</p class="lead">
                         </div>
 
                         <div class="phoneNumber d-flex align-items-center gap-10">
                             <img src="../assets/svgs/Black-phone.svg" alt="" />
-                            <p class="lead">+49-176-2590-8274</p class="lead">
+                            <p class="lead">Germany: 49-176-2590-8274</p class="lead">
                         </div>
 
                         <div class="phoneNumber d-flex align-items-center gap-10">
                             <img src="../assets/svgs/Black-phone.svg" alt="" />
-                            <p class="lead">+44-7768-012397</p class="lead">
+                            <p class="lead">UK: 44-7768-012397</p class="lead">
                         </div>
 
                         <div class="mailId d-flex align-items-center gap-10">
