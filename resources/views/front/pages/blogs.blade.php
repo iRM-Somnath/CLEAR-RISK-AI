@@ -1,5 +1,12 @@
 @extends('front.layouts.master')
 @section('content')
+
+@push('meta-tags')
+<meta name="title" content="ClearRisk Blog - Expert Insights on Technology & Risk Management" />
+<meta name="description" content="Welcome to the ClearRisk blog, your trusted source for expert advice on technology, risk management, and governance solutions. Explore insightful articles covering topics like risk and threat intelligence platforms, quantitative risk management, and the role of GRC in modern business operations." />
+<meta name="keywords" content="ClearRisk blog, technology insights, risk management articles, risk and threat intelligence, quantitative risk management, GRC in business, governance solutions, compliance management, business risk solutions, expert advice on risk management" />
+@endpush
+
     <!-- Blogs Page -->
 
     <div class="blog-section px-5 d-flex flex-column gap-20">

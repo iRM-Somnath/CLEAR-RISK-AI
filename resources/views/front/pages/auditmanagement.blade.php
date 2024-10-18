@@ -1,11 +1,18 @@
 @extends('front.layouts.master')
 @section('content')
+
+@push('meta-tags')
+<meta name="title" content="Internal Audit Management - Efficient Risk-Based Solutions | ClearRisk">
+<meta name="description" content="ClearRisk offers internal audit management solutions aimed at enhancing and protecting organizational value. Through risk-based and objective assurance, we help ensure your organization's internal controls operate efficiently, effectively, and ethically, providing clear insight into governance.">
+<meta name="keywords" content="Internal audit management, risk-based internal audit, organizational governance, audit controls, internal controls, effective audit solutions, organizational efficiency, ClearRisk audit management, governance and audit assurance, ethical internal operations">
+@endpush
+
     <!-- Audit Management Page -->
 
     <div class="AM-container d-flex align-items-center px-5 justify-content-center flex-column gap-20"
     >
     <div class="AM-vid d-flex justify-content-center col-lg-12">
-        <video src="{{asset('front/assets/videos/AM-Video.mp4')}}" autoplay controls></video>
+        <video src="{{asset('front\assets\videos\AuditManagement_ClearRiskV2 1.mp4')}}" autoplay controls></video>
       </div>
     <div class="col-lg-12 d-flex flex-column gap-20">
         <h1 class="display-5 fw-bold lh-1 mb-3 main-heading-dark">
@@ -16,7 +23,7 @@
         </p>
         <div class="d-grid gap-2 d-md-flex justify-content-md-start ">
 
-          <a href="{{asset('front/assets/PDFS/ClearRisk_PDF_1_AUDIT _DOC (1).pdf')}}" target="_blank">
+          <a href="{{asset('front\assets\PDFS\ClearRisk_AuditManagement.pdf')}}" target="_blank">
             <button type="button" class="btn btn btn-dark rounded-pill">
             Read More
           </button>

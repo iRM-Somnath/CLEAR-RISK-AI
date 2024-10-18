@@ -1,5 +1,12 @@
 @extends('front.layouts.master')
 @section('content')
+
+@push('meta-tags')
+<meta name="title" content="Pricing Plans for Risk Management Solutions | ClearRisk">
+<meta name="description" content="Explore ClearRisk's pricing plans for comprehensive risk management solutions. From Starter to Enterprise Pro, our flexible options cater to businesses of all sizes, offering scalable risk profiles and user management features. Contact us to find the best plan for your organization's needs.">
+<meta name="keywords" content="ClearRisk pricing, risk management pricing, starter plan, standard plan, enterprise risk management pricing, scalable risk solutions, risk management software costs, pricing for internal audit management, enterprise risk management, business risk management plans">
+@endpush
+
     <!-- Pricing Page -->
 
     <div class="product-pricing-container ">
@@ -62,7 +69,7 @@
                    <button
                   type="button"
                   class="btn btn-outline-dark rounded-pill d-flex align-items-center gap-2 w-100 justify-content-center">
-                  Subscribe
+                  Contact Us
                 </button> 
                 </a>
               </div>
@@ -85,7 +92,7 @@
                     <button
                    type="button"
                    class="btn btn-outline-dark rounded-pill d-flex align-items-center gap-2 w-100 justify-content-center">
-                   Subscribe
+                   Contact Us
                  </button> 
                  </a>
               </div>
@@ -108,7 +115,7 @@
                     <button
                    type="button"
                    class="btn btn-outline-dark rounded-pill d-flex align-items-center gap-2 w-100 justify-content-center">
-                   Subscribe
+                   Contact Us
                  </button> 
                  </a>
               </div>
@@ -137,7 +144,7 @@
                     <button
                    type="button"
                    class="btn btn-outline-dark rounded-pill d-flex align-items-center gap-2 w-100 justify-content-center">
-                   Subscribe
+                   Contact Us
                  </button> 
                  </a>
               </div>
@@ -164,7 +171,7 @@
                     <button
                    type="button"
                    class="btn btn-outline-dark rounded-pill d-flex align-items-center gap-2 w-100 justify-content-center">
-                   Subscribe
+                   Contact Us
                  </button> 
                  </a>
               </div>
