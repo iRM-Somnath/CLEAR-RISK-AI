@@ -11,7 +11,7 @@ class Authenticate extends Controller
     public function login()
     {
         if(Auth::check()):
-            return redirect('dashboard');
+            return redirect('admin/dashboard');
         endif;
         return view('admin.pages.login');
     }
@@ -58,7 +58,7 @@ class Authenticate extends Controller
     {
         Session::flush();
         Auth::logout();
-        return redirect('login');
+        return redirect('admin/login');
     }
 
 }

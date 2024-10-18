@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\Authenticate;
+use App\Http\Controllers\admin\Dashboard;
 
 Route::get('/', function () {
     return view('front.pages.home',['title'=> 'Home']);
@@ -35,9 +36,11 @@ Route::get('/events', function () {
     return view('front.pages.events',['title'=> 'Events']);
 });
 
-
 Route::prefix('admin')->group(function(){
      Route::get('login',[Authenticate::class,'login'])->name('admin.login');
      Route::post('user-check',[Authenticate::class,'userCheck'])->name('admin.user-check');
-    //  Route::get('logout',[Authenticate::class,'logout'])->name('admin.logout');
+     Route::middleware(['isAdmin'])->group(function () {
+        Route::get('/dashboard',[Dashboard::class,'index'])->name('admin.dashboard');
+        Route::get('/logout',[Authenticate::class,'logout'])->name('admin.logout');
+    });
 });
