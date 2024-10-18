@@ -1,5 +1,12 @@
 @extends('front.layouts.master')
 @section('content')
+
+@push('meta-tags')
+<meta name="title" content="Webinars - Engage with ClearRisk's Risk Management Community" />
+<meta name="description" content="Join ClearRisk's upcoming webinars and engage with industry experts on key topics such as audit consulting, education on fraud prevention, and more. Stay informed on the latest trends in risk management by subscribing to our interactive and educational webinars." />
+<meta name="keywords" content="ClearRisk webinars, risk management webinars, audit consulting webinars, fraud prevention education, ClearRisk events, risk management community, risk management trends, subscribe to webinars, risk consulting, interactive webinars" />
+@endpush
+
     <!-- Events Page -->
 
     <div class="events-webinar-section col-lg-12 px-5 d-flex flex-column">

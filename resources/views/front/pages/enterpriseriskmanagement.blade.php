@@ -1,5 +1,12 @@
 @extends('front.layouts.master')
 @section('content')
+
+@push('meta-tags')
+<meta name="title" content="What is an ERM? - Enterprise Risk Management Solutions | ClearRisk">
+<meta name="description" content="ClearRisk's Enterprise and Operational Risk Management (ERM) solutions serve as a centralized hub for identifying, assessing, and monitoring risks across the entire enterprise. Learn how ClearRisk can streamline your risk management program to enhance collaboration, reduce silos, and mitigate risks in modern business operations.">
+<meta name="keywords" content="Enterprise Risk Management, ERM, operational risk management, risk assessment, risk monitoring, centralized risk management, business risk solutions, process silos, risk mitigation, ClearRisk ERM solutions, comprehensive risk framework, risk management program">
+@endpush
+
     <!-- ERM Page -->
 
 <div

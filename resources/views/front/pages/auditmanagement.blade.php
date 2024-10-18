@@ -1,5 +1,12 @@
 @extends('front.layouts.master')
 @section('content')
+
+@push('meta-tags')
+<meta name="title" content="Internal Audit Management - Efficient Risk-Based Solutions | ClearRisk">
+<meta name="description" content="ClearRisk offers internal audit management solutions aimed at enhancing and protecting organizational value. Through risk-based and objective assurance, we help ensure your organization's internal controls operate efficiently, effectively, and ethically, providing clear insight into governance.">
+<meta name="keywords" content="Internal audit management, risk-based internal audit, organizational governance, audit controls, internal controls, effective audit solutions, organizational efficiency, ClearRisk audit management, governance and audit assurance, ethical internal operations">
+@endpush
+
     <!-- Audit Management Page -->
 
     <div class="AM-container d-flex align-items-center px-5 justify-content-center flex-column gap-20"

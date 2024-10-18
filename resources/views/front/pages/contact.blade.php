@@ -1,5 +1,12 @@
 @extends('front.layouts.master')
 @section('content')
+
+@push('meta-tags')
+<meta name="title" content="Contact ClearRisk.AI | Grow Your Business with Risk Management Solutions">
+<meta name="description" content="Get in touch with ClearRisk.AI today for expert support in growing your business. Reach out for personalized risk management solutions in audit management and enterprise risk management. Contact us via phone, email, or by submitting the contact form on this page.">
+<meta name="keywords" content="Contact ClearRisk, ClearRisk.AI support, risk management contact, business growth support, audit management inquiries, enterprise risk management inquiries, contact form, ClearRisk phone, ClearRisk email, ClearRisk UK office">
+@endpush
+
     <!-- Contact Us Page -->
 
     <div class="Contact-us-page-container">
