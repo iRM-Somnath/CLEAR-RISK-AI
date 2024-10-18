@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    @stack('meta-tags')
     <title>{{ $title ? $title : '' }}</title>
     <link rel="stylesheet" href="{{ asset('front/css/style.css') }}" />
     <link rel="stylesheet" href="{{ asset('front/css/bootstrap.min.css') }}" />
@@ -98,7 +99,7 @@
                         src="{{ asset('front/assets/images/Optimized-Images/footerimage-66dad3902cdcf.webp') }}"
                         alt="logo" /></a>
                 <p>
-                    Choosing TRPGLOBAL means embracing a transformative experience that
+                    Choosing us means embracing a transformative experience that
                     unlocks your business's full potential.
                 </p>
             </div>
@@ -116,24 +117,24 @@
             <div class="footer-item padding-40 d-flex flex-column gap-10 col-xl-3 col-lg-6 col-md-12">
                 <h4>Our contacts</h4>
                 <div class="d-flex flex-column gap-10">
-                    <div class="address d-flex align-items-center gap-10">
+                    {{-- <div class="address d-flex align-items-center gap-10">
                         <img src="../assets/svgs/LocationIcon.svg" alt="" />
                         <p>
                             Suite 1 Second Floor EverdeneHouse Deansleigh Road, Bournemouth,
                             England, BH7 7DU, United Kingdom
                         </p>
+                    </div> --}}
+                    <div class="phoneNumber d-flex align-items-center gap-10">
+                        <img src="../assets/svgs/PhoneIcon.svg" alt="" />
+                        <p>US: 1-425-864-2958</p>
                     </div>
                     <div class="phoneNumber d-flex align-items-center gap-10">
                         <img src="../assets/svgs/PhoneIcon.svg" alt="" />
-                        <p>+1-425-864-2958</p>
+                        <p>Germany: 49-176-2590-8274</p>
                     </div>
                     <div class="phoneNumber d-flex align-items-center gap-10">
                         <img src="../assets/svgs/PhoneIcon.svg" alt="" />
-                        <p>+49-176-2590-8274</p>
-                    </div>
-                    <div class="phoneNumber d-flex align-items-center gap-10">
-                        <img src="../assets/svgs/PhoneIcon.svg" alt="" />
-                        <p>+44-7768-012397</p>
+                        <p>UK: 44-7768-012397</p>
                     </div>
                     <div class="mailId d-flex align-items-center gap-10">
                         <img src="../assets/svgs/MailIcon.svg" alt="" />

@@ -1,5 +1,11 @@
 @extends('front.layouts.master')
 @section('content')
+@push('meta-tags')
+<meta name="title" content="Intelligent Risk Management Solutions for Bold Leaders | ClearRisk" />
+<meta name="description" content="Discover how ClearRisk empowers businesses across industries like IT, manufacturing, healthcare, and more with AI-driven risk management solutions. Our innovative products help identify, assess, and mitigate risks with precision. Explore audit and enterprise risk management tools tailored to bold leaders seeking to navigate uncertainties and drive success." />
+<meta name="keywords" content="Intelligent risk management, AI-driven risk solutions, audit management, enterprise risk management, business risk solutions, proactive risk mitigation, IT risk management, manufacturing risk solutions, healthcare risk management, ClearRisk products, industries we helped" />
+@endpush
+
     <!-- First Page -->
     <div class="row flex-lg-row-reverse align-items-center px-5">
         <div class="col-10 col-sm-8 col-lg-6 circlegif">

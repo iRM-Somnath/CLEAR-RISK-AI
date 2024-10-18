@@ -1,5 +1,12 @@
 @extends('front.layouts.master')
 @section('content')
+
+@push('meta-tags')
+<meta name="title" content="About Us - Effortless IT and Risk Management Solutions | ClearRisk">
+<meta name="description" content="Learn more about ClearRisk's mission to simplify IT and risk management. We provide easy-to-use solutions that prioritize quality and client satisfaction, ensuring your business's success. With a passion for innovation and reliable support, ClearRisk helps you stay ahead of the curve.">
+<meta name="keywords" content="About ClearRisk, IT management solutions, risk management consulting, business IT support, client satisfaction, simple risk solutions, reliable IT services, ClearRisk mission, IT and risk management expertise, business success">
+@endpush
+
     <!-- About Us Page -->
 
     <div class="find-out-container margin40">
