@@ -28,6 +28,9 @@
         justify-content: flex-end;
       }
       
+      /* .offcanvas{
+        justify-content: space-between !important;
+      } */
   }
 
 @media (max-width: 992px) {
@@ -101,6 +104,11 @@
         justify-content: flex-end;
       }
 
+      .circlegif img{
+        /* transform: translate(60px, -60px); */
+        max-width: 280px;
+      }
+
   }
   
   @media (max-width: 576px) {
@@ -139,7 +147,17 @@
 
     .circlegif img{
       /* transform: translate(60px, -60px); */
-      max-width: 280px;
+      max-width: 220px;
+    }
+
+    .monthly-pricing-btns{
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .pricing-btns{
+      flex-direction: column;
+      gap: 10px;
     }
 
   }

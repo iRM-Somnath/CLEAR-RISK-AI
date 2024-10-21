@@ -19,7 +19,7 @@
   
           
 
-          <div class="d-flex w-100 product-btns justify-content-between px-5 align-items-center">
+          <div class="monthly-pricing-btns d-flex w-100 product-btns justify-content-between px-5 align-items-center">
 
             <div class="d-flex">
               <label class="form-check-label me-2" for="flexSwitchCheckDefault">Monthly</label>
@@ -29,26 +29,22 @@
               </div>
             </div>
 
-            <div>
-              <button
-            id="product-btn-1"
+            <div class="d-flex pricing-btns">
+              <button id="product-btn-1"
               class="btn btn-outline-dark me-2 rounded-pill"
-              type="submit"
-            >
+              type="submit">
               Internal Audit Management
             </button>
-            <button onclick=""
-            id="product-btn-2"
+            <button id="product-btn-2"
               class="btn btn-outline-dark me-2 rounded-pill"
-              type="submit"
-            >
+              type="submit">
               Enterprise Risk Management
             </button>
             </div>
             
-
           </div>
   
+          
           <div class="product-pricing-cards d-flex justify-content-center row"
           >
             <div class="pricing-card product-pricing-card col-xl-3 col-lg-4 col-md-6 col-sm-10 col-10">
