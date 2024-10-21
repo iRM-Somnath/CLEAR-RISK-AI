@@ -136,5 +136,11 @@
     .join-other-btns{
       justify-content: center;
     }
+
+    .circlegif img{
+      /* transform: translate(60px, -60px); */
+      max-width: 280px;
+    }
+
   }
   

@@ -12,7 +12,9 @@
     @stack('css')
 </head>
 
+
 <body>
+    {{-- <div id="loader" ></div> --}}
     <div class="bg">
         <div class="bg1"></div>
         <div class="bg2"></div>
