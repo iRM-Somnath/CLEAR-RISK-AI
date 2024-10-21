@@ -38,7 +38,7 @@
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-l">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Introduction Videoss</h5>
+                    {{-- <h5 class="modal-title" id="exampleModalLabel">Introduction Videos</h5> --}}
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <video class="intro-video" src="{{ asset('front/assets/videos/ClearRisk_Intro 3.mp4') }}" controls></video>
