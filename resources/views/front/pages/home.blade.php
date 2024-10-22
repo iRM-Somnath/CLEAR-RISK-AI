@@ -250,7 +250,7 @@
                     <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            ClearRisk focuses on simplicity and effectiveness, offering easy-to-use and straightforward
+                           Ans. ClearRisk focuses on simplicity and effectiveness, offering easy-to-use and straightforward
                             solutions that help businesses tackle IT and risk challenges with confidence.
                         </div>
                     </div>
