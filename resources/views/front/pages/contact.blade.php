@@ -38,23 +38,23 @@
                             </p class="lead">
                         </div> --}}
 
-                        <div class="phoneNumber d-flex align-items-center  gap-10">
-                            <img src="../assets/svgs/Black-phone.svg" alt="" />
+                        <div class="contact-us-details phoneNumber d-flex align-items-center  gap-10">
+                            <img src="{{asset('front/assets/svgs/Black-phone.svg')}}" alt="" />
                             <p class="lead">US: 1-425-864-2958</p class="lead">
                         </div>
 
-                        <div class="phoneNumber d-flex align-items-center gap-10">
-                            <img src="../assets/svgs/Black-phone.svg" alt="" />
+                        <div class="contact-us-details phoneNumber d-flex align-items-center gap-10">
+                            <img src="{{asset('front/assets/svgs/Black-phone.svg')}}" alt="" />
                             <p class="lead">Germany: 49-176-2590-8274</p class="lead">
                         </div>
 
-                        <div class="phoneNumber d-flex align-items-center gap-10">
-                            <img src="../assets/svgs/Black-phone.svg" alt="" />
+                        <div class="contact-us-details phoneNumber d-flex align-items-center gap-10">
+                            <img src="{{asset('front/assets/svgs/Black-phone.svg')}}" alt="" />
                             <p class="lead">UK: 44-7768-012397</p class="lead">
                         </div>
 
-                        <div class="mailId d-flex align-items-center gap-10">
-                            <img src="../assets/svgs/Black-mail.svg" alt="" />
+                        <div class="contact-us-details mailId d-flex align-items-center gap-10">
+                            <img src="{{asset('front/assets/svgs/Black-mail.svg')}}" alt="" />
                             <p class="lead">hello@clearrisk.ai</p class="lead">
                         </div>
                     </div>

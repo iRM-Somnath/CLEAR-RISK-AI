@@ -7,7 +7,7 @@
 @endpush
 
     <!-- First Page -->
-    <div class="row flex-lg-row-reverse align-items-center px-5">
+    <div class="row px-5 flex-lg-row-reverse align-items-center">
         <div class="col-10 col-sm-8 col-lg-6 circlegif">
             <img src="{{ asset('front//assets/images/Optimized-Images/hero image.webp') }}" alt="
           class="d-block mx-lg-auto img-fluid" alt="ClearRiskGif" loading="lazy" />
@@ -16,7 +16,7 @@
             <h1 class="display-5 fw-bold lh-1 mb-3 main-heading-dark">
                 Intelligent Risk Management<br>for Bold Leaders.
             </h1>
-            <p class="lead">
+            <p class="lead hero-desc">
                 At ClearRisk, we empower businesses to navigate uncertainties with precision. Our AI-driven risk management
                 solutions provide actionable insights, helping leaders mitigate potential threats and drive success with
                 confidence.

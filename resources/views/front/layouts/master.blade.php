@@ -131,19 +131,19 @@
                         </p>
                     </div> --}}
                     <div class="phoneNumber d-flex align-items-center gap-10">
-                        <img src="../assets/svgs/PhoneIcon.svg" alt="" />
+                        <img src="{{asset('front/assets/svgs/PhoneIcon.svg')}}" alt="" />
                         <p>US: 1-425-864-2958</p>
                     </div>
                     <div class="phoneNumber d-flex align-items-center gap-10">
-                        <img src="../assets/svgs/PhoneIcon.svg" alt="" />
+                        <img src="{{asset('front/assets/svgs/PhoneIcon.svg')}}" alt="" />
                         <p>Germany: 49-176-2590-8274</p>
                     </div>
                     <div class="phoneNumber d-flex align-items-center gap-10">
-                        <img src="../assets/svgs/PhoneIcon.svg" alt="" />
+                        <img src="{{asset('front/assets/svgs/PhoneIcon.svg')}}" alt="" />
                         <p>UK: 44-7768-012397</p>
                     </div>
                     <div class="mailId d-flex align-items-center gap-10">
-                        <img src="../assets/svgs/MailIcon.svg" alt="" />
+                        <img src="{{asset('front/assets/svgs/MailIcon.svg')}}" alt="" />
                         <p>hello@clearrisk.ai</p>
                     </div>
                 </div>
