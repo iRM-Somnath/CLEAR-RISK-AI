@@ -19,11 +19,12 @@ class Authenticate extends Controller
     public function userCheck(Request $request)
     {
         $validated = $request->validate([
-            'email' => 'required',
+            'email' => 'required|email',
             'password' => 'required',
         ]);
         if($validated):
-            if(Auth::attempt($request->only('email','password'))):
+            $rememberMe = $request->has('rememberme') ? TRUE : FALSE;
+            if(Auth::attempt($request->only('email','password'),$rememberMe)):
                 // if(Auth::user()->user_type==1):
                     return response()->json([
                         'status'=>TRUE,
@@ -59,6 +60,18 @@ class Authenticate extends Controller
         Session::flush();
         Auth::logout();
         return redirect('admin/login');
+    }
+
+    public function lock(Request $request)
+    {
+        // Set a lock state in the session
+        $request->session()->put('isLocked', true);
+
+        return response()->json([
+            'status'=>TRUE,
+            'message'=>'Screen locked!',
+            'redirect'=>'',
+        ]);
     }
 
 }

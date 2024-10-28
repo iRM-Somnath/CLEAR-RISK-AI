@@ -337,7 +337,7 @@ window.theme.fn = {
 					$html.removeClass( 'sidebar-left-opened' );
 					$html.off( 'click.close-left-sidebar' );
 				}
-				
+
 				// Recalculate Owl Carousel sizes
 				$('.owl-carousel').trigger('refresh.owl.carousel');
 			});
@@ -592,7 +592,7 @@ window.theme.fn = {
 					}
 
 					$(this).parent().addClass('expanding');
-					
+
 					$(this).closest('li').find( '> ul' ).slideDown( 'fast', function() {
 						$tabItem.parent().removeClass('expanding');
 						$(this).closest('li').addClass( 'nav-expanded' );
@@ -608,16 +608,16 @@ window.theme.fn = {
 					e.preventDefault();
 					return false;
 				}
-				
+
 				if( $(this).parent().hasClass('nav-expanded') ) {
 					$tabItem.parent().removeClass('nav-expanded');
 					$contentBody.removeClass('tab-menu-opened');
 					return;
 				}
-				
+
 				$tabItem.parent().removeClass('nav-expanded');
 				$contentBody.addClass('tab-menu-opened');
-				$(this).parent().addClass('nav-expanded');	
+				$(this).parent().addClass('nav-expanded');
 			}
 		}
 	});
@@ -1049,6 +1049,8 @@ window.theme = {};
 	});
 
 }).apply(this, [jQuery]);
+
+
 
 // Panels
 (function($) {
@@ -3701,7 +3703,7 @@ window.theme = {};
 	};
 
 	PluginCarousel.defaults = {
-		
+
 	};
 
 	PluginCarousel.prototype = {
@@ -4941,3 +4943,77 @@ window.theme = {};
 	}
 
 }).apply(this, [jQuery]);
+
+
+
+///////////////////
+// (function($) {
+
+//     'use strict';
+
+//     var LockScreen = {
+
+//         initialize: function() {
+//             this.$body = $('body');
+//             this.checkLockStatus();
+//             this.events();
+//         },
+
+//         events: function() {
+//             var _self = this;
+
+//             this.$body.find('[data-lock-screen="true"]').on('click', function(e) {
+//                 e.preventDefault();
+//                 _self.lock();
+//             });
+//         },
+
+//         checkLockStatus: function() {
+//             $.ajax({
+//                 url: '/check-lock-status', // You need to create this route
+//                 method: 'GET',
+//                 success: function(response) {
+//                     if (response.isLocked) {
+//                         LockScreen.show();
+//                     }
+//                 }
+//             });
+//         },
+
+//         lock: function() {
+//             $.post('/lock', function() {
+//                 LockScreen.show();
+//             });
+//         },
+
+//         show: function() {
+//             // Your existing show function logic for the modal
+//             // Open the lock screen modal here
+//         },
+
+//         unlock: function() {
+//             var _self = this;
+//             // Assuming you have a form to handle unlocking
+//             $('#unlockForm').on('submit', function(e) {
+//                 e.preventDefault();
+//                 var data = $(this).serialize();
+
+//                 $.post('/unlock', data, function(response) {
+//                     if (response.status) {
+//                         // Handle successful unlock
+//                         window.location.href = response.redirect;
+//                     } else {
+//                         // Show error message
+//                         $('#errorMessage').text(response.message);
+//                     }
+//                 });
+//             });
+//         }
+
+//     };
+
+//     $(function() {
+//         LockScreen.initialize();
+//     });
+
+// }).apply(this, [jQuery]);

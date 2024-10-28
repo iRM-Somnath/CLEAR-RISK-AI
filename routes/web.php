@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\Authenticate;
 use App\Http\Controllers\admin\Dashboard;
+use App\Http\Controllers\admin\PricingManagement;
 
 use App\Http\Controllers\front\Home;
 use App\Http\Controllers\front\About;
@@ -35,5 +36,13 @@ Route::prefix('admin')->group(function(){
      Route::middleware(['isAdmin'])->group(function () {
         Route::get('/dashboard',[Dashboard::class,'index'])->name('admin.dashboard');
         Route::get('/logout',[Authenticate::class,'logout'])->name('admin.logout');
+
+        Route::prefix('pricing')->group(function () {
+            Route::get('/',[PricingManagement::class,'index'])->name('admin.pricing');
+            Route::post('/store',[PricingManagement::class,'store'])->name('admin.pricing.store');
+            Route::get('/edit/{id}',[PricingManagement::class,'edit'])->name('admin.pricing.edit');
+            Route::put('/update/{id}',[PricingManagement::class,'update'])->name('admin.pricing.update');
+            Route::delete('/delete/{id}',[PricingManagement::class,'destroy'])->name('admin.pricing.delete');
+        });
     });
 });

@@ -68,9 +68,9 @@
                                 class="img-circle"
                                 data-lock-picture="{{ asset('admin/assets/images/!logged-user.jpg ') }}" />
                         </figure>
-                        <div class="profile-info" data-lock-name="John Doe" data-lock-email="johndoe@okler.com">
-                            <span class="name">John Doe Junior</span>
-                            <span class="role">administrator</span>
+                        <div class="profile-info" data-lock-name="{{ Auth::user()->name }}" data-lock-email="{{ Auth::user()->email }}">
+                            <span class="name">{{ Auth::user()->name }}</span>
+                            <span class="role">Administrator</span>
                         </div>
 
                         <i class="fa custom-caret"></i>
@@ -122,6 +122,12 @@
                                     <a href="layouts-default.html">
                                         <i class="fa fa-home" aria-hidden="true"></i>
                                         <span>Dashboard</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ url("admin/pricing") }}">
+                                        <i class="fa fa-home" aria-hidden="true"></i>
+                                        <span>Pricing Management</span>
                                     </a>
                                 </li>
                                 <li class="nav-parent">
