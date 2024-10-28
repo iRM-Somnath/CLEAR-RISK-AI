@@ -7,7 +7,7 @@
 @endpush
 
     <!-- First Page -->
-    <div class="row flex-lg-row-reverse align-items-center px-5">
+    <div class="row px-5 flex-lg-row-reverse align-items-center">
         <div class="col-10 col-sm-8 col-lg-6 circlegif">
             <img src="{{ asset('front//assets/images/Optimized-Images/hero image.webp') }}" alt="
           class="d-block mx-lg-auto img-fluid" alt="ClearRiskGif" loading="lazy" />
@@ -16,7 +16,7 @@
             <h1 class="display-5 fw-bold lh-1 mb-3 main-heading-dark">
                 Intelligent Risk Management<br>for Bold Leaders.
             </h1>
-            <p class="lead">
+            <p class="lead hero-desc">
                 At ClearRisk, we empower businesses to navigate uncertainties with precision. Our AI-driven risk management
                 solutions provide actionable insights, helping leaders mitigate potential threats and drive success with
                 confidence.
@@ -250,7 +250,7 @@
                     <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            ClearRisk focuses on simplicity and effectiveness, offering easy-to-use and straightforward
+                           Ans. ClearRisk focuses on simplicity and effectiveness, offering easy-to-use and straightforward
                             solutions that help businesses tackle IT and risk challenges with confidence.
                         </div>
                     </div>
@@ -265,7 +265,7 @@
                     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            We are committed to providing reliable, ongoing support throughout the entire process, ensuring
+                            Ans. We are committed to providing reliable, ongoing support throughout the entire process, ensuring
                             our solutions meet and exceed client expectations.
                         </div>
                     </div>
@@ -280,7 +280,7 @@
                     <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            ClearRisk is dedicated to delivering high-quality solutions tailored to your business needs,
+                            Ans. ClearRisk is dedicated to delivering high-quality solutions tailored to your business needs,
                             with a focus on client satisfaction. Every project is designed to exceed expectations.
                         </div>
                     </div>
@@ -295,7 +295,7 @@
                     <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            ClearRisk provides flexible IT consulting and risk management solutions that are designed to
+                            Ans. ClearRisk provides flexible IT consulting and risk management solutions that are designed to
                             meet the needs of various industries, helping businesses simplify their challenges and achieve
                             success.
                         </div>
@@ -311,7 +311,7 @@
                     <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            ClearRisk stays ahead by constantly innovating and keeping up with the latest developments in
+                            Ans. ClearRisk stays ahead by constantly innovating and keeping up with the latest developments in
                             IT consulting and risk management, allowing our clients to benefit from cutting-edge solutions.
                         </div>
                     </div>
