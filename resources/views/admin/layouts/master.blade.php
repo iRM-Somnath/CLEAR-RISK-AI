@@ -124,11 +124,23 @@
                                         <span>Dashboard</span>
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="{{ url("admin/pricing") }}">
+                                <li class="nav-parent">
+                                    <a href="javascript:void(0)">
                                         <i class="fa fa-home" aria-hidden="true"></i>
                                         <span>Pricing Management</span>
                                     </a>
+                                    <ul class="nav nav-children">
+                                        <li>
+                                            <a href="{{ url("admin/pricing") }}">
+                                                List
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ url("admin/pricing/add") }}">
+                                               add
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </li>
                                 <li class="nav-parent">
                                     <a href="#">
