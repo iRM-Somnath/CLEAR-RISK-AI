@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\Authenticate;
 use App\Http\Controllers\admin\Dashboard;
 use App\Http\Controllers\admin\PricingManagement;
+use App\Http\Controllers\admin\FaqsManagement;
 
 use App\Http\Controllers\front\Home;
 use App\Http\Controllers\front\About;
@@ -44,6 +45,14 @@ Route::prefix('admin')->group(function(){
             // Route::get('/edit/{id}',[PricingManagement::class,'edit'])->name('admin.pricing.edit');
             // Route::put('/update/{id}',[PricingManagement::class,'update'])->name('admin.pricing.update');
             // Route::delete('/delete/{id}',[PricingManagement::class,'destroy'])->name('admin.pricing.delete');
+        });
+        Route::prefix('faqs')->group(function () {
+            Route::get('/',[FaqsManagement::class,'index'])->name('admin.faqs');
+            Route::get('/add',[FaqsManagement::class,'add'])->name('admin.faqs.add');
+            Route::post('/save',[FaqsManagement::class,'save'])->name('admin.faqs.save');
+            // Route::get('/edit/{id}',[FaqsManagement::class,'edit'])->name('admin.pricing.edit');
+            // Route::put('/update/{id}',[FaqsManagement::class,'update'])->name('admin.pricing.update');
+            // Route::delete('/delete/{id}',[FaqsManagement::class,'destroy'])->name('admin.pricing.delete');
         });
     });
 });

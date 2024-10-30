@@ -33,7 +33,7 @@
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-          <a class="navbar-brand" href="../html/index.html"
+          <a class="navbar-brand" href="{{ url('/') }}"
             ><img src="{{asset('front/assets/images/Optimized-Images/navimage-66dad39351057.webp')}}" alt="logo"
           /></a>
           
