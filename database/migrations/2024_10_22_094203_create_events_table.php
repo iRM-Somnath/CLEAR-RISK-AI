@@ -13,14 +13,15 @@ return new class extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->id();
-            $table->text('title');
-            $table->String('image')->nullable();
+            $table->string('title');
+            $table->string('image')->nullable();
             $table->string('location')->nullable();
+            $table->string('meeting_url')->nullable();
             $table->timestamp('start_date')->nullable();
             $table->timestamp('end_date')->nullable();
             $table->enum('status', [0, 1, 3])->default(1)->comment('0 = inactive, 1 = active, 3 = deleted');
-            $table->integer('created_by');
-            $table->integer('updated_by');
+            $table->integer('created_by')->nullable();
+            $table->integer('updated_by')->nullable();
             $table->timestamps();
         });
     }

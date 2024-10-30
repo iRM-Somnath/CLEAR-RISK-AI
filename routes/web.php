@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\Authenticate;
 use App\Http\Controllers\admin\Dashboard;
 use App\Http\Controllers\admin\PricingManagement;
+use App\Http\Controllers\admin\EventManagement;
 
 use App\Http\Controllers\front\Home;
 use App\Http\Controllers\front\About;
@@ -40,6 +41,14 @@ Route::prefix('admin')->group(function(){
         Route::prefix('pricing')->group(function () {
             Route::get('/',[PricingManagement::class,'index'])->name('admin.pricing');
             Route::get('/add',[PricingManagement::class,'add'])->name('admin.pricing.add');
+            // Route::post('/store',[PricingManagement::class,'store'])->name('admin.pricing.store');
+            // Route::get('/edit/{id}',[PricingManagement::class,'edit'])->name('admin.pricing.edit');
+            // Route::put('/update/{id}',[PricingManagement::class,'update'])->name('admin.pricing.update');
+            // Route::delete('/delete/{id}',[PricingManagement::class,'destroy'])->name('admin.pricing.delete');
+        });
+        Route::prefix('event')->group(function () {
+            Route::get('/',[EventManagement::class,'index'])->name('admin.event');
+            Route::get('/add',[EventManagement::class,'add'])->name('admin.event.add');
             // Route::post('/store',[PricingManagement::class,'store'])->name('admin.pricing.store');
             // Route::get('/edit/{id}',[PricingManagement::class,'edit'])->name('admin.pricing.edit');
             // Route::put('/update/{id}',[PricingManagement::class,'update'])->name('admin.pricing.update');

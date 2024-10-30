@@ -143,6 +143,24 @@
                                     </ul>
                                 </li>
                                 <li class="nav-parent">
+                                    <a href="javascript:void(0)">
+                                        <i class="fa fa-home" aria-hidden="true"></i>
+                                        <span>Event Management</span>
+                                    </a>
+                                    <ul class="nav nav-children">
+                                        <li>
+                                            <a href="{{ url("admin/event") }}">
+                                                List
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ url("admin/event/add") }}">
+                                               add
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-parent">
                                     <a href="#">
                                         <i class="fa fa-columns" aria-hidden="true"></i>
                                         <span>Layouts</span>
