@@ -145,16 +145,45 @@
                                 <li class="nav-parent">
                                     <a href="javascript:void(0)">
                                         <i class="fa fa-home" aria-hidden="true"></i>
+<<<<<<< HEAD
                                         <span>Event Management</span>
+=======
+                                         <span>Event Management</span>
+>>>>>>> 8f55b72b4d2cace6ac6d77b843296bfd76074d3a
                                     </a>
                                     <ul class="nav nav-children">
                                         <li>
                                             <a href="{{ url("admin/event") }}">
+<<<<<<< HEAD
+=======
                                                 List
                                             </a>
                                         </li>
                                         <li>
                                             <a href="{{ url("admin/event/add") }}">
+                                               add
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-parent">
+                                    <a href="javascript:void(0)">
+                                        <i class="fa fa-home" aria-hidden="true"></i>
+                                        <span>FAQ Management</span>
+                                    </a>
+                                    <ul class="nav nav-children">
+                                        <li>
+                                            <a href="{{ url("admin/faqs") }}">
+>>>>>>> 8f55b72b4d2cace6ac6d77b843296bfd76074d3a
+                                                List
+                                            </a>
+                                        </li>
+                                        <li>
+<<<<<<< HEAD
+                                            <a href="{{ url("admin/event/add") }}">
+=======
+                                            <a href="{{ url("admin/faqs/add") }}">
+>>>>>>> 8f55b72b4d2cace6ac6d77b843296bfd76074d3a
                                                add
                                             </a>
                                         </li>
