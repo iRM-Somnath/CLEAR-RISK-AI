@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('location')->nullable();
             $table->timestamp('start_date')->nullable();
             $table->timestamp('end_date')->nullable();
-            $table->enum('status', ['0', '1', '3'])->default('1')->comment('0 = inactive, 1 = active, 3 = deleted');
+            $table->enum('status', [0, 1, 3])->default('1')->comment('0 = inactive, 1 = active, 3 = deleted');
             $table->integer('created_by');
             $table->integer('updated_by');
             $table->timestamps();
