@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->text('question')->nullable();
             $table->text('answer')->nullable();
-            $table->enum('status', [0, 1, 3])->default('1')->comment('0 = inactive, 1 = active, 3 = deleted');
+            $table->enum('status', [0, 1, 3])->default(1)->comment('0 = inactive, 1 = active, 3 = deleted');
             $table->integer('created_by');
             $table->integer('updated_by');
             $table->timestamps();
