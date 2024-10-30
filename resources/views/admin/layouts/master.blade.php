@@ -37,6 +37,12 @@
     @stack('admin-css')
     <!-- Head Libs -->
     <script src="{{ asset('admin/assets/vendor/modernizr/modernizr.js') }}"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+    <script>
+        let baseUrl = "{{ url('admin') }}/";
+        let lang = "en";
+        let _token = "{{ csrf_token() }}";
+    </script>
 
 </head>
 
@@ -47,7 +53,7 @@
         <header class="header">
             <div class="logo-container">
                 <a href="../1.7.0" class="logo">
-                    <img src="{{ asset('admin/assets/images/logo.png') }}" width="75" height="35"
+                    <img src="{{asset('front/assets/images/Optimized-Images/navimage-66dad39351057.webp')}}" width="75" height="35"
                         alt="Porto Admin" />
                 </a>
                 <div class="visible-xs toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html"
@@ -145,7 +151,7 @@
                                 <li class="nav-parent">
                                     <a href="javascript:void(0)">
                                         <i class="fa fa-home" aria-hidden="true"></i>
-                                        <span>Event Management</span>
+                                         <span>Event Management</span>
                                     </a>
                                     <ul class="nav nav-children">
                                         <li>
@@ -155,6 +161,24 @@
                                         </li>
                                         <li>
                                             <a href="{{ url("admin/event/add") }}">
+                                               add
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-parent">
+                                    <a href="javascript:void(0)">
+                                        <i class="fa fa-home" aria-hidden="true"></i>
+                                        <span>FAQ Management</span>
+                                    </a>
+                                    <ul class="nav nav-children">
+                                        <li>
+                                            <a href="{{ url("admin/faqs") }}">
+                                                List
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ url("admin/faqs/add") }}">
                                                add
                                             </a>
                                         </li>
@@ -267,6 +291,8 @@
 
     <!-- Theme Initialization Files -->
     <script src="{{ asset('admin/assets/javascripts/theme.init.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+    <script src="{{ asset('common/js/index.js') }}"></script>
     @stack('admin-js')
 </body>
 
