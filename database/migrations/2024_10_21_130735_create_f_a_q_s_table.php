@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('f_a_q_s', function (Blueprint $table) {
             $table->id();
-            $table->text('question')->nullable();
+            $table->string('question')->nullable();
             $table->text('answer')->nullable();
             $table->enum('status', [0, 1, 3])->default(1)->comment('0 = inactive, 1 = active, 3 = deleted');
             $table->integer('created_by')->nullable();
