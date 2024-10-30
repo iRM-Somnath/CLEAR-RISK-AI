@@ -47,8 +47,8 @@
         <header class="header">
             <div class="logo-container">
                 <a href="../1.7.0" class="logo">
-                    <img src="{{ asset('admin/assets/images/logo.png') }}" width="75" height="35"
-                        alt="Porto Admin" />
+                    <img src="{{asset('front/assets/images/Optimized-Images/navimage-66dad39351057.webp')}}" width="75" height="35"
+                        alt="Clear-Risk Admin" />
                 </a>
                 <div class="visible-xs toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html"
                     data-fire-event="sidebar-left-opened">
@@ -145,17 +145,11 @@
                                 <li class="nav-parent">
                                     <a href="javascript:void(0)">
                                         <i class="fa fa-home" aria-hidden="true"></i>
-<<<<<<< HEAD
                                         <span>Event Management</span>
-=======
-                                         <span>Event Management</span>
->>>>>>> 8f55b72b4d2cace6ac6d77b843296bfd76074d3a
                                     </a>
                                     <ul class="nav nav-children">
                                         <li>
                                             <a href="{{ url("admin/event") }}">
-<<<<<<< HEAD
-=======
                                                 List
                                             </a>
                                         </li>
@@ -174,16 +168,11 @@
                                     <ul class="nav nav-children">
                                         <li>
                                             <a href="{{ url("admin/faqs") }}">
->>>>>>> 8f55b72b4d2cace6ac6d77b843296bfd76074d3a
                                                 List
                                             </a>
                                         </li>
                                         <li>
-<<<<<<< HEAD
-                                            <a href="{{ url("admin/event/add") }}">
-=======
                                             <a href="{{ url("admin/faqs/add") }}">
->>>>>>> 8f55b72b4d2cace6ac6d77b843296bfd76074d3a
                                                add
                                             </a>
                                         </li>
