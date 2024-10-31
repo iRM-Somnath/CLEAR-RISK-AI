@@ -26,7 +26,21 @@ class PricingManagement extends Controller
         return view('admin.pages.pricing-management.add', compact("title","oldData","productData"));
     }
 
-    public function store(Request $request) {
+    public function save(Request $request) {
+
+        try{
+            DB::beginTransaction();
+            // your code here...
+            DB::commit();
+        }
+        catch(\Exception $e){
+            return response()->json([
+                'status'=>FALSE,
+                'message'=>'Error occurred while saving data!',
+                'redirect'=>'',
+            ]);
+            // throw $e; // uncomment this line to re-throw exception and debug it.
+        }
 
         $validated = $request->validate([
             'choose_product' => 'required',
@@ -41,7 +55,7 @@ class PricingManagement extends Controller
                 "product_id" => $request->input('choose_product'),
                 "plan_id" => $request->input('choose_plans'),
                 "price" => $request->input('price'),
-                "title" => $request->input('title'),
+                "name" => $request->input('title'),
                 "description" => $request->input('description'),
                 // "created_by" => Auth::user()->id,
             ]);

@@ -32,11 +32,13 @@
                 @forelse ($data as $item)
                     <tr>
                         <td>{{$loop->index + 1}}</td>
-                        <td>{{$item->question}}</td>
-                        <td>{{$item->answer}}</td>
-                        <td>{{$item->plan_name}}</td>
-                        {{-- <td>{{$item->currency}}</td> --}}
+                        <td>{{$item->product_id}}</td>
+                        <td>{{$item->plan_id}}</td>
                         <td>{{$item->price}}</td>
+                        <td>{{$item->name}}</td>
+                        <td>{{$item->description}}</td>
+                        {{-- <td>{{$item->currency}}</td> --}}
+                        {{-- <td>{{$item->price}}</td> --}}
                         <td>
                             @if($item->status == 1)
                             <span class="label label-success">Active</span>

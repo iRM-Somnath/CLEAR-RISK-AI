@@ -10,7 +10,7 @@
             {{-- <h2 class="panel-title">Ajax</h2> --}}
         </header>
         <div class="panel-body">
-            <form data-action="pricing/store" class="adminFrm">
+            <form data-action="pricing/save" class="adminFrm">
                 @csrf
                 <div class="panel-body">
                     <div class="row">
@@ -48,7 +48,7 @@
                         <div class="col-sm-12">
                             <div class="form-group">
                                 <label class="control-label">Title</label>
-                                <input type="text" name="title" class="form-control requiredCheck" data-check="Title">
+                                <input type="text" name="name" class="form-control requiredCheck" data-check="Title">
                             </div>
                         </div>
                     </div>
