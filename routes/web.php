@@ -46,6 +46,7 @@ Route::prefix('admin')->group(function(){
             // Route::put('/update/{id}',[PricingManagement::class,'update'])->name('admin.pricing.update');
             // Route::delete('/delete/{id}',[PricingManagement::class,'destroy'])->name('admin.pricing.delete');
         });
+        
         Route::prefix('faqs')->group(function () {
             Route::get('/',[FaqsManagement::class,'index'])->name('admin.faqs');
             Route::get('/add',[FaqsManagement::class,'add'])->name('admin.faqs.add');
