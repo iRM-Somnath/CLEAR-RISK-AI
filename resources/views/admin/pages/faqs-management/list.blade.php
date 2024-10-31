@@ -18,15 +18,12 @@
                 <tr>
                     <th width="5%">Sl No.</th>
                     <th width="40%">Quwstion</th>
-                    <th width="45%">Answer</th>
-                    {{-- <th width="30%">Plan Name</th> --}}
-                    {{-- <th width="5%">Currency</th> --}}
-                    {{-- <th width="10%">Price</th> --}}
-                    <th width="5%">Status</th>
-                    <th width="5%">Action</th>
+                    <th width="40%">Answer</th>
+                    <th width="7%">Status</th>
+                    <th width="8%">Action</th>
 
                 </tr>
-                
+
             </thead>
             <tbody>
                 @forelse ($data as $item)
@@ -34,22 +31,18 @@
                         <td>{{$loop->index + 1}}</td>
                         <td>{{$item->question}}</td>
                         <td>{{$item->answer}}</td>
-                        {{-- <td>{{$item->plan_name}}</td> --}}
-                        {{-- <td>{{$item->currency}}</td> --}}
-                        {{-- <td>{{$item->price}}</td> --}}
                         <td>
                             @if($item->status == 1)
-                            <span class="label label-success">Active</span>
+                            <span class="label label-success change-status" data-id="{{ $item->id }}" data-key="id" data-table="f_a_q_s" data-status="0">Active</span>
                             @else
-                            <span class="label label-danger">Inactive</span>
+                            <span class="label label-danger change-status" data-id="{{ $item->id }}" data-key="id" data-table="f_a_q_s" data-status="1">In-active</span>
                             @endif
                         </td>
                         <td>
-                            {{-- <a href="{{route('admin.question.edit', $item->id)}}" class="btn btn-sm btn-primary"><i class="fa fa-pencil"></i> Edit</a> --}}
-                            {{-- <form action="{{route('admin.question.destroy', $item->id)}}" method="POST" onsubmit="return confirm('Are you sure --}}
+
                     </tr>
                 @empty
-                    
+
                 @endforelse
             </tbody>
         </table>
