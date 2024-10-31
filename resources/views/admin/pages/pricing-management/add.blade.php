@@ -15,7 +15,7 @@
     <div class="panel-body">
         <div class="panel-body">
             <div class="row">
-                <div class="col-sm-3">
+                <div class="col-sm-4">
                     <div class="form-group">
                         <label class="control-label">Choose Product</label>
                         <select class="form-control mb-md">
@@ -28,27 +28,20 @@
                         </select>
                     </div>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-4">
                     <div class="form-group">
                         <label class="control-label">Choose plan type</label>
                         <select class="form-control mb-md">
                                 <option value="">~Choose Option~</option>
                                 <option value="1">Monthly</option>
                                 <option value="2">Yearly</option>
-
-                            {{-- <option value="">~Choose Option~</option>
-                            @forelse ($productData as $key=> $product)
-                                    <option value="{{ $product->id }}">{{ $product->name }}</option>
-                            @empty
-                                    <option value="">~Not available~</option>
-                            @endforelse --}}
                         </select>
                     </div>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-4">
                     <div class="form-group">
                         <label class="control-label">Price</label>
-                        <input type="text" name="price" class="form-control" data-check="Price">
+                        <input type="text"  name="price" class="form-control checkDecimal" data-check="Price">
                     </div>
                 </div>
             </div>
