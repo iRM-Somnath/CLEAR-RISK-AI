@@ -34,10 +34,15 @@
 
     <!-- Theme Custom CSS -->
     <link rel="stylesheet" href="{{ asset('admin/assets/stylesheets/theme-custom.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
     @stack('admin-css')
     <!-- Head Libs -->
     <script src="{{ asset('admin/assets/vendor/modernizr/modernizr.js') }}"></script>
-
+    <script>
+        let baseUrl = "{{ url('admin') }}/";
+        let lang = "en";
+        let _token = "{{ csrf_token() }}";
+    </script>
 </head>
 
 <body>
@@ -285,6 +290,9 @@
 
     <!-- Theme Initialization Files -->
     <script src="{{ asset('admin/assets/javascripts/theme.init.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+    <script src="{{ asset('common/js/index.js') }}"></script>
+
     @stack('admin-js')
 </body>
 

@@ -47,6 +47,7 @@ Route::prefix('admin')->group(function(){
             // Route::put('/update/{id}',[PricingManagement::class,'update'])->name('admin.pricing.update');
             // Route::delete('/delete/{id}',[PricingManagement::class,'destroy'])->name('admin.pricing.delete');
         });
+        
         Route::prefix('event')->group(function () {
             Route::get('/',[EventManagement::class,'index'])->name('admin.event');
             Route::get('/add',[EventManagement::class,'add'])->name('admin.event.add');

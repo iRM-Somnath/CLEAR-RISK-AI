@@ -15,7 +15,7 @@
     <div class="panel-body">
         <div class="panel-body">
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-4">
                     <div class="form-group">
                         <label class="control-label">Choose Product</label>
                         <select class="form-control mb-md">
@@ -28,24 +28,36 @@
                         </select>
                     </div>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-4">
                     <div class="form-group">
-                        <label class="control-label">Last Name</label>
-                        <input type="text" name="lastname" class="form-control">
+                        <label class="control-label">Choose plan type</label>
+                        <select class="form-control mb-md">
+                                <option value="">~Choose Option~</option>
+                                <option value="1">Monthly</option>
+                                <option value="2">Yearly</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label class="control-label">Price</label>
+                        <input type="text"  name="price" class="form-control checkDecimal" data-check="Price">
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-12">
                     <div class="form-group">
-                        <label class="control-label">Email</label>
-                        <input type="email" name="email" class="form-control">
+                        <label class="control-label">Title</label>
+                        <input type="text" name="qustion" class="form-control requiredCheck" data-check="Title">
                     </div>
                 </div>
-                <div class="col-sm-6">
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
                     <div class="form-group">
-                        <label class="control-label">Website</label>
-                        <input type="url" name="website" class="form-control">
+                        <label class="control-label">Description</label>
+                        <textarea name="answer" id="" cols="30" rows="10" class="form-control requiredCheck" data-check="Decsription"></textarea>
                     </div>
                 </div>
             </div>
