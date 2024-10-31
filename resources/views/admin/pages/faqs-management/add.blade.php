@@ -10,7 +10,7 @@
             {{-- <h2 class="panel-title">Ajax</h2> --}}
         </header>
         <div class="panel-body">
-            <form data-action="faqs/save" class="adminFrm">
+            <form data-action="faqs/save" class="adminFrm" method="POST">
                 @csrf
                 <div class="panel-body">
                     <div class="row">
