@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\FAQS;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class FaqsManagement extends Controller
 {
@@ -19,7 +20,7 @@ class FaqsManagement extends Controller
     public function add($id=''){
         if(!empty($id)):
             $title = "Faqs Management : Edit";
-            $oldData = FAQS::where('status',1)->find();
+            $oldData = FAQS::where('status','!=',3)->find($id);
         else:
             $title="Faqs Management : Add";
             $oldData = NULL;
@@ -28,29 +29,66 @@ class FaqsManagement extends Controller
     }
 
     public function save(Request $request) {
-
-        $validated = $request->validate([
-            'qustion' => 'required',
-            'answer' => 'required',
-        ]);
-        if($validated):
-            FAQS::create([
-                "question"=>$request->qustion,
-                "answer"=>$request->answer,
-                "created_by"=>Auth::user()->id,
+        DB::beginTransaction();
+        try{
+            $validated = $request->validate([
+                'question' => 'required',
+                'answer' => 'required',
             ]);
-            return response()->json([
-                'status'=>TRUE,
-                'message'=>'Data saved successfully!',
-                'redirect'=>'faqs/',
-            ]);
-        else:
+            if($validated):
+                if(empty($request->input('updateId'))):
+                    if(FAQS::whereRaw("LOWER(`question`) = '".strtolower($request->question)."'")->where('status','!=',3)->exists()):
+                        return response()->json([
+                            'status'=>FALSE,
+                            'message'=>'Question already exists!',
+                            'redirect'=>'',
+                        ]);
+                    endif;
+                    FAQS::create([
+                        "question"=>$request->question,
+                        "answer"=>$request->answer,
+                        "created_by"=>Auth::user()->id,
+                    ]);
+                    DB::commit();
+                    return response()->json([
+                        'status'=>TRUE,
+                        'message'=>'Data saved successfully!',
+                        'redirect'=>'faqs/',
+                    ]);
+                else:
+                    if(FAQS::whereRaw("LOWER(`question`) = '".strtolower($request->question)."'")->where('status','!=',3)->where('id','<>',$request->input('updateId'))->exists()):
+                        return response()->json([
+                            'status'=>FALSE,
+                            'message'=>'Question already exists!',
+                            'redirect'=>'',
+                        ]);
+                    endif;
+                    FAQS::where('id',$request->input('updateId'))->update([
+                        "question"=>$request->question,
+                        "answer"=>$request->answer,
+                        "updated_by"=>Auth::user()->id,
+                    ]);
+                    DB::commit();
+                    return response()->json([
+                        'status'=>TRUE,
+                        'message'=>'Data updated successfully!',
+                        'redirect'=>'faqs/',
+                    ]);
+                endif;
+            else:
+                return response()->json([
+                    'status'=>FALSE,
+                    'message'=>'All data are not present in the request!',
+                    'redirect'=>'',
+                ]);
+            endif;
+        }catch(\Exception $e)   {
+            DB::rollBack();
             return response()->json([
                 'status'=>FALSE,
-                'message'=>'All data are not present in the request!',
+                'message'=>'An error occurred: '.$e->getMessage(),
                 'redirect'=>'',
             ]);
-        endif;
-
+        }
     }
 }

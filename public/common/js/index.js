@@ -146,13 +146,13 @@ $(document).on("click", ".change-status", function () {
   var id = $(this).data("id");
   var keyId = $(this).data("key");
   var table = $(this).data("table");
-  var approval = $(this).data("status");
+  var status = $(this).data("status");
   var dataJSON = {
-    id: id,
-    keyId: keyId,
-    table: table,
-    approval: approval,
-     _token: _token,
+    id,
+    keyId,
+    table,
+    status,
+     _token,
   };
   $.confirm({
     icon: "fa fa-spinner fa-spin",
@@ -171,7 +171,7 @@ $(document).on("click", ".change-status", function () {
             dataType: "JSON",
             success: function (data) {
               if (data.status) {
-                if (data.postApproval == "1") {
+                if (data.postStatus == "1") {
                   $("#" + id).removeClass("label-danger");
                   $("#" + id).addClass("label-success");
                   $("#" + id).html("Active");
@@ -183,7 +183,17 @@ $(document).on("click", ".change-status", function () {
                     type: "green",
                     typeAnimated: true,
                   });
-                } else {
+                }else if(data.postStatus == "3"){
+                    $("#" + id).closest("tr").remove();
+                    $.alert({
+                        icon: "fa fa-check",
+                        title: "Success!",
+                        content: data.message,
+                        type: "green",
+                        typeAnimated: true,
+                    });
+
+                }else {
                   $("#" + id).removeClass("label-success");
                   $("#" + id).addClass("label-danger");
                   $("#" + id).html("In-active");

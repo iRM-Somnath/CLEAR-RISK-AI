@@ -77,23 +77,43 @@ class Authenticate extends Controller
 
     public function genericStatusChange(Request $request)
     {
-        if($request->ajax()):
-            $dbTransaction = DB::table($request->input('table'))->where($request->input('keyId'),$request->input('id'))->update(['status'=>$request->input("status")]);
-            if($dbTransaction):
+        try{
+            DB::beginTransaction();
+            if($request->ajax()):
+                // DB::enableQueryLog();
+                $dbTransaction = DB::table($request->input('table'))
+                                    ->where($request->input('keyId'),$request->input('id'))
+                                    ->update([
+                                        'status'=>$request->input("status"),
+                                        'updated_by'=>Auth::user()->id
+                                    ]);
+                // dd(DB::getQueryLog());
+                if($dbTransaction):
+                    DB::commit();
+                    return response()->json([
+                        'status'=>TRUE,
+                        'message'=>'Request processed successfully!',
+                        'redirect'=>'',
+                        'postStatus'=>$request->input("status")
+                    ]);
+                endif;
+
+                DB::rollBack();
                 return response()->json([
-                    'status'=>TRUE,
-                    'message'=>'Request processed successfully!',
-                    'redirect'=>'',
-                    'postStatus'=>$request->input("status")
-                ]);
+                        'status'=>FALSE,
+                        'message'=>'Something went wrong!',
+                        'redirect'=>'',
+                        'postStatus'=>$request->input("status")
+                    ]);
             endif;
+        }catch(\Exception $e)   {
+            DB::rollBack();
             return response()->json([
-                    'status'=>FALSE,
-                    'message'=>'Something went wrong!',
-                    'redirect'=>'',
-                    'postStatus'=>$request->input("status")
-                ]);
-        endif;
+                'status'=>FALSE,
+                'message'=>'An error occurred: '.$e->getMessage(),
+                'redirect'=>'',
+            ]);
+        }
     }
 
 }

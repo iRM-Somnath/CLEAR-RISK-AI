@@ -11,13 +11,14 @@
         </header>
         <div class="panel-body">
             <form data-action="faqs/save" class="adminFrm" method="POST">
+                <input type="hidden" name="updateId" value="{{!is_null($oldData)?$oldData->id:''}}">
                 @csrf
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group">
                                 <label class="control-label">Question</label>
-                                <input type="text" name="qustion" class="form-control requiredCheck" data-check="Question">
+                                <input type="text" name="question" class="form-control requiredCheck" data-check="Question" value="{{ !is_null($oldData)?$oldData->question:'' }}">
                             </div>
                         </div>
                     </div>
@@ -26,7 +27,7 @@
                             <div class="form-group">
                                 <label class="control-label">Answer</label>
                                 {{-- <input type="text" name="lastname" class="form-control"> --}}
-                                <textarea name="answer" id="" cols="30" rows="10" class="form-control requiredCheck" data-check="Answer"></textarea>
+                                <textarea name="answer" id="" cols="30" rows="10" class="form-control requiredCheck" data-check="Answer">{{ !is_null($oldData)?$oldData->answer:'' }}</textarea>
                             </div>
                         </div>
                     </div>
