@@ -126,7 +126,7 @@ function jqueryConfirmAlert(text, type, timer = 2000) {
       content: text,
       type: "orange",
       typeAnimated: true,
-     
+
     });
   } else if (type === "success") {
     $.alert({
@@ -136,195 +136,23 @@ function jqueryConfirmAlert(text, type, timer = 2000) {
       content: text,
       type: "green",
       typeAnimated: true,
-     
+
     });
   }
 }
 
-$(document).on("click", ".change-status", function () {
-  var dataJSON = {
-    id: $(this).data("id"),
-    keyId:  $(this).data("key"),
-    table: $(this).data("table"),
-    status: $(this).data("status"),
-    _csrf: _token,
-  };
-  if ($(this).data("table") === "project_vendors") {
-      dataJSON.projectId = $(this).data("project-id");
-  }
-  changeStatus(dataJSON);
-});
-function changeStatus(dataJSON) {
-  var id = dataJSON.id;
-  var table = dataJSON.table;
-  var keyId = dataJSON.keyId;
-  var status = dataJSON.status;
-  var rtl = false;
-  var title = "Confirm!";
-  var content = "Do you really want to do this ?";
-  if (lang === "ar") {
-    rtl = true;
-    title = "يتأكد!";
-    content = "هل تريد حقا أن تفعل هذا ?";
-  }
-  $.confirm({
-    icon: "fa fa-spinner fa-spin",
-    title: title,
-    content: content,
-    type: "orange",
-    rtl: rtl,
-    typeAnimated: true,
-    buttons: {
-      confirm: function () {
-        if (id && table) {
-          $.ajax({
-            type: "POST",
-            url: baseUrl + "generic-status-change-delete",
-            data: dataJSON,
-            dataType: "JSON",
-            success: function (data) {
-              var rtl = false;
-              var warning = "Warning!";
-              var success = "Success!";
-              var deleteContent = "Data has been deleted !";
-              if (lang === "ar") {
-                rtl = true;
-                warning = "!تحذير";
-                success = "!نجاح";
-                deleteContent = "تم حذف البيانات!";
-              }
-              if (data.status) {
-                if (data.postStatus == "3") {
-                  if (table === "project_folders"){
-                      if (data.data.parent != 0) {
-                        getSubfolderAndFiles(data.data.parent);
-                        // uploadModal.hide();
-                      }
-                  }else if (table === "project_folder_permissions") {
-                   if (data.parent != 0) {
-                     getSubfolderAndFiles(data.parent,"send");
-                     // uploadModal.hide();
-                   }
-                    shareUsers(id);
-                    uploadModal3.hide();
-                    uploadModal4.hide();
-                     $.alert({
-                       icon: "fa fa-check",
-                       title: success,
-                       rtl: rtl,
-                       content: deleteContent,
-                       type: "green",
-                       typeAnimated: true,
-                     });
-                  }else if (table === "project_file_approvals") {
-                    if (data.parent != 0) {
-                      getSubfolderAndFiles(data.parent, "send");
-                      uploadModal5.hide();
-                       
-                       if (data.action === "accept-next") {
-                          $("#uploadModalLabel4").text('Send File '+data.docName+' For Approval')
-                          $("#fileId4").val(data.fileId);
-                          $("#parent4").val(data.parent);
-                          $('.select2').select2();
-                          shareUsers(data.fileId,"userIds4","allReadySendForApprovalUsers","send");
-                          uploadModal4.show();
-                       }else{
-                          $.alert({
-                            icon: "fa fa-check",
-                            title: success,
-                            rtl: rtl,
-                            content: data.message,
-                            type: "green",
-                            typeAnimated: true,
-                          });
-                        }
-                    }
-                   
-                  } else {
-                    $.alert({
-                      icon: "fa fa-check",
-                      title: success,
-                      rtl: rtl,
-                      content: deleteContent,
-                      type: "green",
-                      typeAnimated: true,
-                    });
-                    setTimeout(function () {
-                      location.reload();
-                    }, 1550);
-                  }
-                    
-                } else if (data.postStatus == "1") {
-                  if (table === "roles") {
-                    setTimeout(function () {
-                      location.reload();
-                    }, 1550);
-                  }
-                  $("#" + id).prop("checked", true);
-                  $("#" + id).data("status", "0");
-                  $.alert({
-                    icon: "fa fa-check",
-                    title: success,
-                    rtl: rtl,
-                    content: data.message,
-                    type: "green",
-                    typeAnimated: true,
-                  });
-                } else if (data.postStatus == "0") {
-                  if (table === "roles") {
-                    setTimeout(function () {
-                      location.reload();
-                    }, 1550);
-                  }
-                  $("#" + id).prop("checked", false);
-                  $("#" + id).data("status", "1");
-                  $.alert({
-                    icon: "fa fa-check",
-                    title: success,
-                    content: data.message,
-                    rtl: rtl,
-                    type: "green",
-                    typeAnimated: true,
-                  });
-                }
-              }
-            },
-          });
-        }
-      },
-      cancel: function () {
-        var rtl = false;
-        var title = "Canceled!";
-        var content = "Process canceled!";
-        if (lang === "ar") {
-          rtl = true;
-          title = "ألغيت!";
-          content = "تم إلغاء العملية!";
-        }
-        $.alert({
-          icon: "fa fa-times",
-          title: title,
-          content: content,
-          type: "purple",
-          rtl: rtl,
-          typeAnimated: true,
-        });
-      },
-    },
-  });
-}
 /*change approval*/
-$(document).on("click", ".change-approval", function () {
+$(document).on("click", ".change-status", function () {
   var id = $(this).data("id");
   var keyId = $(this).data("key");
   var table = $(this).data("table");
-  var approval = $(this).data("approval");
+  var status = $(this).data("status");
   var dataJSON = {
-    id: id,
-    keyId: keyId,
-    table: table,
-    approval: approval,
-     _csrf: _token,
+    id,
+    keyId,
+    table,
+    status,
+     _token,
   };
   $.confirm({
     icon: "fa fa-spinner fa-spin",
@@ -337,16 +165,17 @@ $(document).on("click", ".change-approval", function () {
         if (id && table) {
           $.ajax({
             type: "POST",
-            url: baseUrl + "generic-approval-change",
+            headers:{},
+            url: baseUrl + "generic-status-change",
             data: dataJSON,
             dataType: "JSON",
             success: function (data) {
               if (data.status) {
-                if (data.postApproval == "1") {
-                  $("#" + id).removeClass("badge-danger");
-                  $("#" + id).addClass("badge-primary");
-                  $("#" + id).html("Approved");
-                  $("#" + id).data("approval", "0");
+                if (data.postStatus == "1") {
+                  $("#" + id).removeClass("label-danger");
+                  $("#" + id).addClass("label-success");
+                  $("#" + id).html("Active");
+                  $("#" + id).data("status", "0");
                   $.alert({
                     icon: "fa fa-check",
                     title: "Success!",
@@ -354,11 +183,21 @@ $(document).on("click", ".change-approval", function () {
                     type: "green",
                     typeAnimated: true,
                   });
-                } else {
-                  $("#" + id).removeClass("badge-primary");
-                  $("#" + id).addClass("badge-danger");
-                  $("#" + id).html("Unapproved");
-                  $("#" + id).data("approval", "1");
+                }else if(data.postStatus == "3"){
+                    $("#" + id).closest("tr").remove();
+                    $.alert({
+                        icon: "fa fa-check",
+                        title: "Success!",
+                        content: data.message,
+                        type: "green",
+                        typeAnimated: true,
+                    });
+
+                }else {
+                  $("#" + id).removeClass("label-success");
+                  $("#" + id).addClass("label-danger");
+                  $("#" + id).html("In-active");
+                  $("#" + id).data("status", "1");
 
                   $.alert({
                     icon: "fa fa-check",

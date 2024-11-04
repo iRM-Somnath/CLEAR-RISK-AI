@@ -38,16 +38,17 @@ Route::prefix('admin')->group(function(){
      Route::middleware(['isAdmin'])->group(function () {
         Route::get('/dashboard',[Dashboard::class,'index'])->name('admin.dashboard');
         Route::get('/logout',[Authenticate::class,'logout'])->name('admin.logout');
+        Route::post('/generic-status-change',[Authenticate::class,'genericStatusChange'])->name('admin.generic-status-change');
 
         Route::prefix('pricing')->group(function () {
             Route::get('/',[PricingManagement::class,'index'])->name('admin.pricing');
             Route::get('/add',[PricingManagement::class,'add'])->name('admin.pricing.add');
-            // Route::post('/store',[PricingManagement::class,'store'])->name('admin.pricing.store');
+            Route::post('/save',[PricingManagement::class,'save'])->name('admin.pricing.save');
             // Route::get('/edit/{id}',[PricingManagement::class,'edit'])->name('admin.pricing.edit');
             // Route::put('/update/{id}',[PricingManagement::class,'update'])->name('admin.pricing.update');
             // Route::delete('/delete/{id}',[PricingManagement::class,'destroy'])->name('admin.pricing.delete');
         });
-        
+
         Route::prefix('event')->group(function () {
             Route::get('/', [EventManagement::class, 'index'])->name('admin.event');
             Route::get('/add', [EventManagement::class, 'add'])->name('admin.event.add');
@@ -57,11 +58,12 @@ Route::prefix('admin')->group(function(){
             Route::post('admin/event/changeStatus/{id}', [EventManagement::class, 'changeStatus'])->name('admin.event.changeStatus');
             Route::delete('/delete/{id}', [EventManagement::class, 'delete'])->name('admin.event.delete');
         });
+
         Route::prefix('faqs')->group(function () {
             Route::get('/',[FaqsManagement::class,'index'])->name('admin.faqs');
             Route::get('/add',[FaqsManagement::class,'add'])->name('admin.faqs.add');
             Route::post('/save',[FaqsManagement::class,'save'])->name('admin.faqs.save');
-            // Route::get('/edit/{id}',[FaqsManagement::class,'edit'])->name('admin.pricing.edit');
+            Route::get('/edit/{id}',[FaqsManagement::class,'add'])->name('admin.faqs.edit');
             // Route::put('/update/{id}',[FaqsManagement::class,'update'])->name('admin.pricing.update');
             // Route::delete('/delete/{id}',[FaqsManagement::class,'destroy'])->name('admin.pricing.delete');
         });
