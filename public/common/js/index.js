@@ -152,7 +152,7 @@ $(document).on("click", ".change-status", function () {
     keyId: keyId,
     table: table,
     approval: approval,
-     _csrf: _token,
+     _token: _token,
   };
   $.confirm({
     icon: "fa fa-spinner fa-spin",
@@ -165,6 +165,7 @@ $(document).on("click", ".change-status", function () {
         if (id && table) {
           $.ajax({
             type: "POST",
+            headers:{},
             url: baseUrl + "generic-status-change",
             data: dataJSON,
             dataType: "JSON",

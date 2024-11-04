@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\DB;
 class Authenticate extends Controller
 {
     public function login()
@@ -72,6 +73,27 @@ class Authenticate extends Controller
             'message'=>'Screen locked!',
             'redirect'=>'',
         ]);
+    }
+
+    public function genericStatusChange(Request $request)
+    {
+        if($request->ajax()):
+            $dbTransaction = DB::table($request->input('table'))->where($request->input('keyId'),$request->input('id'))->update(['status'=>$request->input("status")]);
+            if($dbTransaction):
+                return response()->json([
+                    'status'=>TRUE,
+                    'message'=>'Request processed successfully!',
+                    'redirect'=>'',
+                    'postStatus'=>$request->input("status")
+                ]);
+            endif;
+            return response()->json([
+                    'status'=>FALSE,
+                    'message'=>'Something went wrong!',
+                    'redirect'=>'',
+                    'postStatus'=>$request->input("status")
+                ]);
+        endif;
     }
 
 }

@@ -38,6 +38,7 @@ Route::prefix('admin')->group(function(){
      Route::middleware(['isAdmin'])->group(function () {
         Route::get('/dashboard',[Dashboard::class,'index'])->name('admin.dashboard');
         Route::get('/logout',[Authenticate::class,'logout'])->name('admin.logout');
+        Route::post('/generic-status-change',[Authenticate::class,'logout'])->name('admin.generic-status-change');
 
         Route::prefix('pricing')->group(function () {
             Route::get('/',[PricingManagement::class,'index'])->name('admin.pricing');
@@ -47,7 +48,7 @@ Route::prefix('admin')->group(function(){
             // Route::put('/update/{id}',[PricingManagement::class,'update'])->name('admin.pricing.update');
             // Route::delete('/delete/{id}',[PricingManagement::class,'destroy'])->name('admin.pricing.delete');
         });
-        
+
         Route::prefix('event')->group(function () {
             Route::get('/',[EventManagement::class,'index'])->name('admin.event');
             Route::get('/add',[EventManagement::class,'add'])->name('admin.event.add');
