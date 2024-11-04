@@ -43,7 +43,7 @@ Route::prefix('admin')->group(function(){
         Route::prefix('pricing')->group(function () {
             Route::get('/',[PricingManagement::class,'index'])->name('admin.pricing');
             Route::get('/add',[PricingManagement::class,'add'])->name('admin.pricing.add');
-            // Route::post('/store',[PricingManagement::class,'store'])->name('admin.pricing.store');
+            Route::post('/save',[PricingManagement::class,'save'])->name('admin.pricing.save');
             // Route::get('/edit/{id}',[PricingManagement::class,'edit'])->name('admin.pricing.edit');
             // Route::put('/update/{id}',[PricingManagement::class,'update'])->name('admin.pricing.update');
             // Route::delete('/delete/{id}',[PricingManagement::class,'destroy'])->name('admin.pricing.delete');
@@ -57,6 +57,7 @@ Route::prefix('admin')->group(function(){
             // Route::put('/update/{id}',[PricingManagement::class,'update'])->name('admin.pricing.update');
             // Route::delete('/delete/{id}',[PricingManagement::class,'destroy'])->name('admin.pricing.delete');
         });
+
         Route::prefix('faqs')->group(function () {
             Route::get('/',[FaqsManagement::class,'index'])->name('admin.faqs');
             Route::get('/add',[FaqsManagement::class,'add'])->name('admin.faqs.add');
