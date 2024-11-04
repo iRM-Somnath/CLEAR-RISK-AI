@@ -49,12 +49,13 @@ Route::prefix('admin')->group(function(){
         });
         
         Route::prefix('event')->group(function () {
-            Route::get('/',[EventManagement::class,'index'])->name('admin.event');
-            Route::get('/add',[EventManagement::class,'add'])->name('admin.event.add');
-            // Route::post('/store',[PricingManagement::class,'store'])->name('admin.pricing.store');
-            // Route::get('/edit/{id}',[PricingManagement::class,'edit'])->name('admin.pricing.edit');
-            // Route::put('/update/{id}',[PricingManagement::class,'update'])->name('admin.pricing.update');
-            // Route::delete('/delete/{id}',[PricingManagement::class,'destroy'])->name('admin.pricing.delete');
+            Route::get('/', [EventManagement::class, 'index'])->name('admin.event');
+            Route::get('/add', [EventManagement::class, 'add'])->name('admin.event.add');
+            Route::post('/save', [EventManagement::class, 'save'])->name('admin.event.save');
+            Route::get('/edit/{id}', [EventManagement::class, 'add'])->name('admin.event.edit');
+            Route::put('/update/{id}', [EventManagement::class, 'save'])->name('admin.event.update');
+            Route::post('admin/event/changeStatus/{id}', [EventManagement::class, 'changeStatus'])->name('admin.event.changeStatus');
+            Route::delete('/delete/{id}', [EventManagement::class, 'delete'])->name('admin.event.delete');
         });
         Route::prefix('faqs')->group(function () {
             Route::get('/',[FaqsManagement::class,'index'])->name('admin.faqs');
