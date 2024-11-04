@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('image')->nullable();
+            $table->string('image_name')->nullable();
+            $table->string('image_original_name')->nullable();
             $table->string('location')->nullable();
             $table->string('meeting_url')->nullable();
             $table->timestamp('start_date')->nullable();

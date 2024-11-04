@@ -37,8 +37,8 @@
                             <td>{{$item->question}}</td>
                             <td>{{$item->answer}}</td>
                             <td>{{ date('d-m-Y h:i A',strtotime($item->created_at)) }}</td>
-                            <td>{{$item->creator->name }}</td>
-                            <td>{{$item->lastUpdator->name }}</td>
+                            <td>{{$item?->creator?->name??'N/A' }}</td>
+                            <td>{{$item?->lastUpdator?->name??'N/A' }}</td>
                             <td>{{ date('d-m-Y h:i A',strtotime($item->updated_at)) }}</td>
                             <td>
                                 @if($item->status == 1)
