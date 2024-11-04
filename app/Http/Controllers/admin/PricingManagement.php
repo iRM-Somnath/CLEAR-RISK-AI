@@ -25,4 +25,52 @@ class PricingManagement extends Controller
         $productData = Product::where('status','1')->get();
         return view('admin.pages.pricing-management.add', compact("title","oldData","productData"));
     }
+
+    public function save(Request $request) {
+
+        try{
+            DB::beginTransaction();
+            // your code here...
+            DB::commit();
+        }
+        catch(\Exception $e){
+            return response()->json([
+                'status'=>FALSE,
+                'message'=>'Error occurred while saving data!',
+                'redirect'=>'',
+            ]);
+            // throw $e; // uncomment this line to re-throw exception and debug it.
+        }
+
+        $validated = $request->validate([
+            'choose_product' => 'required',
+            'choose_plans' => 'required',
+            'price' => 'required',
+            'title' => 'required',
+            'description' => 'required',
+        ]);
+        if($validated):
+            plan::create([
+
+                "product_id" => $request->input('choose_product'),
+                "plan_id" => $request->input('choose_plans'),
+                "price" => $request->input('price'),
+                "name" => $request->input('title'),
+                "description" => $request->input('description'),
+                // "created_by" => Auth::user()->id,
+            ]);
+            return response()->json([
+                'status'=>TRUE,
+                'message'=>'Data saved successfully!',
+                'redirect'=>'pricing/',
+            ]);
+        else:
+            return response()->json([
+                'status'=>FALSE,
+                'message'=>'All data are not present in the request!',
+                'redirect'=>'',
+            ]);
+        endif;
+
+    }
 }

@@ -35,6 +35,7 @@
     <!-- Theme Custom CSS -->
     <link rel="stylesheet" href="{{ asset('admin/assets/stylesheets/theme-custom.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+    
     @stack('admin-css')
     <!-- Head Libs -->
     <script src="{{ asset('admin/assets/vendor/modernizr/modernizr.js') }}"></script>
