@@ -28,19 +28,21 @@ class PricingManagement extends Controller
 
     public function save(Request $request) {
 
-        try{
-            DB::beginTransaction();
-            // your code here...
-            DB::commit();
-        }
-        catch(\Exception $e){
-            return response()->json([
-                'status'=>FALSE,
-                'message'=>'Error occurred while saving data!',
-                'redirect'=>'',
-            ]);
-            // throw $e; // uncomment this line to re-throw exception and debug it.
-        }
+        // try{
+        //     DB::beginTransaction();
+        //     // your code here...
+        //     DB::commit();
+        // }
+        // catch(\Exception $e){
+        //     return response()->json([
+        //         'status'=>FALSE,
+        //         'message'=>'Error occurred while saving data!',
+        //         'redirect'=>'',
+        //     ]);
+        //     // throw $e; // uncomment this line to re-throw exception and debug it.
+        // }
+
+        // dd($request->all());
 
         $validated = $request->validate([
             'choose_product' => 'required',
@@ -50,14 +52,14 @@ class PricingManagement extends Controller
             'description' => 'required',
         ]);
         if($validated):
-            plan::create([
+            Plan::create([
 
                 "product_id" => $request->input('choose_product'),
-                "plan_id" => $request->input('choose_plans'),
+                "plan_type" => $request->input('choose_plans'),
                 "price" => $request->input('price'),
                 "name" => $request->input('title'),
                 "description" => $request->input('description'),
-                // "created_by" => Auth::user()->id,
+                "created_by" => Auth::user()->id,
             ]);
             return response()->json([
                 'status'=>TRUE,
