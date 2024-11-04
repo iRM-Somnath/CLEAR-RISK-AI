@@ -10,7 +10,8 @@ class PricingManagement extends Controller
 {
     public function index(){
         $title = "Pricing Management";
-        return view('admin.pages.pricing-management.list', compact("title"));
+        $data = Plan::where('status', '!=', 3)->get();
+        return view('admin.pages.pricing-management.list', compact("title", "data"));
     }
 
 
@@ -59,7 +60,7 @@ class PricingManagement extends Controller
                 "price" => $request->input('price'),
                 "name" => $request->input('title'),
                 "description" => $request->input('description'),
-                "created_by" => Auth::user()->id,
+                // "created_by" => Auth::user()->id,
             ]);
             return response()->json([
                 'status'=>TRUE,
