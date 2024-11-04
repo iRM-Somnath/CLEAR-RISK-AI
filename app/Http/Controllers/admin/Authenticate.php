@@ -110,8 +110,9 @@ class Authenticate extends Controller
             DB::rollBack();
             return response()->json([
                 'status'=>FALSE,
-                'message'=>'An error occurred: '.$e->getMessage(),
+                'message'=>'Oops Sank! Something went wrong',
                 'redirect'=>'',
+                'error'=>$e->getMessage()
             ]);
         }
     }
