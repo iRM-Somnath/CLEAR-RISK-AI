@@ -38,8 +38,8 @@
                             <td>{{$item->answer}}</td>
                             <td>{{ date('d-m-Y h:i A',strtotime($item->created_at)) }}</td>
                             <td>{{$item?->creator?->name??'N/A' }}</td>
-                            <td>{{$item?->lastUpdator?->name??'N/A' }}</td>
                             <td>{{ date('d-m-Y h:i A',strtotime($item->updated_at)) }}</td>
+                            <td>{{$item?->lastUpdator?->name??'N/A' }}</td>
                             <td>
                                 @if($item->status == 1)
                                 <span class="label label-success change-status" id="{{ $item->id }}" data-id="{{ $item->id }}" data-key="id" data-table="f_a_q_s" data-status="0">Active</span>
