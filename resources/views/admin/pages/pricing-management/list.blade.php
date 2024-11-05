@@ -32,8 +32,11 @@
                 @forelse ($data as $item)
                     <tr>
                         <td>{{$loop->iteration}}</td>
-                        <td>{{$item->product_id}}</td>
-                        <td>{{$item->plan_type}}</td>
+                        <td>{{$item->product_id ==1?'Internal Audit Management':'Enterprise Risk Management'}}</td>
+                        <td>
+                            {{$item->plan_type ==1?'Monthly':'Yearly'}}
+                            
+                        </td>
                         <td>{{$item->name}}</td>
                         <td>{{$item->description}}</td>
                         <td>{{$item->price}}</td>
