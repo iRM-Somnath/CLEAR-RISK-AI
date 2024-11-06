@@ -45,7 +45,7 @@ Route::prefix('admin')->group(function(){
             Route::get('/',[PricingManagement::class,'index'])->name('admin.pricing');
             Route::get('/add',[PricingManagement::class,'add'])->name('admin.pricing.add');
             Route::post('/save',[PricingManagement::class,'save'])->name('admin.pricing.save');
-            // Route::get('/edit/{id}',[PricingManagement::class,'edit'])->name('admin.pricing.edit');
+            Route::get('/edit/{id}',[PricingManagement::class,'add'])->name('admin.pricing.edit');
             // Route::put('/update/{id}',[PricingManagement::class,'update'])->name('admin.pricing.update');
             // Route::delete('/delete/{id}',[PricingManagement::class,'destroy'])->name('admin.pricing.delete');
         });

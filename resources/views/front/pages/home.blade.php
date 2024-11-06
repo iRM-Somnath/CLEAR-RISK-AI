@@ -93,9 +93,9 @@
                     </div>
                     <div class="bio">
                         Remain at the forefront of the contemporary landscape
-                        characterized by escalating risk demands by smoothly and
+                        characterized by escalating risk demands by smooth and
                         effectively integrating and coordinating teams, stakeholders,
-                        data, and processes.
+                        data and processes.
                     </div>
                     <!-- <div class="gap-2 d-md-flex justify-content-md-start">
                                               <button
