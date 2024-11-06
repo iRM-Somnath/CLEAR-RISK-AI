@@ -55,9 +55,9 @@ Route::prefix('admin')->group(function(){
             Route::get('/add', [EventManagement::class, 'add'])->name('admin.event.add');
             Route::post('/save', [EventManagement::class, 'save'])->name('admin.event.save');
             Route::get('/edit/{id}', [EventManagement::class, 'add'])->name('admin.event.edit');
-            Route::put('/update/{id}', [EventManagement::class, 'save'])->name('admin.event.update');
-            Route::post('admin/event/changeStatus/{id}', [EventManagement::class, 'changeStatus'])->name('admin.event.changeStatus');
-            Route::delete('/delete/{id}', [EventManagement::class, 'delete'])->name('admin.event.delete');
+            // Route::put('/update/{id}', [EventManagement::class, 'save'])->name('admin.event.update');
+            // Route::post('admin/event/changeStatus/{id}', [EventManagement::class, 'changeStatus'])->name('admin.event.changeStatus');
+            // Route::delete('/delete/{id}', [EventManagement::class, 'delete'])->name('admin.event.delete');
         });
 
         Route::prefix('faqs')->group(function () {
