@@ -35,7 +35,7 @@
                             <td>{{ $loop->index + 1 }}</td>
                             <td>{{ $item->title }}</td>
                             <td>
-                                <img src="{{ asset('uploads/blog/' . $item->image) }}" alt="Event Image" style="max-height: 100px; margin-top: 10px;">
+                                <img src="{{ asset('uploads/blog/' . $item->image) }}" alt="Blog Image" style="max-height: 100px; margin-top: 10px;">
                             </td>
                             <td>{{ $item->meta_title }}</td>
                             <td>{{ $item->meta_tags }}</td>
@@ -58,7 +58,7 @@
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="11" class="text-center">No Blog entries found.</td>
+                            <td colspan="12" class="text-center">No Blog entries found.</td>
                         </tr>
                     @endforelse
                 </tbody>

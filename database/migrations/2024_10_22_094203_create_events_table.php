@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('title');
             $table->string('image_name')->nullable();
             $table->string('image_original_name')->nullable();
+            $table->text('description')->nullable();
+            $table->string('organizer')->nullable();
             $table->string('location')->nullable();
             $table->string('meeting_url')->nullable();
             $table->timestamp('start_date')->nullable();
