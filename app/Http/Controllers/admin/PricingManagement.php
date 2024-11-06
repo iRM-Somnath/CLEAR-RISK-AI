@@ -18,20 +18,19 @@ class PricingManagement extends Controller
         return view('admin.pages.pricing-management.list', compact("title", "data"));
     }
 
-
     public function add($id = '')
     {
         if (!empty($id)):
             $title = "Pricing Management : Edit";
-            $oldData = Product::where('status', '!=', 3)->find($id);
+            $oldData = Plan::where('status', '!=', 3)->find($id);
         else:
             $title = "Pricing Management : Add";
             $oldData = NULL;
         endif;
-        $productData = Product::where('status', '!=', 3)->get();
+        $productData = Product::where('status', 1)->get();
+        // $plan_type = Plan::select('plan_type')->distinct()->get(); 
         return view('admin.pages.pricing-management.add', compact("title", "oldData", "productData"));
     }
-
 
     public function save(Request $request)
     {
@@ -46,10 +45,10 @@ class PricingManagement extends Controller
             ]);
             if ($validated):
                 if (empty($request->input('updateId'))):
-                    if (Plan::whereRaw("LOWER(`price`) = '" . strtolower($request->price) . "'")->where('status', '!=', 3)->exists()):
+                    if (Plan::whereRaw("LOWER(`name`) = '" . strtolower($request->title) . "'")->where('status', '!=', 3)->exists()):
                         return response()->json([
                             'status' => FALSE,
-                            'message' => 'Question already exists!',
+                            'message' => 'Plan already exists!',
                             'redirect' => '',
                         ]);
                     endif;
@@ -68,7 +67,7 @@ class PricingManagement extends Controller
                         'redirect' => 'pricing/',
                     ]);
                 else:
-                    if (Plan::whereRaw("LOWER(`price`) = '" . strtolower($request->price) . "'")->where('status', '!=', 3)->where('id', '<>', $request->input('updateId'))->exists()):
+                    if (Plan::whereRaw("LOWER(`name`) = '" . strtolower($request->title) . "'")->where('status', '!=', 3)->where('id', '<>', $request->input('updateId'))->exists()):
                         return response()->json([
                             'status' => FALSE,
                             'message' => 'Question already exists!',
