@@ -11,6 +11,7 @@
         </header>
         <div class="panel-body">
             <form data-action="pricing/save" class="adminFrm" method="POST">
+                <input type="hidden" name="updateId" value="{{!is_null($oldData)?$oldData->id:''}}">
                 @csrf
                 <div class="panel-body">
                     <div class="row">
@@ -18,7 +19,7 @@
                             <div class="form-group">
                                 <label class="control-label">Choose Product</label>
                                 <select class="form-control mb-md" name="choose_product">
-                                    <option value="">~Choose Option~</option>
+                                    <option value="{{ !is_null($oldData)?$oldData->question:'' }}">~Choose Option~</option>
                                     @forelse ($productData as $key=> $product)
                                         <option value="{{ $product->id }}">{{ $product->name }}</option>
                                     @empty
