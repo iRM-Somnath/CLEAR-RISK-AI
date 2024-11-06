@@ -12,15 +12,17 @@
         <table class="table table-bordered table-striped">
             <thead>
                 <tr>
-                    <th width="5%">Sl No.</th>
-                    <th width="15%">Title</th>
+                    <th width="3%">Sl No.</th>
+                    <th width="10%">Title</th>
+                    <th width="13%">Description</th>
                     <th width="10%">Image</th>
+                    <th width="7%">Organizer</th>
                     <th width="10%">Location</th>
-                    <th width="15%">Meeting URL</th>
-                    <th width="10%">Start Date</th>
-                    <th width="10%">End Date</th>
-                    <th width="10%">Status</th>
-                    <th width="15%">Action</th>
+                    <th width="10%">Meeting URL</th>
+                    <th width="8%">Start Date</th>
+                    <th width="8%">End Date</th>
+                    <th width="5%">Status</th>
+                    <th width="8%">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -28,48 +30,34 @@
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $item->title }}</td>
+                        <td>{{ Str::limit($item->description, 50) }}</td>
                         <td>
                             <img src="{{ asset('uploads/event/' . $item->image_name) }}" alt="Event Image" style="max-height: 100px; margin-top: 10px;">
                         </td>
+                        <td>{{ $item->organizer }}</td>
                         <td>{{ $item->location }}</td>
                         <td>{{ $item->meeting_url }}</td>
-                        <td>{{ $item->start_date }}</td>
-                        <td>{{ $item->end_date }}</td>
+                        <td>{{ date('d-m-Y', strtotime($item->start_date)) }}</td>
+                        <td>{{ date('d-m-Y', strtotime($item->end_date)) }}</td>
                         <td>
-                            <form action="{{ route('admin.event.changeStatus', $item->id) }}" method="POST" style="display: inline;">
-                                @csrf
-                                <button type="submit" class="btn btn-sm {{ $item->status == 1 ? 'btn-success' : 'btn-danger' }}">
-                                    {{ $item->status == 1 ? 'Active' : 'Inactive' }}
-                                </button>
-                                <input type="hidden" name="status" value="{{ $item->status == 1 ? 0 : 1 }}">
-                            </form>
+                            @if ($item->status == 1)
+                                <span class="label label-success change-status" id="{{ $item->id }}" data-id="{{ $item->id }}" data-key="id" data-table="events" data-status="0">Active</span>
+                            @else
+                                <span class="label label-danger change-status" id="{{ $item->id }}" data-id="{{ $item->id }}" data-key="id" data-table="events" data-status="1">Inactive</span>
+                            @endif
                         </td>
                         <td>
-                            <a href="{{ route('admin.event.edit', $item->id) }}" class="btn btn-sm btn-primary">
-                                <i class="fa fa-pencil"></i> Edit
-                            </a>
-                            <form action="{{ route('admin.event.delete', $item->id) }}" method="POST" 
-                                  style="display: inline;" 
-                                  onsubmit="return confirm('Are you sure you want to delete this event?')">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-sm btn-danger">
-                                    <i class="fa fa-trash"></i> Delete
-                                </button>
-                            </form>
+                            <a href="{{ route('admin.event.edit', $item->id) }}" class="btn btn-sm btn-primary"><i class="fa fa-pencil"></i></a>
+                            <button class="btn btn-sm btn-danger change-status" data-id="{{ $item->id }}" data-key="id" data-table="events" data-status="3"><i class="fa fa-trash"></i></button>
                         </td>
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="9" class="text-center">No events available.</td>
+                        <td colspan="11" class="text-center">No Event entries found.</td>
                     </tr>
                 @endforelse
             </tbody>
         </table>
-        {{-- Pagination links (if data is paginated) --}}
-        @if($data instanceof \Illuminate\Pagination\LengthAwarePaginator)
-            {{ $data->links() }}
-        @endif
     </div>
 </section>
 
