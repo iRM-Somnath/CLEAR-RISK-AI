@@ -103,6 +103,11 @@ body {
   letter-spacing: -0.01em;
   color: #000;
 }
+.main-dark-blog{
+  /* font-size: 70px; */
+  letter-spacing: -0.01em;
+  color: #000;
+}
 .main-heading-gray {
   font-size: 64px;
   letter-spacing: -0.01em;
