@@ -6,6 +6,7 @@ use App\Http\Controllers\admin\Dashboard;
 use App\Http\Controllers\admin\PricingManagement;
 use App\Http\Controllers\admin\EventManagement;
 use App\Http\Controllers\admin\FaqsManagement;
+use App\Http\Controllers\admin\BlogManagement;
 
 use App\Http\Controllers\front\Home;
 use App\Http\Controllers\front\About;
@@ -66,6 +67,15 @@ Route::prefix('admin')->group(function(){
             Route::get('/edit/{id}',[FaqsManagement::class,'add'])->name('admin.faqs.edit');
             // Route::put('/update/{id}',[FaqsManagement::class,'update'])->name('admin.pricing.update');
             // Route::delete('/delete/{id}',[FaqsManagement::class,'destroy'])->name('admin.pricing.delete');
+        });
+
+        Route::prefix('blogs')->group(function () {
+            Route::get('/', [BlogManagement::class, 'index'])->name('admin.blogs');
+            Route::get('/add', [BlogManagement::class, 'add'])->name('admin.blogs.add');
+            Route::post('/save', [BlogManagement::class, 'save'])->name('admin.blogs.save');
+            Route::get('/edit/{id}', [BlogManagement::class, 'add'])->name('admin.blogs.edit');
+            // Route::put('/update/{id}', [BlogManagement::class, 'update'])->name('admin.blogs.update');
+            // Route::delete('/delete/{id}', [BlogManagement::class, 'destroy'])->name('admin.blogs.delete');
         });
     });
 });
