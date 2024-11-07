@@ -35,7 +35,7 @@
     <!-- Theme Custom CSS -->
     <link rel="stylesheet" href="{{ asset('admin/assets/stylesheets/theme-custom.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
-    
+
     @stack('admin-css')
     <!-- Head Libs -->
     <script src="{{ asset('admin/assets/vendor/modernizr/modernizr.js') }}"></script>
@@ -110,8 +110,8 @@
             <aside id="sidebar-left" class="sidebar-left">
 
                 <div class="sidebar-header">
-                    <div class="sidebar-title">
-                        Navigation
+                    <div class="sidebar-title" style="background-color: #000000">
+                        &nbsp;&nbsp;&nbsp;&nbsp;
                     </div>
                     <div class="sidebar-toggle hidden-xs" data-toggle-class="sidebar-left-collapsed" data-target="html"
                         data-fire-event="sidebar-left-toggle">
@@ -124,121 +124,85 @@
                         <nav id="menu" class="nav-main" role="navigation">
 
                             <ul class="nav nav-main">
-                                <li>
-                                    <a href="layouts-default.html">
+                                <li class="{{ Request::segment(2)==='dashboard'?'nav-active':'' }}">
+                                    <a href="{{ route("admin.dashboard") }}">
                                         <i class="fa fa-home" aria-hidden="true"></i>
                                         <span>Dashboard</span>
                                     </a>
                                 </li>
-                                <li class="nav-parent">
+                                <li class="nav-parent {{ Request::segment(2)==='pricing'?'nav-expanded nav-active':'' }}">
                                     <a href="javascript:void(0)">
-                                        <i class="fa fa-home" aria-hidden="true"></i>
+                                        <i class="fa fa-forward" aria-hidden="true"></i>
                                         <span>Pricing Management</span>
                                     </a>
                                     <ul class="nav nav-children">
-                                        <li>
-                                            <a href="{{ url("admin/pricing") }}">
+                                        <li class="{{ (Request::segment(2)==='pricing' && Request::segment(3)==='list')?'nav-active':'' }}">
+                                            <a href="{{ route("admin.pricing.list") }}">
                                                 List
                                             </a>
                                         </li>
-                                        <li>
-                                            <a href="{{ url("admin/pricing/add") }}">
+                                        <li class="{{ (Request::segment(2)==='pricing' && Request::segment(3)==='add')?'nav-active':'' }}">
+                                            <a href="{{ route("admin.pricing.add") }}">
                                                add
                                             </a>
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="nav-parent">
+                                <li class="nav-parent {{ Request::segment(2)==='event'?'nav-expanded nav-active':'' }}">
                                     <a href="javascript:void(0)">
-                                        <i class="fa fa-home" aria-hidden="true"></i>
+                                        <i class="fa fa-forward" aria-hidden="true"></i>
                                         <span>Event Management</span>
                                     </a>
                                     <ul class="nav nav-children">
-                                        <li>
-                                            <a href="{{ url("admin/event") }}">
+                                        <li class="{{ (Request::segment(2)==='event' && Request::segment(3)==='list')?'nav-active':'' }}">
+                                            <a href="{{ route("admin.event.list") }}">
                                                 List
                                             </a>
                                         </li>
-                                        <li>
-                                            <a href="{{ url("admin/event/add") }}">
+                                        <li class="{{ (Request::segment(2)==='event' && Request::segment(3)==='add')?'nav-active':'' }}">
+                                            <a href="{{ route("admin.event.add") }}">
                                                add
                                             </a>
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="nav-parent">
+                                <li class="nav-parent  {{ Request::segment(2)==='faqs'?'nav-expanded nav-active':'' }}">
                                     <a href="javascript:void(0)">
-                                        <i class="fa fa-home" aria-hidden="true"></i>
+                                        <i class="fa fa-forward" aria-hidden="true"></i>
                                         <span>FAQ Management</span>
                                     </a>
                                     <ul class="nav nav-children">
-                                        <li>
-                                            <a href="{{ url("admin/faqs") }}">
+                                        <li class="{{  (Request::segment(2)==='faqs' && Request::segment(3)==='list')?'nav-active':'' }}">
+                                            <a href="{{ route("admin.faqs.list") }}">
                                                 List
                                             </a>
                                         </li>
-                                        <li>
-                                            <a href="{{ url("admin/faqs/add") }}">
+                                        <li class="{{ (Request::segment(2)==='faqs' && Request::segment(3)==='add')?'nav-active':'' }}">
+                                            <a href="{{ route("admin.faqs.add") }}">
                                                add
                                             </a>
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="nav-parent">
+                                <li class="nav-parent  {{ Request::segment(2)==='blogs'?'nav-expanded nav-active':'' }}">
                                     <a href="javascript:void(0)">
-                                        <i class="fa fa-home" aria-hidden="true"></i>
+                                        <i class="fa fa-forward" aria-hidden="true"></i>
                                         <span>Blog Management</span>
                                     </a>
                                     <ul class="nav nav-children">
-                                        <li>
-                                            <a href="{{ url("admin/blogs") }}">
+                                        <li class="{{ (Request::segment(2)==='blogs' && Request::segment(3)==='list')?'nav-active':'' }}">
+                                            <a href="{{ route("admin.blogs.list") }}">
                                                 List
                                             </a>
                                         </li>
-                                        <li>
-                                            <a href="{{ url("admin/blogs/add") }}">
+                                        <li class="{{ (Request::segment(2)==='blogs' && Request::segment(3)==='add')?'nav-active':'' }}">
+                                            <a href="{{ route("admin.blogs.add") }}">
                                                add
                                             </a>
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="nav-parent">
-                                    <a href="#">
-                                        <i class="fa fa-columns" aria-hidden="true"></i>
-                                        <span>Layouts</span>
-                                    </a>
-                                    <ul class="nav nav-children">
-                                        <li>
-                                            <a href="index.html">
-                                                Landing Page
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="layouts-default.html">
-                                                Default
-                                            </a>
-                                        </li>
-                                        <li class="nav-parent">
-                                            <a>
-                                                Boxed
-                                            </a>
-                                            <ul class="nav nav-children">
-                                                <li>
-                                                    <a href="layouts-boxed.html">
-                                                        Static Header
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="layouts-boxed-fixed-header.html">
-                                                        Fixed Header
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </li>
 
-
-                                    </ul>
-                                </li>
 
 
                             </ul>
@@ -271,7 +235,7 @@
                         <ol class="breadcrumbs">
                             <li>
                                 <a href="index.html">
-                                    <i class="fa fa-home"></i>
+                                    <i class="fa fa-forward"></i>
                                 </a>
                             </li>
                             <li><span>Pages</span></li>

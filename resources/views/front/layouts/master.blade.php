@@ -36,7 +36,7 @@
           <a class="navbar-brand" href="{{ url('/') }}"
             ><img src="{{asset('front/assets/images/Optimized-Images/navimage-66dad39351057.webp')}}" alt="logo"
           /></a>
-          
+
           <div
             class="collapse navbar-collapse justify-content-center navbar-text"
             id="navbarSupportedContent"
@@ -59,7 +59,7 @@
                   Products
                   <img src="{{asset('front/assets/svgs/Down-Arrow.svg')}}" alt="" />
                 </a>
-  
+
                 <ul class="dropdown-menu">
                   <li>
                     <a class="dropdown-item d-flex" href="{{ url('/audit-management') }}">Audit Management</a>
@@ -104,7 +104,7 @@
               Get a demo
             </button>
             </a>
-            
+
           </div>
         </div>
       </nav>

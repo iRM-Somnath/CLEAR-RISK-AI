@@ -42,7 +42,7 @@ Route::prefix('admin')->group(function(){
         Route::post('/generic-status-change',[Authenticate::class,'genericStatusChange'])->name('admin.generic-status-change');
 
         Route::prefix('pricing')->group(function () {
-            Route::get('/',[PricingManagement::class,'index'])->name('admin.pricing');
+            Route::get('/list',[PricingManagement::class,'index'])->name('admin.pricing.list');
             Route::get('/add',[PricingManagement::class,'add'])->name('admin.pricing.add');
             Route::post('/save',[PricingManagement::class,'save'])->name('admin.pricing.save');
             Route::get('/edit/{id}',[PricingManagement::class,'add'])->name('admin.pricing.edit');
@@ -51,7 +51,7 @@ Route::prefix('admin')->group(function(){
         });
 
         Route::prefix('event')->group(function () {
-            Route::get('/', [EventManagement::class, 'index'])->name('admin.event');
+            Route::get('/list', [EventManagement::class, 'index'])->name('admin.event.list');
             Route::get('/add', [EventManagement::class, 'add'])->name('admin.event.add');
             Route::post('/save', [EventManagement::class, 'save'])->name('admin.event.save');
             Route::get('/edit/{id}', [EventManagement::class, 'add'])->name('admin.event.edit');
@@ -61,7 +61,7 @@ Route::prefix('admin')->group(function(){
         });
 
         Route::prefix('faqs')->group(function () {
-            Route::get('/',[FaqsManagement::class,'index'])->name('admin.faqs');
+            Route::get('/list',[FaqsManagement::class,'index'])->name('admin.faqs.list');
             Route::get('/add',[FaqsManagement::class,'add'])->name('admin.faqs.add');
             Route::post('/save',[FaqsManagement::class,'save'])->name('admin.faqs.save');
             Route::get('/edit/{id}',[FaqsManagement::class,'add'])->name('admin.faqs.edit');
@@ -70,7 +70,7 @@ Route::prefix('admin')->group(function(){
         });
 
         Route::prefix('blogs')->group(function () {
-            Route::get('/', [BlogManagement::class, 'index'])->name('admin.blogs');
+            Route::get('/list', [BlogManagement::class, 'index'])->name('admin.blogs.list');
             Route::get('/add', [BlogManagement::class, 'add'])->name('admin.blogs.add');
             Route::post('/save', [BlogManagement::class, 'save'])->name('admin.blogs.save');
             Route::get('/edit/{id}', [BlogManagement::class, 'add'])->name('admin.blogs.edit');

@@ -16,8 +16,8 @@
               Pricing
             </h1>
           </div>
-  
-          
+
+
 
           <div class="monthly-pricing-btns d-flex w-100 product-btns justify-content-between px-5 align-items-center">
 
@@ -30,28 +30,28 @@
             </div>
 
             <div class="d-flex pricing-btns">
-              <button id="product-btn-1"
-              class="btn btn-outline-dark me-2 rounded-pill"
-              type="submit">
-              Internal Audit Management
-            </button>
-            <button id="product-btn-2"
-              class="btn btn-outline-dark me-2 rounded-pill"
-              type="submit">
-              Enterprise Risk Management
-            </button>
+                @forelse ( $productData as $item )
+                    <button id="product-btn-{{ $loop->index + 1 }}"
+                        class="btn btn-outline-dark me-2 rounded-pill product" data-product-id="{{ $item->id }}""
+                        type="button">
+                        {{ $item->name }}
+                    </button>
+                @empty
+
+                @endforelse
+
             </div>
-            
+
           </div>
-  
-          
+
+
           <div class="product-pricing-cards d-flex justify-content-center row"
           >
             <div class="pricing-card product-pricing-card col-xl-3 col-lg-4 col-md-6 col-sm-10 col-10">
               <div class="text">
                 <div class="card-heading product-card-heading">Starter</div>
                 <div class="card-heading product-card-heading">$400</div>
-  
+
                 <div class="bio">
                   <ul>
                     <li>1 Risk Profile</li>
@@ -66,7 +66,7 @@
                   type="button"
                   class="btn btn-outline-dark rounded-pill d-flex align-items-center gap-2 w-100 justify-content-center">
                   Contact Us
-                </button> 
+                </button>
                 </a>
               </div>
             </div>
@@ -74,7 +74,7 @@
               <div class="text">
                 <div class="card-heading product-card-heading">Standard</div>
                 <div class="card-heading product-card-heading">$1,200</div>
-  
+
                 <div class="bio">
                   <ul>
                     <li>Up to 5 Risk Profiles</li>
@@ -89,7 +89,7 @@
                    type="button"
                    class="btn btn-outline-dark rounded-pill d-flex align-items-center gap-2 w-100 justify-content-center">
                    Contact Us
-                 </button> 
+                 </button>
                  </a>
               </div>
             </div>
@@ -97,7 +97,7 @@
               <div class="text">
                 <div class="card-heading product-card-heading">Enterprise</div>
                 <div class="card-heading product-card-heading">$4,800</div>
-  
+
                 <div class="bio">
                   <ul>
                     <li>Unlimited Risk Profiles</li>
@@ -112,7 +112,7 @@
                    type="button"
                    class="btn btn-outline-dark rounded-pill d-flex align-items-center gap-2 w-100 justify-content-center">
                    Contact Us
-                 </button> 
+                 </button>
                  </a>
               </div>
             </div>
@@ -120,7 +120,7 @@
               <div class="text">
                 <div class="card-heading product-card-heading">Enterprise PRO</div>
                 <div class="card-heading product-card-heading">$7,200</div>
-  
+
                 <div class="bio">
                   <ul>
                     <li>Unlimited Risk Profiles</li>
@@ -141,7 +141,7 @@
                    type="button"
                    class="btn btn-outline-dark rounded-pill d-flex align-items-center gap-2 w-100 justify-content-center">
                    Contact Us
-                 </button> 
+                 </button>
                  </a>
               </div>
             </div>
@@ -149,7 +149,7 @@
               <div class="text">
                 <div class="card-heading product-card-heading">Enterprise PRO + Control Assurance</div>
                 <div class="card-heading product-card-heading">$8,600</div>
-  
+
                 <div class="bio">
                   <ul>
                     <li>Unlimited Risk Profiles</li>
@@ -168,7 +168,7 @@
                    type="button"
                    class="btn btn-outline-dark rounded-pill d-flex align-items-center gap-2 w-100 justify-content-center">
                    Contact Us
-                 </button> 
+                 </button>
                  </a>
               </div>
             </div>
@@ -177,3 +177,7 @@
       </div>
 
 @stop
+
+@push('scripts')
+  <script src="{{ asset('front/js/pricing.js') }}"></script>
+@endpush
