@@ -10,6 +10,11 @@
     <link rel="stylesheet" href="{{ asset('front/css/bootstrap.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('front/css/My-Media-Query.css') }}" />
     @stack('css')
+    <script>
+        let baseUrl = "{{ url('') }}/";
+        let lang = "en";
+        let _token = "{{ csrf_token() }}";
+    </script>
 </head>
 
 

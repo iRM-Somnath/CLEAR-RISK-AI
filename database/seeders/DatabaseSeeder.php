@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
         Product::factory()->create([
             'name' => 'Internal Audit Management',
             'description' => NULL,
-            'status' => 1,
+            'status' => '1',
             'created_by' => 1,
             'updated_by' => 1,
         ]);
@@ -27,7 +27,7 @@ class DatabaseSeeder extends Seeder
         Product::factory()->create([
             'name' => 'Enterprise Risk Management',
             'description' => NULL,
-            'status' => 1,
+            'status' => '1',
             'created_by' => 1,
             'updated_by' => 1,
         ]);

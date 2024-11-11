@@ -26,6 +26,7 @@ Route::get('/audit-management', [AuditManagement::class, 'index']);
 Route::get('/enterprise-risk-management', [EnterpriseRiskManagement::class, 'index']);
 
 Route::get('/pricing', [Pricing::class, 'index']);
+Route::post('/get-plans', [Pricing::class, 'getPlans']);
 
 Route::get('/contact-us', [Contact::class, 'index']);
 

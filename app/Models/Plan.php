@@ -25,4 +25,12 @@ class Plan extends Model
     public function products(){
         return $this->belongsTo(Product::class, 'product_id');
     }
+
+    public function creator(){
+        return  $this->belongsTo(User::class, 'created_by','id');
+    }
+
+    public function lastUpdator(){
+         return $this->belongsTo(User::class, 'updated_by','id');
+     }
 }

@@ -27,8 +27,9 @@ class PricingManagement extends Controller
             $title = "Pricing Management : Add";
             $oldData = NULL;
         endif;
-        $productData = Product::where('status', 1)->get();
-        // $plan_type = Plan::select('plan_type')->distinct()->get(); 
+        // DB::enableQueryLog();
+        $productData = Product::where('status', '1')->get();
+        // dd(DB::getQueryLog());
         return view('admin.pages.pricing-management.add', compact("title", "oldData", "productData"));
     }
 
@@ -64,7 +65,7 @@ class PricingManagement extends Controller
                     return response()->json([
                         'status' => TRUE,
                         'message' => 'Data saved successfully!',
-                        'redirect' => 'pricing/',
+                        'redirect' => 'pricing/list',
                     ]);
                 else:
                     if (Plan::whereRaw("LOWER(`name`) = '" . strtolower($request->title) . "'")->where('status', '!=', 3)->where('id', '<>', $request->input('updateId'))->exists()):
@@ -86,7 +87,7 @@ class PricingManagement extends Controller
                     return response()->json([
                         'status' => TRUE,
                         'message' => 'Data updated successfully!',
-                        'redirect' => 'pricing/',
+                        'redirect' => 'pricing/list',
                     ]);
                 endif;
             else:

@@ -53,7 +53,7 @@ class FaqsManagement extends Controller
                     return response()->json([
                         'status'=>TRUE,
                         'message'=>'Data saved successfully!',
-                        'redirect'=>'faqs/',
+                        'redirect'=>'faqs/list',
                     ]);
                 else:
                     if(FAQS::whereRaw("LOWER(`question`) = '".strtolower($request->question)."'")->where('status','!=',3)->where('id','<>',$request->input('updateId'))->exists()):
@@ -72,7 +72,7 @@ class FaqsManagement extends Controller
                     return response()->json([
                         'status'=>TRUE,
                         'message'=>'Data updated successfully!',
-                        'redirect'=>'faqs/',
+                        'redirect'=>'faqs/list',
                     ]);
                 endif;
             else:

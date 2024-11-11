@@ -1,3 +1,6 @@
+@push('admin-css')
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.css" rel="stylesheet">
+@endpush
 @extends('admin.layouts.master')
 @section('content')
     <section class="panel">
@@ -50,7 +53,7 @@
                         <div class="col-sm-12">
                             <div class="form-group">
                                 <label class="control-label">Title</label>
-                                <input type="text" name="title" class="form-control requiredCheck" data-check="Title" value="{{ !is_null($oldData)?$oldData->name:'' }}">
+                                <input type="text" name="title" class="form-control requiredCheck restrictSpecial" data-check="Title" value="{{ !is_null($oldData)?$oldData->name:'' }}">
                             </div>
                         </div>
                     </div>
@@ -58,7 +61,7 @@
                         <div class="col-sm-12">
                             <div class="form-group">
                                 <label class="control-label">Description</label>
-                                <textarea name="description" id="desc" cols="30" rows="10" class="form-control requiredCheck"
+                                <textarea name="description" id="summernote" cols="30" rows="10" class="form-control requiredCheck "
                                     data-check="Decsription">{{ !is_null($oldData)?$oldData->description:'' }}</textarea>
                             </div>
                         </div>
@@ -71,3 +74,13 @@
         </div>
     </section>
 @endsection
+@push('admin-js')
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#summernote').summernote({
+            height: 300,
+        });
+    });
+</script>
+@endpush

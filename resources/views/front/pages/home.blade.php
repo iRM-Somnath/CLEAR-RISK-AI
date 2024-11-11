@@ -240,82 +240,25 @@
             </div>
 
             <div class="accordion" id="accordionExample">
+                @forelse ($faq as $item)
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingOne">
+                    <h2 class="accordion-header" id="heading-{{ $loop->iteration }}">
                         <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Q.1 What makes ClearRisk different from other IT and risk management solution providers?
+                            data-bs-target="#collapse-{{ $loop->iteration }}" aria-expanded="true" aria-controls="collapse-{{ $loop->iteration }}">
+                            Q.{{ $loop->iteration }} {{ $item->question }}
                         </button>
                     </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                    <div id="collapse-{{ $loop->iteration }}" class="accordion-collapse collapse {{ $loop->iteration == 1 ? 'show':''}}" aria-labelledby="heading-{{ $loop->iteration }}"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                           Ans. ClearRisk focuses on simplicity and effectiveness, offering easy-to-use and straightforward
-                            solutions that help businesses tackle IT and risk challenges with confidence.
+                           Ans. {{ $item->answer }}
                         </div>
                     </div>
                 </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingTwo">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Q.2 What kind of support does ClearRisk offer for its clients?
-                        </button>
-                    </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            Ans. We are committed to providing reliable, ongoing support throughout the entire process, ensuring
-                            our solutions meet and exceed client expectations.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingThree">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            Q.3 How does ClearRisk ensure client satisfaction and quality?
-                        </button>
-                    </h2>
-                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            Ans. ClearRisk is dedicated to delivering high-quality solutions tailored to your business needs,
-                            with a focus on client satisfaction. Every project is designed to exceed expectations.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingFour">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                            Q.4 What industries or businesses can benefit from ClearRisk’s services?
-                        </button>
-                    </h2>
-                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            Ans. ClearRisk provides flexible IT consulting and risk management solutions that are designed to
-                            meet the needs of various industries, helping businesses simplify their challenges and achieve
-                            success.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingFive">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                            Q.5 How does ClearRisk stay ahead of industry trends in IT and risk management?
-                        </button>
-                    </h2>
-                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            Ans. ClearRisk stays ahead by constantly innovating and keeping up with the latest developments in
-                            IT consulting and risk management, allowing our clients to benefit from cutting-edge solutions.
-                        </div>
-                    </div>
-                </div>
+                @empty
+
+                @endforelse
+
             </div>
         </div>
     </div>

@@ -39,7 +39,7 @@
 
                             </td>
                             <td>{{ $item->name }}</td>
-                            <td>{{ $item->description }}</td>
+                            <td>{!! $item->description !!}</td>
                             <td>{{ $item->price }}</td>
                             {{-- <td>{{$item->currency}}</td> --}}
                             {{-- <td>{{$item->price}}</td> --}}
