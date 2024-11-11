@@ -14,7 +14,9 @@ class Blogs extends Controller
         return view('front.pages.blogs',compact("title", "blogs"));
     }
 
-    public function singleBlog($id){
-
+    public function singleBlog($slug){
+        $blog = Blog::where('status','1')->where('slug',$slug)->first();
+        $title= $blog->title??"";
+        return view('front.pages.blog-details',compact("title", "blog"));
     }
 }
