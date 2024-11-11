@@ -21,35 +21,40 @@
             </p>
         </div>
 
-        <div class="row">
-            <!-- Blog Item 1 -->
+        <div class="events-cards d-flex justify-content-center gap-20 row">
             @forelse ($blogs as $item)
-                <div class="col-md-4 blog-item">
-                    <div class="d-flex align-items-center flex-column gap-10">
-                        <img src="{{ asset('uploads/blog/'.$item->image ) }}"
-                            alt="{{$item->title}}" />
-                    </div>
-                    <div>
-                        <h5>
-                            {{ $item->title }}
-                        </h5>
-                        <p>
-                            {{ \Str::words(strip_tags($item->content), 80, '...') }}
-                        </p>
-                    </div>
 
-                    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                        <button type="button" class="btn btn btn-dark rounded-pill">
-                            Read More
-                        </button>
-                    </div>
+            <div class="event-card col-xl-3 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="d-flex justify-content-center">
+                    <img class="blog-img"
+                        src="{{ asset('uploads/blog/'.$item->image ) }}"
+                        alt="{{$item->title}}">
                 </div>
-            @empty
+                <div class="event-card-text d-flex flex-column gap-10">
+                    <div class="card-heading product-card-heading">
+                        {{ $item->title }}
+                    </div>
+                    <span class="d-flex gap-2">
+                        <p>{{ $item->author }}</p>
+                        <p>{{date('d/m/Y', strtotime($item->published_date)) }}</p>
+                    </span>
+                    <p>  {{ \Str::words(strip_tags($item->content), 20, '...') }}</p>
 
-            @endforelse
+                </div>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                    <a href="{{ route('blogs.show',$item->slug) }}" class="btn btn-dark rounded-pill d-flex align-items-center gap-2 w-100 justify-content-center">
+                        Read More
+                    </a>
+                </div>
+            </div>
+        @empty
+
+        @endforelse
 
 
         </div>
+
+
         {{ $blogs->links('pagination::bootstrap-5') }}
 
     </div>

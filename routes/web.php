@@ -17,20 +17,22 @@ use App\Http\Controllers\front\Contact;
 use App\Http\Controllers\front\Blogs;
 use App\Http\Controllers\front\Events;
 
-Route::get('/', [Home::class, 'index']);
+Route::get('/', [Home::class, 'index'])->name('home');
 
-Route::get('/about-us', [About::class, 'index']);
+Route::get('/about-us', [About::class, 'index'])->name('about-us');
 
-Route::get('/audit-management', [AuditManagement::class, 'index']);
+Route::get('/audit-management', [AuditManagement::class, 'index'])->name('audit-management');
 
-Route::get('/enterprise-risk-management', [EnterpriseRiskManagement::class, 'index']);
+Route::get('/enterprise-risk-management', [EnterpriseRiskManagement::class, 'index'])->name('enterprise-risk-management');
 
-Route::get('/pricing', [Pricing::class, 'index']);
-Route::post('/get-plans', [Pricing::class, 'getPlans']);
+Route::get('/pricing', [Pricing::class, 'index'])->name('pricing');
+Route::post('/get-plans', [Pricing::class, 'getPlans'])->name('get-plans');
 
-Route::get('/contact-us', [Contact::class, 'index']);
+Route::get('/contact-us', [Contact::class, 'index'])->name('contact-us');
 
-Route::get('/blogs', [Blogs::class, 'index']);
+Route::get('/blogs', [Blogs::class, 'index'])->name('blogs.index');
+Route::get('/blogs/{slug}', [Blogs::class, 'singleBlog'])->name('blogs.show');
+
 
 Route::get('/events', [Events::class, 'index']);
 

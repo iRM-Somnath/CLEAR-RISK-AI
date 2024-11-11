@@ -45,7 +45,7 @@
                         <div class="col-sm-4">
                             <div class="form-group">
                                 <label class="control-label">Price</label>
-                                <input type="text" name="price" class="form-control checkDecimal" data-check="Price" value="{{ !is_null($oldData)?$oldData->price:'' }}">
+                                <input type="text" name="price" class="form-control checkDecimal requiredCheck restrictSpecial" data-check="Price" value="{{ !is_null($oldData)?$oldData->price:'' }}">
                             </div>
                         </div>
                     </div>
@@ -61,7 +61,7 @@
                         <div class="col-sm-12">
                             <div class="form-group">
                                 <label class="control-label">Description</label>
-                                <textarea name="description" id="summernote" cols="30" rows="10" class="form-control requiredCheck "
+                                <textarea name="description" id="summernote" cols="30" rows="10" class="form-control requiredCheck restrictSpecial "
                                     data-check="Decsription">{{ !is_null($oldData)?$oldData->description:'' }}</textarea>
                             </div>
                         </div>

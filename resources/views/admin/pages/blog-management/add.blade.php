@@ -98,7 +98,7 @@
                         <div class="col-sm-12">
                             <div class="form-group">
                                 <label class="control-label">Meta Description</label>
-                                <textarea name="meta_description" cols="30" rows="5"  class="form-control requiredCheck" data-check="meta_description">{{ !is_null($oldData) ? $oldData->meta_description : '' }}</textarea>
+                                <textarea name="meta_description" cols="30" rows="5"  clAass="form-control requiredCheck" data-check="meta_description">{{ !is_null($oldData) ? $oldData->meta_description : '' }}</textarea>
 
 
                             </div>
