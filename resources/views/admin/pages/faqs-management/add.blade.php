@@ -18,7 +18,7 @@
                         <div class="col-sm-12">
                             <div class="form-group">
                                 <label class="control-label">Question</label>
-                                <input type="text" name="question" class="form-control requiredCheck" data-check="Question" value="{{ !is_null($oldData)?$oldData->question:'' }}">
+                                <input type="text" name="question" class="form-control requiredCheck restrictSpecial" data-check="Question" value="{{ !is_null($oldData)?$oldData->question:'' }}">
                             </div>
                         </div>
                     </div>
@@ -27,7 +27,7 @@
                             <div class="form-group">
                                 <label class="control-label">Answer</label>
                                 {{-- <input type="text" name="lastname" class="form-control"> --}}
-                                <textarea name="answer" id="" cols="30" rows="10" class="form-control requiredCheck" data-check="Answer">{{ !is_null($oldData)?$oldData->answer:'' }}</textarea>
+                                <textarea name="answer" id="" cols="30" rows="10" class="form-control requiredCheck restrictSpecial" data-check="Answer">{{ !is_null($oldData)?$oldData->answer:'' }}</textarea>
                             </div>
                         </div>
                     </div>

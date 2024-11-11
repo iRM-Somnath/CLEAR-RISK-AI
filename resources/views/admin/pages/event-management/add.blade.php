@@ -18,14 +18,14 @@
                     <div class="col-sm-8">
                         <div class="form-group">
                             <label class="control-label">Event Title</label>
-                            <input type="text" name="title" class="form-control requiredCheck" data-check="Event Title" value="{{ !is_null($oldData) ? $oldData->title : '' }}">
+                            <input type="text" name="title" class="form-control requiredCheck restrictSpecial" data-check="Event Title" value="{{ !is_null($oldData) ? $oldData->title : '' }}">
                         </div>
                     </div>
 
                     <div class="col-sm-4">
                         <div class="form-group">
                             <label class="control-label">Event Image</label>
-                            <input type="file" name="image" class="form-control">
+                            <input type="file" name="image" class="form-control requiredCheck restrictSpecial">
                             @if(isset($oldData) && $oldData->image_name)
                                 <img src="{{ asset('uploads/event/' . $oldData->image_name) }}" alt="Event Image" style="max-height: 100px; margin-top: 10px;">
                             @endif
@@ -41,7 +41,7 @@
                     <div class="col-sm-12">
                         <div class="form-group">
                             <label class="control-label">Event Description</label>
-                            <textarea name="description" class="form-control requiredCheck" data-check="Event Description">{{ !is_null($oldData) ? $oldData->description : '' }}</textarea>
+                            <textarea name="description" class="form-control requiredCheck restrictSpecial" data-check="Event Description">{{ !is_null($oldData) ? $oldData->description : '' }}</textarea>
                         </div>
                     </div>
                 </div>
@@ -50,14 +50,14 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label class="control-label">Event Location</label>
-                            <input type="text" name="location" class="form-control requiredCheck" data-check="Event Location" value="{{ !is_null($oldData) ? $oldData->location : '' }}">
+                            <input type="text" name="location" class="form-control requiredCheck restrictSpecial" data-check="Event Location" value="{{ !is_null($oldData) ? $oldData->location : '' }}">
                         </div>
                     </div>
 
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label class="control-label">Meeting URL (if any)</label>
-                            <input type="text" name="meeting_url" class="form-control" value="{{ !is_null($oldData) ? $oldData->meeting_url : '' }}">
+                            <input type="text" name="meeting_url" class="form-control requiredCheck restrictSpecial" value="{{ !is_null($oldData) ? $oldData->meeting_url : '' }}">
                         </div>
                     </div>
                 </div>
@@ -66,21 +66,21 @@
                     <div class="col-sm-3">
                         <div class="form-group">
                             <label class="control-label">Start Date</label>
-                            <input type="date" name="start_date" class="form-control requiredCheck" data-check="Start Date" value="{{ !is_null($oldData) ? $oldData->start_date : '' }}">
+                            <input type="date" name="start_date" class="form-control requiredCheck restrictSpecial " data-check="Start Date" value="{{ !is_null($oldData) ? $oldData->start_date : '' }}">
                         </div>
                     </div>
 
                     <div class="col-sm-3">
                         <div class="form-group">
                             <label class="control-label">End Date</label>
-                            <input type="date" name="end_date" class="form-control requiredCheck" data-check="End Date" value="{{ !is_null($oldData) ? $oldData->end_date : '' }}">
+                            <input type="date" name="end_date" class="form-control requiredCheck restrictSpecial" data-check="End Date" value="{{ !is_null($oldData) ? $oldData->end_date : '' }}">
                         </div>
                     </div>
 
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label class="control-label">Event Organizer</label>
-                            <input type="text" name="organizer" class="form-control" value="{{ !is_null($oldData) ? $oldData->organizer : '' }}">
+                            <input type="text" name="organizer" class="form-control requiredCheck restrictSpecial" value="{{ !is_null($oldData) ? $oldData->organizer : '' }}">
                         </div>
                     </div>
                 </div>

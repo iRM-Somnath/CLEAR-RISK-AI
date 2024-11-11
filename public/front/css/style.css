@@ -402,9 +402,9 @@ color: #0000008d;
 }
 
 .blog-item div img{
-  width: 80%;
-  aspect-ratio: 3 / 2;
-  object-fit: contain;
+  /* width: 100%; */
+  /* aspect-ratio: 3 / 2; */
+  /* object-fit: contain; */
 }
 
 .product-pricing-cards .pricing-card img{
@@ -471,5 +471,18 @@ color: #0000008d;
   width:100%;
   position: fixed;
   z-index: 100;
+
+}
+
+.date-author img{
+  width: 18px;
+}
+
+.blog-img{
+ 
+    width: 350px;
+    aspect-ratio: 3 / 2;
+    object-fit: contain;
+  
 
 }
