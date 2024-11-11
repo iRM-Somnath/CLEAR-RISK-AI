@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Blog;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\File; // Add this import for File handling
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
 
 class BlogManagement extends Controller
 {
@@ -74,6 +75,7 @@ class BlogManagement extends Controller
                     Blog::create([
                         "title" => $request->title,
                         "image" => $imageName,
+                        "slug" => Str::slug($request->title),
                         "image_original_name" => $imageOriginalName,
                         "content" => $request->content,
                         "author" => $request->author,
@@ -117,6 +119,7 @@ class BlogManagement extends Controller
                     // Update the existing blog post
                     $updateData = [
                         "title" => $request->title,
+                        "slug" => Str::slug($request->title),
                         "content" => $request->content,
                         "author" => $request->author,
                         "published_date" => $request->published_date,

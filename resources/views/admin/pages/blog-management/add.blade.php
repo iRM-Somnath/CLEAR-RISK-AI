@@ -1,3 +1,6 @@
+@push('admin-css')
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.css" rel="stylesheet">
+@endpush
 @extends('admin.layouts.master')
 @section('content')
     <section class="panel">
@@ -15,17 +18,28 @@
                 @csrf
                 <div class="panel-body">
                     <div class="row">
-                        <div class="col-sm-8">
+                        <div class="col-sm-12">
                             <div class="form-group">
                                 <label class="control-label">Title</label>
-                                <input type="text" name="title" class="form-control requiredCheck restrictSpecial"
-                                    data-check="Title" value="{{ !is_null($oldData) ? $oldData->title : '' }}">
+                                <input type="text" name="title" class="form-control requiredCheck" data-check="Title"
+                                    value="{{ !is_null($oldData) ? $oldData->title : '' }}">
                             </div>
                         </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label class="control-label">Content</label>
+                                <textarea name="content" cols="30" rows="10" id="summernote"  class="form-control requiredCheck" data-check="Content">{{ !is_null($oldData) ? $oldData->content : '' }}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
                         <div class="col-sm-4">
                             <div class="form-group">
                                 <label class="control-label">Image</label>
-                                <input type="file" name="image" class="form-control requiredCheck restrictSpecial">
+                                <input type="file" name="image" class="form-control"
+                                    accept="image/png, image/jpg, image/jpeg">
                                 @if (isset($oldData) && $oldData->image)
                                     <img src="{{ asset('uploads/blog/' . $oldData->image) }}" alt="Event Image"
                                         style="max-height: 100px; margin-top: 10px;">
@@ -36,29 +50,19 @@
                                 <p class="help-block">Image size should be less than 2MB.</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="form-group">
-                                <label class="control-label">Content</label>
-                                <textarea name="content" cols="30" rows="10" class="form-control requiredCheck restrictSpecial"
-                                    data-check="Content">{{ !is_null($oldData) ? $oldData->content : '' }}</textarea>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-8">
+                        <div class="col-sm-4">
                             <div class="form-group">
                                 <label class="control-label">Author</label>
-                                <input type="text" name="author" class="form-control requiredCheck restrictSpecial"
-                                    data-check="Author" value="{{ !is_null($oldData) ? $oldData->author : '' }}">
+                                <input type="text" name="author" class="form-control requiredCheck" data-check="Author"
+                                    value="{{ !is_null($oldData) ? $oldData->author : '' }}">
                             </div>
                         </div>
+
                         <div class="col-sm-4">
                             <div class="form-group">
                                 <label class="control-label">Published Date</label>
-                                <input type="date" name="published_date"
-                                    class="form-control requiredCheck restrictSpecial" data-check="Published Date"
+                                <input type="date" name="published_date" class="form-control requiredCheck"
+                                    data-check="Published Date"
                                     value="{{ !is_null($oldData) ? $oldData->published_date : '' }}">
                             </div>
                         </div>
@@ -67,7 +71,7 @@
                         <div class="col-sm-12">
                             <div class="form-group">
                                 <label class="control-label">Meta Tags</label>
-                                <input type="text" name="meta_tags" class="form-control requiredCheck restrictSpecial"
+                                <input type="text" name="meta_tags" class="form-control"
                                     value="{{ !is_null($oldData) ? $oldData->meta_tags : '' }}">
                             </div>
                         </div>
@@ -76,8 +80,7 @@
                         <div class="col-sm-12">
                             <div class="form-group">
                                 <label class="control-label">Meta Keywords</label>
-                                <input type="text" name="meta_keywords"
-                                    class="form-control requiredCheck restrictSpecial"
+                                <input type="text" name="meta_keywords" class="form-control"
                                     value="{{ !is_null($oldData) ? $oldData->meta_keywords : '' }}">
                             </div>
                         </div>
@@ -86,7 +89,7 @@
                         <div class="col-sm-12">
                             <div class="form-group">
                                 <label class="control-label">Meta Title</label>
-                                <input type="text" name="meta_title" class="form-control requiredCheck restrictSpecial"
+                                <input type="text" name="meta_title" class="form-control"
                                     value="{{ !is_null($oldData) ? $oldData->meta_title : '' }}">
                             </div>
                         </div>
@@ -95,9 +98,9 @@
                         <div class="col-sm-12">
                             <div class="form-group">
                                 <label class="control-label">Meta Description</label>
-                                <input type="text" name="meta_description"
-                                    class="form-control requiredCheck restrictSpecial"
-                                    value="{{ !is_null($oldData) ? $oldData->meta_description : '' }}">
+                                <textarea name="meta_description" cols="30" rows="5"  clAass="form-control requiredCheck" data-check="meta_description">{{ !is_null($oldData) ? $oldData->meta_description : '' }}</textarea>
+
+
                             </div>
                         </div>
                     </div>
@@ -109,3 +112,13 @@
         </div>
     </section>
 @endsection
+@push('admin-js')
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#summernote').summernote({
+            height: 300,
+        });
+    });
+</script>
+@endpush
