@@ -22,169 +22,59 @@
         </div>
 
         <div class="events-cards d-flex justify-content-center gap-20 row">
+            @forelse ($blogs as $item)
 
             <div class="event-card col-xl-3 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="d-flex justify-content-center">
                     <img class="blog-img"
-                        src="{{ asset('front/assets/images/Optimized-Images/frame-12-66dad391ab1db.webp') }}"
-                        alt="">
+                        src="{{ asset('uploads/blog/'.$item->image ) }}"
+                        alt="{{$item->title}}">
                 </div>
                 <div class="event-card-text d-flex flex-column gap-10">
                     <div class="card-heading product-card-heading">
-                        Audit Consulting Education Fraud Retreat
-                    </div>
-                    <span class="d-flex gap-2">
-                        <p>Denver,</p>
-                        <p>08/08/2024</p>
-                    </span>
-                    <p>description description description description description description </p>
-
-                </div>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                    <button type="button"
-                        class="btn btn-dark rounded-pill d-flex align-items-center gap-2 w-100 justify-content-center">
-                        Read More
-                    </button>
-                </div>
-            </div>
-
-            <div class="event-card col-xl-3 col-lg-12 col-md-12 col-sm-12 col-12">
-                <div class="d-flex justify-content-center">
-                    <img class="blog-img"
-                        src="{{ asset('front/assets/images/Optimized-Images/frame-12-66dad391ab1db.webp') }}"
-                        alt="">
-                </div>
-                <div class="event-card-text d-flex flex-column gap-10">
-                    <div class="card-heading product-card-heading">
-                        Audit Consulting Education Fraud Retreat
-                    </div>
-                    <span class="d-flex gap-2">
-                        <p>Denver,</p>
-                        <p>08/08/2024</p>
-                    </span>
-                    <p>description description description description description description </p>
-
-                </div>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                    <button type="button"
-                        class="btn btn-dark rounded-pill d-flex align-items-center gap-2 w-100 justify-content-center">
-                        Read More
-                    </button>
-                </div>
-            </div>
-
-            <div class="event-card col-xl-3 col-lg-12 col-md-12 col-sm-12 col-12">
-                <div class="d-flex justify-content-center">
-                    <img class="blog-img"
-                        src="{{ asset('front/assets/images/Optimized-Images/frame-12-66dad391ab1db.webp') }}"
-                        alt="">
-                </div>
-                <div class="event-card-text d-flex flex-column gap-10">
-                    <div class="card-heading product-card-heading">
-                        Audit Consulting Education Fraud Retreat
-                    </div>
-                    <span class="d-flex gap-2">
-                        <p>Denver,</p>
-                        <p>08/08/2024</p>
-                    </span>
-                    <p>description description description description description description </p>
-
-                </div>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                    <button type="button"
-                        class="btn btn-dark rounded-pill d-flex align-items-center gap-2 w-100 justify-content-center">
-                        Read More
-                    </button>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="events-cards d-flex justify-content-center gap-20 row">
-
-            <div class="event-card col-xl-3 col-lg-12 col-md-12 col-sm-12 col-12">
-                <div class="d-flex justify-content-center">
-                    <img class="blog-img"
-                        src="{{ asset('front/assets/images/Optimized-Images/frame-12-66dad391ab1db.webp') }}"
-                        alt="">
-                </div>
-                <div class="event-card-text d-flex flex-column gap-10">
-                    <div class="card-heading product-card-heading">
-                        Audit Consulting Education Fraud Retreat
+                        {{ $item->title }}
                     </div>
                     <div class="d-flex gap-3">
                         <div class="blog-icon d-flex align-middle gap-1">
                             <img src="{{asset('front/assets/svgs/user-solid.svg')}}" alt="" />
-                            <p>Denver</p>
+                            <p>{{ $item->author }}</p>
                         </div>
                         <div class="blog-icon d-flex blog-icon gap-1">
                             <img src="{{asset('front/assets/svgs/calendar-days-solid.svg')}}" alt="" />
-                            <p>08/08/2024</p>
-                        </div>  
+                            <p>{{date('d/m/Y', strtotime($item->published_date)) }}</p>
+                        </div> 
                     </div>
-                    <p>description description description description description description description description description description description description </p>
+                    <p>  {{ \Str::words(strip_tags($item->content), 20, '...') }}</p>
 
                 </div>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                    <button type="button"
-                        class="btn btn-dark rounded-pill d-flex align-items-center gap-2 w-100 justify-content-center">
+                    <a href="{{ route('blogs.show',$item->slug) }}" class="btn btn-dark rounded-pill d-flex align-items-center gap-2 w-100 justify-content-center">
                         Read More
-                    </button>
+                    </a>
                 </div>
             </div>
+        @empty
 
-            <div class="event-card col-xl-3 col-lg-12 col-md-12 col-sm-12 col-12">
-                <div class="d-flex justify-content-center">
-                    <img class="blog-img"
-                        src="{{ asset('front/assets/images/Optimized-Images/frame-12-66dad391ab1db.webp') }}"
-                        alt="">
-                </div>
-                <div class="event-card-text d-flex flex-column gap-10">
-                    <div class="card-heading product-card-heading">
-                        Audit Consulting Education Fraud Retreat
-                    </div>
-                    <span class="d-flex gap-2">
-                        <p>Denver,</p>
-                        <p>08/08/2024</p>
-                    </span>
-                    <p>description description description description description description </p>
+        @endforelse
 
-                </div>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                    <button type="button"
-                        class="btn btn-dark rounded-pill d-flex align-items-center gap-2 w-100 justify-content-center">
-                        Read More
-                    </button>
-                </div>
-            </div>
-
-            <div class="event-card col-xl-3 col-lg-12 col-md-12 col-sm-12 col-12">
-                <div class="d-flex justify-content-center">
-                    <img class="blog-img"
-                        src="{{ asset('front/assets/images/Optimized-Images/frame-12-66dad391ab1db.webp') }}"
-                        alt="">
-                </div>
-                <div class="event-card-text d-flex flex-column gap-10">
-                    <div class="card-heading product-card-heading">
-                        Audit Consulting Education Fraud Retreat
-                    </div>
-                    <span class="d-flex gap-2">
-                        <p>Denver,</p>
-                        <p>08/08/2024</p>
-                    </span>
-                    <p>description description description description description description </p>
-
-                </div>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                    <button type="button"
-                        class="btn btn-dark rounded-pill d-flex align-items-center gap-2 w-100 justify-content-center">
-                        Read More
-                    </button>
-                </div>
-            </div>
 
         </div>
+
+
+        {{ $blogs->links('pagination::bootstrap-5') }}
 
     </div>
 
 @stop
+
+
+<div class="d-flex gap-3">
+    <div class="blog-icon d-flex align-middle gap-1">
+        <img src="{{asset('front/assets/svgs/user-solid.svg')}}" alt="" />
+        <p>Denver</p>
+    </div>
+    <div class="blog-icon d-flex blog-icon gap-1">
+        <img src="{{asset('front/assets/svgs/calendar-days-solid.svg')}}" alt="" />
+        <p>08/08/2024</p>
+    </div>  
+</div>
