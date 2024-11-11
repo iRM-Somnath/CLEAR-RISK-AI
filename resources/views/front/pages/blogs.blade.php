@@ -66,15 +66,3 @@
     </div>
 
 @stop
-
-
-<div class="d-flex gap-3">
-    <div class="blog-icon d-flex align-middle gap-1">
-        <img src="{{asset('front/assets/svgs/user-solid.svg')}}" alt="" />
-        <p>Denver</p>
-    </div>
-    <div class="blog-icon d-flex blog-icon gap-1">
-        <img src="{{asset('front/assets/svgs/calendar-days-solid.svg')}}" alt="" />
-        <p>08/08/2024</p>
-    </div>  
-</div>
