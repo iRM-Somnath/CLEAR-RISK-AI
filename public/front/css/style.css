@@ -426,7 +426,7 @@ color: #0000008d;
     flex-direction: column;
     /* justify-content: space-between; */
     /* min-height: 400px; */
-  
+
 }
 
 .events-webinar-section{
@@ -472,4 +472,28 @@ color: #0000008d;
   position: fixed;
   z-index: 100;
 
+}
+
+
+/* Change the color of pagination links to black */
+.pagination .page-link {
+    color: black; /* Set link color to black */
+    border-color: #ddd; /* Optional: change the border color */
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #000; /* Set active button background to black */
+    border-color: #000; /* Optional: set border to black */
+    color: white; /* Set text color of active page to white */
+}
+
+.pagination .page-link:hover {
+    color: white; /* Set link color to white when hovered */
+    background-color: #333; /* Darken the background on hover */
+    border-color: #333; /* Optional: change border on hover */
+}
+
+.pagination .page-link:focus, .pagination .page-item.active .page-link:focus {
+    outline: none; /* Remove focus outline */
+    box-shadow: none; /* Optional: remove shadow on focus */
 }
