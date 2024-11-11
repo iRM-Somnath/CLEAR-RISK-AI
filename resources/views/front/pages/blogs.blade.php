@@ -112,10 +112,16 @@
                     <div class="card-heading product-card-heading">
                         Audit Consulting Education Fraud Retreat
                     </div>
-                    <span class="d-flex gap-2">
-                        <p>Denver,</p>
-                        <p>08/08/2024</p>
-                    </span>
+                    <div class="d-flex gap-3">
+                        <div class="blog-icon d-flex align-middle gap-1">
+                            <img src="{{asset('front/assets/svgs/user-solid.svg')}}" alt="" />
+                            <p>Denver</p>
+                        </div>
+                        <div class="blog-icon d-flex blog-icon gap-1">
+                            <img src="{{asset('front/assets/svgs/calendar-days-solid.svg')}}" alt="" />
+                            <p>08/08/2024</p>
+                        </div>  
+                    </div>
                     <p>description description description description description description description description description description description description </p>
 
                 </div>
