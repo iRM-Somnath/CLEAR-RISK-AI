@@ -86,14 +86,14 @@
                 
               </div>
         
-              <div class="next-btn d-flex justify-content-center">
+              {{-- <div class="next-btn d-flex justify-content-center">
                 <button
                   type="button"
                   class="btn btn-outline-dark rounded-pill d-flex align-items-center gap-2 col-6 justify-content-center"
                 >
                   Next
                 </button>
-              </div>
+              </div> --}}
         </div>
     </div>
 
