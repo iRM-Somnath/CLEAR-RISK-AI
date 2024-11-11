@@ -18,15 +18,17 @@
                         <div class="col-sm-8">
                             <div class="form-group">
                                 <label class="control-label">Title</label>
-                                <input type="text" name="title" class="form-control requiredCheck" data-check="Title" value="{{ !is_null($oldData) ? $oldData->title : '' }}">
+                                <input type="text" name="title" class="form-control requiredCheck restrictSpecial"
+                                    data-check="Title" value="{{ !is_null($oldData) ? $oldData->title : '' }}">
                             </div>
                         </div>
                         <div class="col-sm-4">
                             <div class="form-group">
                                 <label class="control-label">Image</label>
-                                <input type="file" name="image" class="form-control">
-                                @if(isset($oldData) && $oldData->image)
-                                    <img src="{{ asset('uploads/blog/' . $oldData->image) }}" alt="Event Image" style="max-height: 100px; margin-top: 10px;">
+                                <input type="file" name="image" class="form-control requiredCheck restrictSpecial">
+                                @if (isset($oldData) && $oldData->image)
+                                    <img src="{{ asset('uploads/blog/' . $oldData->image) }}" alt="Event Image"
+                                        style="max-height: 100px; margin-top: 10px;">
                                 @endif
                                 @error('image')
                                     <span class="text-danger">{{ $message }}</span>
@@ -39,7 +41,8 @@
                         <div class="col-sm-12">
                             <div class="form-group">
                                 <label class="control-label">Content</label>
-                                <textarea name="content" cols="30" rows="10" class="form-control requiredCheck" data-check="Content">{{ !is_null($oldData) ? $oldData->content : '' }}</textarea>
+                                <textarea name="content" cols="30" rows="10" class="form-control requiredCheck restrictSpecial"
+                                    data-check="Content">{{ !is_null($oldData) ? $oldData->content : '' }}</textarea>
                             </div>
                         </div>
                     </div>
@@ -47,21 +50,25 @@
                         <div class="col-sm-8">
                             <div class="form-group">
                                 <label class="control-label">Author</label>
-                                <input type="text" name="author" class="form-control requiredCheck" data-check="Author" value="{{ !is_null($oldData) ? $oldData->author : '' }}">
+                                <input type="text" name="author" class="form-control requiredCheck restrictSpecial"
+                                    data-check="Author" value="{{ !is_null($oldData) ? $oldData->author : '' }}">
                             </div>
                         </div>
-                    <div class="col-sm-4">
-                        <div class="form-group">
-                            <label class="control-label">Published Date</label>
-                            <input type="date" name="published_date" class="form-control requiredCheck" data-check="Published Date" value="{{ !is_null($oldData) ? $oldData->published_date : '' }}">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="control-label">Published Date</label>
+                                <input type="date" name="published_date"
+                                    class="form-control requiredCheck restrictSpecial" data-check="Published Date"
+                                    value="{{ !is_null($oldData) ? $oldData->published_date : '' }}">
+                            </div>
                         </div>
                     </div>
-                </div>
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group">
                                 <label class="control-label">Meta Tags</label>
-                                <input type="text" name="meta_tags" class="form-control" value="{{ !is_null($oldData) ? $oldData->meta_tags : '' }}">
+                                <input type="text" name="meta_tags" class="form-control requiredCheck restrictSpecial"
+                                    value="{{ !is_null($oldData) ? $oldData->meta_tags : '' }}">
                             </div>
                         </div>
                     </div>
@@ -69,7 +76,9 @@
                         <div class="col-sm-12">
                             <div class="form-group">
                                 <label class="control-label">Meta Keywords</label>
-                                <input type="text" name="meta_keywords" class="form-control" value="{{ !is_null($oldData) ? $oldData->meta_keywords : '' }}">
+                                <input type="text" name="meta_keywords"
+                                    class="form-control requiredCheck restrictSpecial"
+                                    value="{{ !is_null($oldData) ? $oldData->meta_keywords : '' }}">
                             </div>
                         </div>
                     </div>
@@ -77,7 +86,8 @@
                         <div class="col-sm-12">
                             <div class="form-group">
                                 <label class="control-label">Meta Title</label>
-                                <input type="text" name="meta_title" class="form-control" value="{{ !is_null($oldData) ? $oldData->meta_title : '' }}">
+                                <input type="text" name="meta_title" class="form-control requiredCheck restrictSpecial"
+                                    value="{{ !is_null($oldData) ? $oldData->meta_title : '' }}">
                             </div>
                         </div>
                     </div>
@@ -85,7 +95,9 @@
                         <div class="col-sm-12">
                             <div class="form-group">
                                 <label class="control-label">Meta Description</label>
-                                <input type="text" name="meta_description" class="form-control" value="{{ !is_null($oldData) ? $oldData->meta_description : '' }}">
+                                <input type="text" name="meta_description"
+                                    class="form-control requiredCheck restrictSpecial"
+                                    value="{{ !is_null($oldData) ? $oldData->meta_description : '' }}">
                             </div>
                         </div>
                     </div>

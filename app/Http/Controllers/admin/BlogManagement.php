@@ -89,7 +89,7 @@ class BlogManagement extends Controller
                     return response()->json([
                         'status' => TRUE,
                         'message' => 'Blog post created successfully!',
-                        'redirect' => 'blogs/',
+                        'redirect' => 'blogs/list',
                     ]);
                 } else {
                     // Check for duplicate title excluding the current blog being updated
@@ -139,7 +139,7 @@ class BlogManagement extends Controller
                     return response()->json([
                         'status' => TRUE,
                         'message' => 'Blog post updated successfully!',
-                        'redirect' => 'blogs/',
+                        'redirect' => 'blogs/list',
                     ]);
                 }
             } else {

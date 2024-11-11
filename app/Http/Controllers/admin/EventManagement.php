@@ -92,7 +92,7 @@ class EventManagement extends Controller
                     return response()->json([
                         'status' => TRUE,
                         'message' => 'Event added successfully!',
-                        'redirect' => 'event/',
+                        'redirect' => 'event/list',
                     ]);
                 } else {
                     // Check for duplicate title excluding the current event
@@ -140,7 +140,7 @@ class EventManagement extends Controller
                     return response()->json([
                         'status' => TRUE,
                         'message' => 'Event updated successfully!',
-                        'redirect' => 'event/',
+                        'redirect' => 'event/list',
                     ]);
                 }
             } else {
