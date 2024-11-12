@@ -40,7 +40,7 @@
                             <p>{{ $item->author }}</p>
                         </div>
                         <div class="blog-icon d-flex blog-icon gap-1">
-                            <img src="{{asset('front/assets/svgs/calendar-days-solid.svg')}}" alt="" />
+                            <img src="{{asset('front/assets/svgs/calendar-days-solid (1).svg')}}" alt="" />
                             <p>{{date('d/m/Y', strtotime($item->published_date)) }}</p>
                         </div> 
                     </div>
