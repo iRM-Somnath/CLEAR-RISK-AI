@@ -180,6 +180,9 @@
                 </div>
             </div>
         </div>
+        <div class="copyright-section">
+          <p class="copyright">© ClearRisk 2024</p>
+        </div>
     </footer>
     <script src="{{ asset('front/js/bootstrap.bundle.js') }}"></script>
     @stack('scripts')
