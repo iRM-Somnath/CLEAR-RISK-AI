@@ -185,6 +185,7 @@
         </div>
     </footer>
     <script src="{{ asset('front/js/bootstrap.bundle.js') }}"></script>
+    <script src="{{ asset('front/js/script.js') }}"></script>
     @stack('scripts')
 </body>
 

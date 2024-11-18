@@ -1,16 +1,19 @@
 @extends('front.layouts.master')
 @section('content')
-@push('meta-tags')
-<meta name="title" content="Intelligent Risk Management Solutions for Bold Leaders | ClearRisk" />
-<meta name="description" content="Discover how ClearRisk empowers businesses across industries like IT, manufacturing, healthcare, and more with AI-driven risk management solutions. Our innovative products help identify, assess, and mitigate risks with precision. Explore audit and enterprise risk management tools tailored to bold leaders seeking to navigate uncertainties and drive success." />
-<meta name="keywords" content="Intelligent risk management, AI-driven risk solutions, audit management, enterprise risk management, business risk solutions, proactive risk mitigation, IT risk management, manufacturing risk solutions, healthcare risk management, ClearRisk products, industries we helped" />
-@endpush
+    @push('meta-tags')
+        <meta name="title" content="Intelligent Risk Management Solutions for Bold Leaders | ClearRisk" />
+        <meta name="description"
+            content="Discover how ClearRisk empowers businesses across industries like IT, manufacturing, healthcare, and more with AI-driven risk management solutions. Our innovative products help identify, assess, and mitigate risks with precision. Explore audit and enterprise risk management tools tailored to bold leaders seeking to navigate uncertainties and drive success." />
+        <meta name="keywords"
+            content="Intelligent risk management, AI-driven risk solutions, audit management, enterprise risk management, business risk solutions, proactive risk mitigation, IT risk management, manufacturing risk solutions, healthcare risk management, ClearRisk products, industries we helped" />
+    @endpush
 
     <!-- First Page -->
     <div class="row px-5 flex-lg-row-reverse align-items-center">
         <div class="col-10 col-sm-8 col-lg-6 circlegif">
             <img src="{{ asset('front//assets/images/Optimized-Images/hero image.webp') }}" alt="
-          class="d-block mx-lg-auto img-fluid" alt="ClearRiskGif" loading="lazy" />
+          class="d-block
+                mx-lg-auto img-fluid" alt="ClearRiskGif" loading="lazy" />
         </div>
         <div class="col-lg-6 hero-text-area d-flex flex-column gap-10">
             <h1 class="display-5 fw-bold lh-1 mb-3 main-heading-dark">
@@ -52,15 +55,19 @@
         <h1 class="display-5 fw-bold lh-1 margin40 main-heading-dark">
             Industries We Helped
         </h1>
-        <div class="logos">
-            <img src="{{asset('front/assets/images/Optimized-Images/Industries2.webp')}}" alt="" />
-            <!-- <img src="../assets/images/Client Logos/acino-logo-66dad3b63bd12.webp" alt="" />
-                                        <img src="../assets/images/Client Logos/acwa-power-logo-66dad3b70715d.webp" alt="" />
-                                        <img src="../assets/images/Client Logos/adnec-logo-66dad3b73aedf.webp" alt="" />
-                                        <img src="../assets/images/Client Logos/adq-logo-2-66dad3b8c2511.webp" alt="" />
-                                        <img src="../assets/images/Client Logos/agthia-logo-66dad3b856d06.webp" alt="" />
-                                        <img src="../assets/images/Client Logos/airbnb-logo-66dad3b95b1f6.webp" alt="" />
-                                        <img src="../assets/images/Client Logos/beltone-logo-66dad3ba9baef.webp" alt="" /> -->
+        <div class="sectors">
+            {{-- <img src="{{asset('front/assets/images/Optimized-Images/Industries2.webp')}}" alt="" /> --}}
+            <div class="sectors-slide">
+                <img src="{{ asset('front/assets/images/Sector Images/Chemicals.webp') }}" alt="" />
+                <img src="{{ asset('front/assets/images/Sector Images/EnergyResource.webp') }}" alt="" />
+                <img src="{{ asset('front/assets/images/Sector Images/Government.webp') }}" alt="" />
+                <img src="{{ asset('front/assets/images/Sector Images/Healthcare.webp') }}" alt="" />
+                <img src="{{ asset('front/assets/images/Sector Images/ITSector.webp') }}" alt="" />
+                <img src="{{ asset('front/assets/images/Sector Images/Lifestyle.webp') }}" alt="" />
+                <img src="{{ asset('front/assets/images/Sector Images/Manufacturing.webp') }}" alt="" />
+            </div>
+
+
         </div>
     </div>
 
@@ -80,8 +87,8 @@
         <div class="row findout-img-cards">
 
             <div class="findout-img col-xl-6 col-lg-12 col-md-12 d-flex justify-content-center align-items-center">
-                <img src="{{asset('front/assets/images/Optimized-Images/frame-12-66dad391ab1db.webp')}}" class="" alt="ClearRiskGif"
-                    width="700" height="500" loading="lazy" />
+                <img src="{{ asset('front/assets/images/Optimized-Images/frame-12-66dad391ab1db.webp') }}" class=""
+                    alt="ClearRiskGif" width="700" height="500" loading="lazy" />
             </div>
 
 
@@ -98,14 +105,14 @@
                         data and processes.
                     </div>
                     <!-- <div class="gap-2 d-md-flex justify-content-md-start">
-                                              <button
-                                                type="button"
-                                                class="btn btn btn-dark rounded-pill d-flex align-items-center gap-2"
-                                              >
-                                                Learn More
-                                                <img src="../assets/svgs/Right-Long-Arrow.svg" alt="" />
-                                              </button>
-                                            </div> -->
+                                                      <button
+                                                        type="button"
+                                                        class="btn btn btn-dark rounded-pill d-flex align-items-center gap-2"
+                                                      >
+                                                        Learn More
+                                                        <img src="../assets/svgs/Right-Long-Arrow.svg" alt="" />
+                                                      </button>
+                                                    </div> -->
                 </div>
 
                 <div class="card col-md-12 col-12">
@@ -119,14 +126,14 @@
                         in-depth analytics to their fullest potential.
                     </div>
                     <!-- <div class=" gap-2 d-md-flex justify-content-md-start">
-                                              <button
-                                                type="button"
-                                                class="btn btn btn-dark rounded-pill d-flex align-items-center gap-2"
-                                              >
-                                                Learn More
-                                                <img src="../assets/svgs/Right-Long-Arrow.svg" alt="" />
-                                              </button>
-                                            </div> -->
+                                                      <button
+                                                        type="button"
+                                                        class="btn btn btn-dark rounded-pill d-flex align-items-center gap-2"
+                                                      >
+                                                        Learn More
+                                                        <img src="../assets/svgs/Right-Long-Arrow.svg" alt="" />
+                                                      </button>
+                                                    </div> -->
                 </div>
 
                 <div class="card col-md-12 col-12">
@@ -140,14 +147,14 @@
                         collaboration capabilities.
                     </div>
                     <!-- <div class=" gap-2 d-md-flex justify-content-md-start">
-                                              <button
-                                                type="button"
-                                                class="btn btn btn-dark rounded-pill d-flex align-items-center gap-2"
-                                              >
-                                                Learn More
-                                                <img src="../assets/svgs/Right-Long-Arrow.svg" alt="" />
-                                              </button>
-                                            </div> -->
+                                                      <button
+                                                        type="button"
+                                                        class="btn btn btn-dark rounded-pill d-flex align-items-center gap-2"
+                                                      >
+                                                        Learn More
+                                                        <img src="../assets/svgs/Right-Long-Arrow.svg" alt="" />
+                                                      </button>
+                                                    </div> -->
                 </div>
 
             </div>
@@ -171,7 +178,7 @@
             <div class="card product-card col-xl-5 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="text">
                     <div class="card-heading product-card-heading">
-                        <img src="{{asset('front/assets/svgs/Frame.svg')}}" alt="" />
+                        <img src="{{ asset('front/assets/svgs/Frame.svg') }}" alt="" />
                         Audit Management
                     </div>
 
@@ -193,7 +200,7 @@
                     <a href="{{ url('/audit-management') }}" class="text-decoration-none">
                         <button type="button" class="btn btn btn-dark rounded-pill d-flex align-items-center gap-2">
                             View More
-                            <img src="{{asset('front/assets/svgs/Right-Long-Arrow.svg')}}" alt="" />
+                            <img src="{{ asset('front/assets/svgs/Right-Long-Arrow.svg') }}" alt="" />
                         </button>
                     </a>
 
@@ -202,7 +209,7 @@
             <div class="card product-card col-xl-5 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="text">
                     <div class="card-heading product-card-heading">
-                        <img src="{{asset('front/assets/svgs/Frame1.svg')}}" alt="" />
+                        <img src="{{ asset('front/assets/svgs/Frame1.svg') }}" alt="" />
                         Enterprise Risk Management
                     </div>
 
@@ -222,7 +229,7 @@
                     <a href="{{ url('/enterprise-risk-management') }}" class="text-decoration-none">
                         <button type="button" class="btn btn btn-dark rounded-pill d-flex align-items-center gap-2">
                             View More
-                            <img src="{{asset('front/assets/svgs/Right-Long-Arrow.svg')}}" alt="" />
+                            <img src="{{ asset('front/assets/svgs/Right-Long-Arrow.svg') }}" alt="" />
                         </button>
                     </a>
 
@@ -241,22 +248,23 @@
 
             <div class="accordion" id="accordionExample">
                 @forelse ($faq as $item)
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="heading-{{ $loop->iteration }}">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapse-{{ $loop->iteration }}" aria-expanded="true" aria-controls="collapse-{{ $loop->iteration }}">
-                            Q.{{ $loop->iteration }} {{ $item->question }}
-                        </button>
-                    </h2>
-                    <div id="collapse-{{ $loop->iteration }}" class="accordion-collapse collapse {{ $loop->iteration == 1 ? 'show':''}}" aria-labelledby="heading-{{ $loop->iteration }}"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                           Ans. {{ $item->answer }}
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading-{{ $loop->iteration }}">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse-{{ $loop->iteration }}" aria-expanded="true"
+                                aria-controls="collapse-{{ $loop->iteration }}">
+                                Q.{{ $loop->iteration }} {{ $item->question }}
+                            </button>
+                        </h2>
+                        <div id="collapse-{{ $loop->iteration }}"
+                            class="accordion-collapse collapse {{ $loop->iteration == 1 ? 'show' : '' }}"
+                            aria-labelledby="heading-{{ $loop->iteration }}" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                Ans. {{ $item->answer }}
+                            </div>
                         </div>
                     </div>
-                </div>
                 @empty
-
                 @endforelse
 
             </div>

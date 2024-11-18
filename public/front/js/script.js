@@ -1,4 +1,4 @@
-const productImg = document.getElementById("#product-img");
+// const productImg = document.getElementById("#product-img");
 // const productButton1 = document.getElementById("product-btn-1");
 // const productButton2 = document.getElementById("product-btn-2");
 
@@ -10,12 +10,16 @@ const productImg = document.getElementById("#product-img");
 //     productImg.src = "../assets/Frame 12.png";
 // });
 
-function productButton1(){
-    productImg.src= "../assets/InternalAuditBanner_Web.png" ;
-    function productButton2(){
+// function productButton1(){
+//     productImg.src= "../assets/InternalAuditBanner_Web.png" ;
+//     function productButton2(){
 
-        productImg.src= "../assets/EnterpriseRiskManagementBanner_Web.png" ;
-    }
-}
+//         productImg.src= "../assets/EnterpriseRiskManagementBanner_Web.png" ;
+//     }
+// }
 
 
+let copy = document.querySelector(".sectors-slide").cloneNode(true);
+    document.querySelector(".sectors").appendChild(copy);  // For Home Slider Image Copy
+
+    
