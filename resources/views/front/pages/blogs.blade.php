@@ -34,10 +34,16 @@
                     <div class="card-heading product-card-heading">
                         {{ $item->title }}
                     </div>
-                    <span class="d-flex gap-2">
-                        <p>{{ $item->author }}</p>
-                        <p>{{date('d/m/Y', strtotime($item->published_date)) }}</p>
-                    </span>
+                    <div class="d-flex gap-3">
+                        <div class="blog-icon d-flex align-middle gap-1">
+                            <img src="{{asset('front/assets/svgs/user-solid.svg')}}" alt="" />
+                            <p>{{ $item->author }}</p>
+                        </div>
+                        <div class="blog-icon d-flex blog-icon gap-1">
+                            <img src="{{asset('front/assets/svgs/calendar-days-solid (1).svg')}}" alt="" />
+                            <p>{{date('d/m/Y', strtotime($item->published_date)) }}</p>
+                        </div> 
+                    </div>
                     <p>  {{ \Str::words(strip_tags($item->content), 20, '...') }}</p>
 
                 </div>
