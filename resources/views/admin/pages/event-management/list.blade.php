@@ -30,7 +30,7 @@
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $item->title }}</td>
-                        <td>{{ Str::limit($item->description, 50) }}</td>
+                        <td>{!! Str::limit($item->description, 50) !!}</td>
                         <td>
                             <img src="{{ asset('uploads/event/' . $item->image_name) }}" alt="Event Image" style="max-height: 100px; margin-top: 10px;">
                         </td>

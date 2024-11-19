@@ -505,3 +505,18 @@ color: #0000008d;
     height: 230px;
     object-fit: cover;
 }
+
+.event-img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.title {
+    display: block;
+    white-space: normal;
+    max-width: 100%;
+    word-wrap: break-word;
+    font-weight: bold;
+    line-height: normal;
+}

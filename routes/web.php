@@ -34,7 +34,7 @@ Route::get('/blogs', [Blogs::class, 'index'])->name('blogs.index');
 Route::get('/blogs/{slug}', [Blogs::class, 'singleBlog'])->name('blogs.show');
 
 
-Route::get('/events', [Events::class, 'index']);
+Route::get('/events', [Events::class, 'index'])->name('events.index');
 
 Route::prefix('admin')->group(function(){
      Route::get('login',[Authenticate::class,'login'])->name('admin.login');
