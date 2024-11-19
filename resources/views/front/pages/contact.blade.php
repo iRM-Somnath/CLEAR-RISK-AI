@@ -1,11 +1,13 @@
 @extends('front.layouts.master')
 @section('content')
 
-@push('meta-tags')
-<meta name="title" content="Contact ClearRisk.AI | Grow Your Business with Risk Management Solutions">
-<meta name="description" content="Get in touch with ClearRisk.AI today for expert support in growing your business. Reach out for personalized risk management solutions in audit management and enterprise risk management. Contact us via phone, email, or by submitting the contact form on this page.">
-<meta name="keywords" content="Contact ClearRisk, ClearRisk.AI support, risk management contact, business growth support, audit management inquiries, enterprise risk management inquiries, contact form, ClearRisk phone, ClearRisk email, ClearRisk UK office">
-@endpush
+    @push('meta-tags')
+        <meta name="title" content="Contact ClearRisk.AI | Grow Your Business with Risk Management Solutions">
+        <meta name="description"
+            content="Get in touch with ClearRisk.AI today for expert support in growing your business. Reach out for personalized risk management solutions in audit management and enterprise risk management. Contact us via phone, email, or by submitting the contact form on this page.">
+        <meta name="keywords"
+            content="Contact ClearRisk, ClearRisk.AI support, risk management contact, business growth support, audit management inquiries, enterprise risk management inquiries, contact form, ClearRisk phone, ClearRisk email, ClearRisk UK office">
+    @endpush
 
     <!-- Contact Us Page -->
 
@@ -19,9 +21,9 @@
             </div>
 
             <!-- <div class="AM-vid d-flex gap-100 justify-content-center ">
-                                            <video src="../assets/videos/AM-Video.mp4" controls></video>
-                                            <video src="../assets/videos/AM-Video.mp4" controls></video>
-                                          </div> -->
+                                                <video src="../assets/videos/AM-Video.mp4" controls></video>
+                                                <video src="../assets/videos/AM-Video.mp4" controls></video>
+                                              </div> -->
 
             <div class="product d-flex align-items-start px-5 justify-content-around row">
 
@@ -39,68 +41,88 @@
                         </div> --}}
 
                         <div class="contact-us-details phoneNumber d-flex align-items-center  gap-10">
-                            <img src="{{asset('front/assets/svgs/Black-phone.svg')}}" alt="" />
+                            <img src="{{ asset('front/assets/svgs/Black-phone.svg') }}" alt="" />
                             <p class="lead">US: 1-425-864-2958</p class="lead">
                         </div>
 
                         <div class="contact-us-details phoneNumber d-flex align-items-center gap-10">
-                            <img src="{{asset('front/assets/svgs/Black-phone.svg')}}" alt="" />
+                            <img src="{{ asset('front/assets/svgs/Black-phone.svg') }}" alt="" />
                             <p class="lead">Germany: 49-176-2590-8274</p class="lead">
                         </div>
 
                         <div class="contact-us-details phoneNumber d-flex align-items-center gap-10">
-                            <img src="{{asset('front/assets/svgs/Black-phone.svg')}}" alt="" />
+                            <img src="{{ asset('front/assets/svgs/Black-phone.svg') }}" alt="" />
                             <p class="lead">UK: 44-7768-012397</p class="lead">
                         </div>
 
                         <div class="contact-us-details mailId d-flex align-items-center gap-10">
-                            <img src="{{asset('front/assets/svgs/Black-mail.svg')}}" alt="" />
+                            <img src="{{ asset('front/assets/svgs/Black-mail.svg') }}" alt="" />
                             <p class="lead">hello@clearrisk.ai</p class="lead">
                         </div>
                     </div>
 
                 </div>
 
-                <!-- <form class="col-lg-5 d-flex justify-content-center flex-column gap-20">
-                                              <h4 class="text-center">Get Started with your Favorite Services</h4>
-                                              <div class="mb-3">
-                                              
-                                                <input type="text" class="form-control"
-                                                id="text-no-field"
-                                                placeholder="Your name*">
-                                              </div>
-                                              <div class="mb-3">
-                                                <input type="text" class="form-control"
-                                                id="text-no-field"
-                                                placeholder="Your phone number*">
-                                              </div>
-                                              <div class="mb-3">
-                                                <input type="email" class="form-control" id="text-no-field" aria-describedby="emailHelp"
-                                                placeholder="your companies email*">
-                                              </div>
-                                              <div class="mb-3">
-                                                <input type="email" class="form-control" id="text-no-field" aria-describedby="emailHelp"
-                                                placeholder="Your designation*">
-                                              </div>
-                                              <div class="mb-3">
-                                                <textarea class="form-control" id="text-no-field" rows="3" placeholder="Your Text"></textarea>
-                                              </div>
-                                              
+                <form class="col-lg-5 d-flex justify-content-center flex-column gap-20">
+                    <h4 class="text-center">Get Started with your Favorite Services</h4>
+                    <div class="row">
+                        <div class="mb-3 col-md-6">
+                            <input type="text" class="form-control" id="text-no-field" placeholder="First name*">
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <input type="text" class="form-control" id="text-no-field" placeholder="Last name*">
+                        </div>
+                    </div>
 
-                                              <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                                <button
-                                                  type="button"
-                                                  class="btn btn btn-dark rounded-pill d-flex align-items-center gap-2"
-                                                >
-                                                  Submit
-                                                  <img src="../assets/Right-Long-Arrow.svg" alt="" />
-                                                </button>
-                                              </div>
-                                            </form> -->
+                    <div class="row">
+                        <div class="mb-3 col-md-6">
+                            <input type="text" class="form-control" id="text-no-field" placeholder="Your phone number*">
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <input type="text" class="form-control" id="text-no-field" placeholder="Country*">
+                        </div>
+                    </div>
 
-                <div class="elfsight-app-ac002fc6-841f-40ac-a83f-2dd27a1c1f68 col-xl-6 col-lg-6 col-md-10 col-sm-12 col-12"
+                    <div class="row">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="text-no-field" placeholder="Your designation*">
+                        </div>
+                    </div>
+
+                    <div class="row px-3">
+                        {{-- <label>Request Demo:</label> --}}
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Audit Management
+                            </label>
+                        </div>
+                        <div class="form-check mb-4 ">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Enterprise Risk Management
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                            <label class="form-check-label" for="flexCheckChecked">
+                                I agree to the terms and conditions
+                            </label>
+                        </div>
+                    </div>
+
+
+                    <div class="d-grid gap-2 d-md-flex justify-content">
+                        <button type="button" class="btn btn btn-dark rounded-pill d-flex align-items-center gap-2">
+                            Submit
+                            <img src="{{ asset('front/assets/svgs/Right-Long-Arrow.svg') }}" alt="" />
+                        </button>
+                    </div>
+                </form>
+
+                {{-- <div class="elfsight-app-ac002fc6-841f-40ac-a83f-2dd27a1c1f68 col-xl-6 col-lg-6 col-md-10 col-sm-12 col-12"
                     data-elfsight-app-lazy>
-                </div>
+                </div> --}}
 
             </div>
         </div>
