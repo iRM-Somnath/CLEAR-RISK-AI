@@ -181,7 +181,7 @@
             </div>
         </div>
         <div class="copyright-section">
-          <p class="copyright">© ClearRisk 2024</p>
+          <p class="copyright">Copyright © ClearRisk {{ date('Y') }} | All Rights Reserved.</p>
         </div>
     </footer>
     <script src="{{ asset('front/js/bootstrap.bundle.js') }}"></script>

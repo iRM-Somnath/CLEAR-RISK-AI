@@ -25,7 +25,7 @@ class contactUs extends Controller
         // Handle the form submission
         // You can validate the form data and save it to the database or send an email
         // For example:
-        
+
         $validated = $request->validate([
             'first_name' => 'required|max:255',
             'last_name' => 'required|max:255',
