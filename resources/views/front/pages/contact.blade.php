@@ -21,9 +21,9 @@
             </div>
 
             <!-- <div class="AM-vid d-flex gap-100 justify-content-center ">
-                                                <video src="../assets/videos/AM-Video.mp4" controls></video>
-                                                <video src="../assets/videos/AM-Video.mp4" controls></video>
-                                              </div> -->
+                                                        <video src="../assets/videos/AM-Video.mp4" controls></video>
+                                                        <video src="../assets/videos/AM-Video.mp4" controls></video>
+                                                      </div> -->
 
             <div class="product d-flex align-items-start px-5 justify-content-around row">
 
@@ -63,29 +63,45 @@
 
                 </div>
 
-                <form class="col-lg-5 d-flex justify-content-center flex-column gap-20">
+                <form class="col-lg-5 d-flex justify-content-center flex-column gap-20" action="submit" method="POST">
+                    @csrf
                     <h4 class="text-center">Get Started with your Favorite Services</h4>
                     <div class="row">
                         <div class="mb-3 col-md-6">
-                            <input type="text" class="form-control" id="text-no-field" placeholder="First name*">
+                            <input type="text" class="form-control" id="first_name" name="first_name"
+                                placeholder="First name*">
                         </div>
                         <div class="mb-3 col-md-6">
-                            <input type="text" class="form-control" id="text-no-field" placeholder="Last name*">
+                            <input type="text" class="form-control" id="last_name" name="last_name"
+                                placeholder="Last name*">
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="mb-3 col-md-6">
-                            <input type="text" class="form-control" id="text-no-field" placeholder="Your phone number*">
+                            <input type="text" class="form-control" id="phone_number" name="phone_number"
+                                placeholder="Your phone number*">
                         </div>
                         <div class="mb-3 col-md-6">
-                            <input type="text" class="form-control" id="text-no-field" placeholder="Country*">
+                            <input type="text" class="form-control" id="email" name="email"
+                                placeholder="Your email*">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="mb-3 col-md-6">
+                            <input type="text" class="form-control" id="designation" name="designation"
+                                placeholder="Your designation*">
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <input type="text" class="form-control" id="country" name="country" placeholder="Country*">
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="mb-3">
-                            <input type="text" class="form-control" id="text-no-field" placeholder="Your designation*">
+                            {{-- <label for="exampleFormControlTextarea1" class="form-label"></label> --}}
+                            <textarea class="form-control" placeholder="Your message*" id="message" name="message" rows="3"></textarea>
                         </div>
                     </div>
 
@@ -98,14 +114,14 @@
                             </label>
                         </div>
                         <div class="form-check mb-4 ">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
                                 Enterprise Risk Management
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                            <label class="form-check-label" for="flexCheckChecked">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
                                 I agree to the terms and conditions
                             </label>
                         </div>
@@ -113,12 +129,28 @@
 
 
                     <div class="d-grid gap-2 d-md-flex justify-content">
-                        <button type="button" class="btn btn btn-dark rounded-pill d-flex align-items-center gap-2">
+                        <button id="toastSubmitbBtn" type="button"
+                            class="btn btn btn-dark rounded-pill d-flex align-items-center gap-2">
                             Submit
                             <img src="{{ asset('front/assets/svgs/Right-Long-Arrow.svg') }}" alt="" />
                         </button>
                     </div>
                 </form>
+
+
+                {{-- toast --}}
+
+                <div id="toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast-header">
+                        <img src="..." class="rounded me-2" alt="...">
+                        <strong class="me-auto">Success!</strong>
+                        <small>time</small>
+                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                    <div class="toast-body">
+                        The message was sent.
+                    </div>
+                </div>
 
                 {{-- <div class="elfsight-app-ac002fc6-841f-40ac-a83f-2dd27a1c1f68 col-xl-6 col-lg-6 col-md-10 col-sm-12 col-12"
                     data-elfsight-app-lazy>

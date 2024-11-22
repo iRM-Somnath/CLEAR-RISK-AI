@@ -202,6 +202,19 @@
                                         </li>
                                     </ul>
                                 </li>
+                                <li class="nav-parent  {{ Request::segment(2)==='blogs'?'nav-expanded nav-active':'' }}">
+                                    <a href="javascript:void(0)">
+                                        <i class="fa fa-forward" aria-hidden="true"></i>
+                                        <span>Contact Us Management</span>
+                                    </a>
+                                    <ul class="nav nav-children">
+                                        <li class="{{ (Request::segment(2)==='blogs' && Request::segment(3)==='list')?'nav-active':'' }}">
+                                            <a href="{{ route("admin.blogs.list") }}">
+                                                List
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
 
 
 
