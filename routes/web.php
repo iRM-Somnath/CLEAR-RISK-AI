@@ -13,7 +13,7 @@ use App\Http\Controllers\front\About;
 use App\Http\Controllers\front\AuditManagement;
 use App\Http\Controllers\front\EnterpriseRiskManagement;
 use App\Http\Controllers\front\Pricing;
-use App\Http\Controllers\front\Contact;
+use App\Http\Controllers\front\ContactUS;
 use App\Http\Controllers\front\Blogs;
 use App\Http\Controllers\front\Events;
 
@@ -28,7 +28,7 @@ Route::get('/enterprise-risk-management', [EnterpriseRiskManagement::class, 'ind
 Route::get('/pricing', [Pricing::class, 'index'])->name('pricing');
 Route::post('/get-plans', [Pricing::class, 'getPlans'])->name('get-plans');
 
-Route::get('/contact-us', [Contact::class, 'index'])->name('contact-us');
+Route::get('/contact-us', [ContactUS::class, 'index'])->name('contactUS-us');
 Route::post('/submit', [Contact::class, 'submit'])->name('contact-us');
 // Route::post('/contact-us', [Contact::class, 'submit'])->name('contact-form');
 

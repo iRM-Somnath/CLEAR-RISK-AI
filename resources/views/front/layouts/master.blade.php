@@ -26,7 +26,7 @@
         <div class="bg1"></div>
         <div class="bg2"></div>
     </div> --}}
-    
+
     <!-- NAVBAR  -->
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid d-flex">
@@ -124,7 +124,7 @@
     <footer>
         <div class="footer-container row">
             <div class="footer-item col-xl-3 col-lg-6 col-md-12">
-                <a class="footer-img" href="../html/index.html"><img
+                <a class="footer-img" href="{{ url('/') }}"><img
                         src="{{ asset('front/assets/images/Optimized-Images/footerimage-66dad3902cdcf.webp') }}"
                         alt="logo" /></a>
                 <p>
@@ -184,7 +184,7 @@
             </div>
         </div>
         <div class="copyright-section">
-          <p class="copyright">© ClearRisk 2024</p>
+          <p class="copyright">Copyright © ClearRisk {{ date('Y') }} | All Rights Reserved.</p>
         </div>
     </footer>
     <script src="{{ asset('front/js/bootstrap.bundle.js') }}"></script>
