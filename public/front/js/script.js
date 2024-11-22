@@ -22,4 +22,20 @@
 let copy = document.querySelector(".sectors-slide").cloneNode(true);
     document.querySelector(".sectors").appendChild(copy);  // For Home Slider Image Copy
 
-    
+
+
+ // Get references to the button and toast element
+ const toastElement = document.getElementById('toast');
+ const toastButton = document.getElementById('toastSubmitbBtn');
+
+ const toast = new bootstrap.Toast(toastElement);
+
+ toastButton.addEventListener('click', function() {
+    toast.show();
+ });
+
+//  setTimeout(() => {
+//     toast.show() 
+// }
+//     ,(1000));
+

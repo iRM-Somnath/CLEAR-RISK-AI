@@ -29,12 +29,15 @@ Route::get('/pricing', [Pricing::class, 'index'])->name('pricing');
 Route::post('/get-plans', [Pricing::class, 'getPlans'])->name('get-plans');
 
 Route::get('/contact-us', [Contact::class, 'index'])->name('contact-us');
+Route::post('/submit', [Contact::class, 'submit'])->name('contact-us');
+// Route::post('/contact-us', [Contact::class, 'submit'])->name('contact-form');
 
 Route::get('/blogs', [Blogs::class, 'index'])->name('blogs.index');
 Route::get('/blogs/{slug}', [Blogs::class, 'singleBlog'])->name('blogs.show');
 
 
 Route::get('/events', [Events::class, 'index'])->name('events.index');
+
 
 Route::prefix('admin')->group(function(){
      Route::get('login',[Authenticate::class,'login'])->name('admin.login');
