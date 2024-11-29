@@ -7,8 +7,11 @@ use App\Http\Controllers\admin\PricingManagement;
 use App\Http\Controllers\admin\EventManagement;
 use App\Http\Controllers\admin\FaqsManagement;
 use App\Http\Controllers\admin\BlogManagement;
+use App\Http\Controllers\admin\HomeCms;
 
-use App\Http\Controllers\front\Home;
+
+
+use App\Http\Controllers\front\Home; 
 use App\Http\Controllers\front\About;
 use App\Http\Controllers\front\AuditManagement;
 use App\Http\Controllers\front\EnterpriseRiskManagement;
@@ -16,6 +19,8 @@ use App\Http\Controllers\front\Pricing;
 use App\Http\Controllers\front\ContactUS;
 use App\Http\Controllers\front\Blogs;
 use App\Http\Controllers\front\Events;
+
+
 
 Route::get('/', [Home::class, 'index'])->name('home');
 
@@ -29,7 +34,7 @@ Route::get('/pricing', [Pricing::class, 'index'])->name('pricing');
 Route::post('/get-plans', [Pricing::class, 'getPlans'])->name('get-plans');
 
 Route::get('/contact-us', [ContactUS::class, 'index'])->name('contactUS-us');
-Route::post('/submit', [Contact::class, 'submit'])->name('contact-us');
+// Route::post('/submit', [Contact::class, 'submit'])->name('contact-us');
 // Route::post('/contact-us', [Contact::class, 'submit'])->name('contact-form');
 
 Route::get('/blogs', [Blogs::class, 'index'])->name('blogs.index');
@@ -37,6 +42,8 @@ Route::get('/blogs/{slug}', [Blogs::class, 'singleBlog'])->name('blogs.show');
 
 
 Route::get('/events', [Events::class, 'index'])->name('events.index');
+
+Route::get('/HomeCms', [Events::class, 'index'])->name('events.index');
 
 
 Route::prefix('admin')->group(function(){
@@ -73,6 +80,14 @@ Route::prefix('admin')->group(function(){
 
         Route::prefix('blogs')->group(function () {
             Route::get('/list', [BlogManagement::class, 'index'])->name('admin.blogs.list');
+            Route::get('/add', [BlogManagement::class, 'add'])->name('admin.blogs.add');
+            Route::post('/save', [BlogManagement::class, 'save'])->name('admin.blogs.save');
+            Route::get('/edit/{id}', [BlogManagement::class, 'add'])->name('admin.blogs.edit');
+
+        });
+
+        Route::prefix('home')->group(function () {
+            Route::get('/list', [HomeManagement::class, 'index'])->name('admin.blogs.list');
             Route::get('/add', [BlogManagement::class, 'add'])->name('admin.blogs.add');
             Route::post('/save', [BlogManagement::class, 'save'])->name('admin.blogs.save');
             Route::get('/edit/{id}', [BlogManagement::class, 'add'])->name('admin.blogs.edit');

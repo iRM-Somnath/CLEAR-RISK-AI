@@ -19,13 +19,10 @@
 
 
 <body>
-    {{-- <div id="loader" ></div> --}}
-
-    {{-- Color Circles --}}
-    {{-- <div class="bg">
-        <div class="bg1"></div>
-        <div class="bg2"></div>
-    </div> --}}
+  <div id="loader" class="loader">
+    <div class="spinner"></div>
+  </div>
+    
 
     <!-- NAVBAR  -->
     <nav class="navbar navbar-expand-lg bg-light">
@@ -123,6 +120,7 @@
 
     <footer>
         <div class="footer-container row">
+
             <div class="footer-item col-xl-3 col-lg-6 col-md-12">
                 <a class="footer-img" href="{{ url('/') }}"><img
                         src="{{ asset('front/assets/images/Optimized-Images/footerimage-66dad3902cdcf.webp') }}"
@@ -187,6 +185,7 @@
           <p class="copyright">Copyright © ClearRisk {{ date('Y') }} | All Rights Reserved.</p>
         </div>
     </footer>
+
     <script src="{{ asset('front/js/bootstrap.bundle.js') }}"></script>
     <script src="{{ asset('front/js/script.js') }}"></script>
     @stack('scripts')

@@ -1,41 +1,7 @@
-// const productImg = document.getElementById("#product-img");
-// const productButton1 = document.getElementById("product-btn-1");
-// const productButton2 = document.getElementById("product-btn-2");
 
-// productButton1.addEventListener("onclick", function() {
-//     productImg.src = "../assets/Component 1.png";
-// });
-
-// productButton2.addEventListener("onclick", function() {
-//     productImg.src = "../assets/Frame 12.png";
-// });
-
-// function productButton1(){
-//     productImg.src= "../assets/InternalAuditBanner_Web.png" ;
-//     function productButton2(){
-
-//         productImg.src= "../assets/EnterpriseRiskManagementBanner_Web.png" ;
-//     }
-// }
-
-
-let copy = document.querySelector(".sectors-slide").cloneNode(true);
-    document.querySelector(".sectors").appendChild(copy);  // For Home Slider Image Copy
-
-
-
- // Get references to the button and toast element
- const toastElement = document.getElementById('toast');
- const toastButton = document.getElementById('toastSubmitbBtn');
-
- const toast = new bootstrap.Toast(toastElement);
-
- toastButton.addEventListener('click', function() {
-    toast.show();
- });
-
-//  setTimeout(() => {
-//     toast.show() 
-// }
-//     ,(1000));
-
+    window.addEventListener('load', function() {
+      // Once the page is loaded, hide the loader and show the content
+      document.getElementById('loader').style.display = 'none';
+      // document.getElementById('content').style.display = 'block';
+    });
+    

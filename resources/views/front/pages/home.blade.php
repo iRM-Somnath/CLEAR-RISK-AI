@@ -9,11 +9,12 @@
     @endpush
 
     <!-- First Page -->
+    {{-- <div class="d-flex justify-center z-50 align-middle"> </div> --}}
     <div class="row px-5 flex-lg-row-reverse align-items-center">
         <div class="col-10 col-sm-8 col-lg-6 circlegif">
             <img src="{{ asset('front//assets/images/Optimized-Images/hero image.webp') }}" alt="
           class="d-block
-                mx-lg-auto img-fluid" alt="ClearRiskGif" loading="lazy" />
+                mx-lg-auto img-fluid" alt="ClearRiskGif" />
         </div>
         <div class="col-lg-6 hero-text-area d-flex flex-column gap-10">
             <h1 class="display-5 fw-bold lh-1 mb-3 main-heading-dark">
@@ -31,6 +32,7 @@
                     data-bs-target="#exampleModal">
                     Watch a video
                 </button>
+
             </div>
         </div>
     </div>
@@ -271,3 +273,12 @@
         </div>
     </div>
 @stop
+
+@push('scripts')
+<script type="text/javascript">
+
+let copy = document.querySelector(".sectors-slide").cloneNode(true);
+document.querySelector(".sectors").appendChild(copy);  // For Home Slider Image Copy
+</script>
+
+@endpush
