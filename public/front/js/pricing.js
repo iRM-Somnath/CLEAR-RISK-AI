@@ -64,8 +64,8 @@ function updateProduct(dataJson) {
                 html+=`<div class="pricing-card product-pricing-card col-xl-3 col-lg-4 col-md-6 col-sm-10 col-10">
 
                 <div class="text">
-                    <div class="card-heading product-card-heading">${item.name}</div>
-                    <div class="card-heading product-card-heading">$${item.price}</div>
+                    <div class="card-heading product-card-heading product-name">${item.name}</div>
+                    <div class="card-heading product-card-heading product-price">$${item.price}</div>
 
                     <div class="bio">
                     ${item.description}

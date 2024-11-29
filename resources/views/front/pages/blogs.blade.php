@@ -13,7 +13,7 @@
 
     <div class="blog-section px-5 d-flex flex-column gap-20">
         <div class="heading d-flex flex-column align-items-center gap-10">
-            <h1 class="display-5 fw-bold lh-1 mb-3 main-heading-dark">Our Blog</h1>
+            <h1 class="display-5 lh-1 mb-3 main-heading-dark">Our Blog</h1>
             <p class="text-center">
                 Welcome to TRPGLOBAL! We are your trusted partners in the world of
                 Technology Risk Management, offering expert advice and tailored

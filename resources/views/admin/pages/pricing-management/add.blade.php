@@ -45,7 +45,7 @@
                         <div class="col-sm-4">
                             <div class="form-group">
                                 <label class="control-label">Price</label>
-                                <input type="text" name="price" class="form-control checkDecimal requiredCheck restrictSpecial" data-check="Price" value="{{ !is_null($oldData)?$oldData->price:'' }}">
+                                <input type="text" name="price" class="form-control checkDecimal requiredCheck " data-check="Price" value="{{ !is_null($oldData)?$oldData->price:'' }}">
                             </div>
                         </div>
                     </div>

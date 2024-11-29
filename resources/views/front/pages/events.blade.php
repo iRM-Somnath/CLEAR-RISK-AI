@@ -6,7 +6,7 @@
     <div class="events-webinar-section col-lg-12 px-5 d-flex flex-column">
         <div class="webinar-section">
             <div class="heading d-flex flex-column align-items-center gap-20">
-                <h1 class="display-5 fw-bold lh-1 mb-3 main-heading-dark">Webinars</h1>
+                <h1 class="display-5 lh-1 mb-3 main-heading-dark">Webinars</h1>
                 <p class="text-center">
                     Engage with the ClearRisk community through our upcoming webinars.
                 </p>

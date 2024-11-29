@@ -11,13 +11,16 @@
 
     <div class="AM-container d-flex align-items-center px-5 justify-content-center flex-column gap-20"
     >
-    <div class="AM-vid d-flex justify-content-center col-lg-12">
-        <video src="{{asset('front\assets\videos\AuditManagement_ClearRiskV2 1.mp4')}}" autoplay controls></video>
-      </div>
+   
     <div class="col-lg-12 d-flex flex-column gap-20">
-        <h1 class="display-5 fw-bold lh-1 mb-3 main-heading-dark">
+        <h1 class="display-5 lh-1 mb-3 main-heading-dark">
             Internal Audit Management
         </h1>
+
+        <div class="AM-vid d-flex justify-content-center col-lg-12">
+          <video src="{{asset('front\assets\videos\AuditManagement_ClearRiskV2 1.mp4')}}" autoplay controls></video>
+        </div>
+      
         <p class="lead">
             Internal auditing is a critical component of organizational governance, aimed at enhancing and protecting organizational value by providing risk-based and objective assurance, advice, and insight. Effective internal audit management ensures that an organization’s internal controls are operating effectively and that its operations are running efficiently and ethically.
         </p>
