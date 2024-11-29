@@ -15,7 +15,7 @@
         <div class="col-10 co-sm-8 col-lg-6 w-100 d-flex flex-column gap-20">
 
             <div class="heading d-flex gap-10 justify-content-center">
-                <h1 class="display-5 fw-bold lh-1 mb-3 main-heading-gray">
+                <h1 class="lh-1 mb-3 main-heading-gray">
                     Contact ClearRisk.AI Today
                 </h1>
             </div>
@@ -28,7 +28,7 @@
             <div class="product d-flex align-items-start px-5 justify-content-around row">
 
                 <div class="col-xl-6 col-lg-6 col-md-10 col-sm-12 col-12 d-flex flex-column gap-20">
-                    <h1 class="display-5 fw-bold lh-1 mb-3 main-heading-dark ">
+                    <h1 class="lh-1 mb-3 main-heading-dark ">
                         We support you to grow your business
                     </h1>
                     <div class="d-flex flex-column gap-20">

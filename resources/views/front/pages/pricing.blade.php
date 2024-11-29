@@ -12,7 +12,7 @@
     <div class="product-pricing-container ">
         <div class="col-10 col-sm-8 col-lg-6 w-100 d-flex flex-column gap-20 ">
           <div class="heading d-flex justify-content-center">
-            <h1 class="display-5 fw-bold lh-1 mb-3 main-heading-dark">
+            <h1 class="display-5 lh-1 mb-3 main-heading-dark">
               Pricing
             </h1>
           </div>

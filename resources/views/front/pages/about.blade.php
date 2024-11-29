@@ -28,7 +28,7 @@
           class=" col-xl-6 col-lg-12 col-md-12 d-flex flex-column gap-10 align-items-center justify-content-center"
         >
           <div class="col-md-12 col-12">
-            <h1 class="display-5 fw-bold lh-1 mb-3 main-heading-dark">
+            <h1 class="display-5  lh-1 mb-3 main-heading-dark">
               About Us
             </h1>
             <p class="lead">

@@ -9,11 +9,12 @@
     @endpush
 
     <!-- First Page -->
+    {{-- <div class="d-flex justify-center z-50 align-middle"> </div> --}}
     <div class="row px-5 flex-lg-row-reverse align-items-center">
         <div class="col-10 col-sm-8 col-lg-6 circlegif">
             <img src="{{ asset('front//assets/images/Optimized-Images/hero image.webp') }}" alt="
           class="d-block
-                mx-lg-auto img-fluid" alt="ClearRiskGif" loading="lazy" />
+                mx-lg-auto img-fluid" alt="ClearRiskGif" />
         </div>
         <div class="col-lg-6 hero-text-area d-flex flex-column gap-10">
             <h1 class="display-5 fw-bold lh-1 mb-3 main-heading-dark">
@@ -31,6 +32,7 @@
                     data-bs-target="#exampleModal">
                     Watch a video
                 </button>
+
             </div>
         </div>
     </div>
@@ -52,19 +54,19 @@
 
 
     <div class="client-logos text-center">
-        <h1 class="display-5 fw-bold lh-1 margin40 main-heading-dark">
+        <h1 class=" lh-1 margin40 main-heading-dark">
             Industries We Helped
         </h1>
         <div class="sectors">
             {{-- <img src="{{asset('front/assets/images/Optimized-Images/Industries2.webp')}}" alt="" /> --}}
             <div class="sectors-slide">
-                <img src="{{ asset('front/assets/images/Sector Images/Chemicals.webp') }}" alt="" />
-                <img src="{{ asset('front/assets/images/Sector Images/EnergyResource.webp') }}" alt="" />
-                <img src="{{ asset('front/assets/images/Sector Images/Government.webp') }}" alt="" />
-                <img src="{{ asset('front/assets/images/Sector Images/Healthcare.webp') }}" alt="" />
-                <img src="{{ asset('front/assets/images/Sector Images/ITSector.webp') }}" alt="" />
-                <img src="{{ asset('front/assets/images/Sector Images/Lifestyle.webp') }}" alt="" />
-                <img src="{{ asset('front/assets/images/Sector Images/Manufacturing.webp') }}" alt="" />
+                <img src="{{ asset('front/assets/images/Sector Images/Icons/Chemicals_Icon.webp') }}" alt="" />
+                <img src="{{ asset('front/assets/images/Sector Images/Icons/EnergyResource_Icon.webp') }}" alt="" />
+                <img src="{{ asset('front/assets/images/Sector Images/Icons/Government_Icon.webp') }}" alt="" />
+                <img src="{{ asset('front/assets/images/Sector Images/Icons/Healthcare_Icon.webp') }}" alt="" />
+                <img src="{{ asset('front/assets/images/Sector Images/Icons/ITSector_Icon.webp') }}" alt="" />
+                <img src="{{ asset('front/assets/images/Sector Images/Icons/Lifestyle_Icon.webp') }}" alt="" />
+                <img src="{{ asset('front/assets/images/Sector Images/Icons/Manufacturing_Icon.webp') }}" alt="" />
             </div>
 
 
@@ -74,10 +76,10 @@
     <div class="find-out-container margin40">
         <div class="col-10 col-sm-8 col-lg-6 w-100">
             <div class="heading">
-                <h1 class="display-5 fw-bold lh-1 mb-3 main-heading-dark">
+                <h1 class="  lh-1 mb-3 main-heading-dark">
                     Find out why<br />leading companies choose
                 </h1>
-                <h1 class="display-5 fw-bold lh-1 mb-3 main-heading-dark">
+                <h1 class="display-5  lh-1 mb-3 main-heading-dark">
                     ClearRisk.AI
                 </h1>
             </div>
@@ -167,7 +169,7 @@
     <div class="product-container d-flex flex-column align-items-center gap-20">
         <div class="col-10 col-sm-8 col-lg-6 w-100">
             <div class="heading d-flex justify-content-center">
-                <h1 class="display-5 fw-bold lh-1 mb-3 main-heading-dark">
+                <h1 class=" lh-1 mb-3 main-heading-dark">
                     Products
                 </h1>
             </div>
@@ -241,7 +243,7 @@
     <div class="faq-container">
         <div class="col-10 col-sm-8 col-lg-6 w-100 d-flex flex-column gap-20">
             <div class="heading d-flex">
-                <h1 class="display-5 fw-bold lh-1 mb-3 main-heading-dark">
+                <h1 class=" lh-1 mb-3 main-heading-dark">
                     Frequently Asked Questions
                 </h1>
             </div>
@@ -271,3 +273,12 @@
         </div>
     </div>
 @stop
+
+@push('scripts')
+<script type="text/javascript">
+
+let copy = document.querySelector(".sectors-slide").cloneNode(true);
+document.querySelector(".sectors").appendChild(copy);  // For Home Slider Image Copy
+</script>
+
+@endpush
