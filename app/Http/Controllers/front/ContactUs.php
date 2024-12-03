@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Contact;
 
 
-class contactUs extends Controller
+class ContactUs extends Controller
 {
     public function index()
     {
