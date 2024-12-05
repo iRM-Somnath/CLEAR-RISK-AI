@@ -61,7 +61,7 @@ function updateProduct(dataJson) {
         let html = ``;
         if(data.status) {
             data.data.forEach(item =>{
-                html+=`<div class="pricing-card product-pricing-card col-xl-3 col-lg-4 col-md-6 col-sm-10 col-10">
+                html+=`<div class="pricing-card product-pricing-card col-xl-2 col-lg-4 col-md-6 col-sm-10 col-10">
 
                 <div class="text">
                     <div class="card-heading product-card-heading product-name">${item.name}</div>

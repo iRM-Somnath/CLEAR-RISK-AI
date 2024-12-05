@@ -88,9 +88,10 @@
 
         <div class="row findout-img-cards">
 
-            <div class="findout-img col-xl-6 col-lg-12 col-md-12 d-flex align-items-center">
-                <img src="{{ asset('front/assets/images/Optimized-Images/frame-12-66dad391ab1db.webp') }}" class=""
-                    alt="ClearRiskGif" width="700" height="500" loading="lazy" />
+            <div class="findout-img col-xl-6 col-lg-12 col-md-12 d-flex">
+                <img src="{{ asset('front/assets/images/Optimized-Images/WhyChooseUs.webp') }}" class=""
+                    alt="ClearRisk"/>
+                    
             </div>
 
 
@@ -107,14 +108,14 @@
                         data and processes.
                     </div>
                     <!-- <div class="gap-2 d-md-flex justify-content-md-start">
-                                                      <button
-                                                        type="button"
-                                                        class="btn btn btn-dark rounded-pill d-flex align-items-center gap-2"
-                                                      >
-                                                        Learn More
-                                                        <img src="../assets/svgs/Right-Long-Arrow.svg" alt="" />
-                                                      </button>
-                                                    </div> -->
+                                                          <button
+                                                            type="button"
+                                                            class="btn btn btn-dark rounded-pill d-flex align-items-center gap-2"
+                                                          >
+                                                            Learn More
+                                                            <img src="../assets/svgs/Right-Long-Arrow.svg" alt="" />
+                                                          </button>
+                                                        </div> -->
                 </div>
 
                 <div class="card col-md-12 col-12">
@@ -128,14 +129,14 @@
                         in-depth analytics to their fullest potential.
                     </div>
                     <!-- <div class=" gap-2 d-md-flex justify-content-md-start">
-                                                      <button
-                                                        type="button"
-                                                        class="btn btn btn-dark rounded-pill d-flex align-items-center gap-2"
-                                                      >
-                                                        Learn More
-                                                        <img src="../assets/svgs/Right-Long-Arrow.svg" alt="" />
-                                                      </button>
-                                                    </div> -->
+                                                          <button
+                                                            type="button"
+                                                            class="btn btn btn-dark rounded-pill d-flex align-items-center gap-2"
+                                                          >
+                                                            Learn More
+                                                            <img src="../assets/svgs/Right-Long-Arrow.svg" alt="" />
+                                                          </button>
+                                                        </div> -->
                 </div>
 
                 <div class="card col-md-12 col-12">
@@ -149,14 +150,14 @@
                         collaboration capabilities.
                     </div>
                     <!-- <div class=" gap-2 d-md-flex justify-content-md-start">
-                                                      <button
-                                                        type="button"
-                                                        class="btn btn btn-dark rounded-pill d-flex align-items-center gap-2"
-                                                      >
-                                                        Learn More
-                                                        <img src="../assets/svgs/Right-Long-Arrow.svg" alt="" />
-                                                      </button>
-                                                    </div> -->
+                                                          <button
+                                                            type="button"
+                                                            class="btn btn btn-dark rounded-pill d-flex align-items-center gap-2"
+                                                          >
+                                                            Learn More
+                                                            <img src="../assets/svgs/Right-Long-Arrow.svg" alt="" />
+                                                          </button>
+                                                        </div> -->
                 </div>
 
             </div>
@@ -185,10 +186,13 @@
                     </div>
 
                     <div class="bio">
-
-                        ClearRisk's Audit Management solution simplifies the entire audit process, ensuring compliance and
-                        reducing risk exposure. This tool provides seamless tracking, reporting, and auditing capabilities
-                        to maintain transparency and meet regulatory standards with ease.
+                        <div class="bio-data">
+                            ClearRisk's Audit Management solution simplifies the entire audit process, ensuring compliance
+                            and
+                            reducing risk exposure. This tool provides seamless tracking, reporting, and auditing
+                            capabilities
+                            to maintain transparency and meet regulatory standards with ease.
+                        </div>
                         <ul>
                             <li>Streamline internal and external audit processes</li>
                             <li>Automate report generation and compliance tracking</li>
@@ -216,9 +220,12 @@
                     </div>
 
                     <div class="bio">
-                        Our Enterprise Risk Management platform provides comprehensive tools to identify, assess, and
-                        mitigate risks across your organization. With real-time reporting and collaboration features,
-                        ClearRisk’s solution ensures your business stays ahead of potential threats.
+                        <div class="bio-data">
+                            Our Enterprise Risk Management platform provides comprehensive tools to identify, assess, and
+                            mitigate risks across your organization. With real-time reporting and collaboration features,
+                            ClearRisk’s solution ensures your business stays ahead of potential threats.
+                        </div>
+
                         <ul>
                             <li>Holistic approach to risk identification and assessment</li>
                             <li>Real-time dashboards for monitoring and reporting</li>
@@ -259,7 +266,7 @@
                             </button>
                         </h2>
                         <div id="collapse-{{ $loop->iteration }}"
-                            class="accordion-collapse collapse {{ $loop->iteration == 1 ? 'show' : '' }}"
+                            class="accordion-collapse collapse {{ $loop->iteration == 1 ?  : '' }}"
                             aria-labelledby="heading-{{ $loop->iteration }}" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
                                 Ans. {{ $item->answer }}
@@ -275,10 +282,8 @@
 @stop
 
 @push('scripts')
-<script type="text/javascript">
-
-let copy = document.querySelector(".sectors-slide").cloneNode(true);
-document.querySelector(".sectors").appendChild(copy);  // For Home Slider Image Copy
-</script>
-
+    <script type="text/javascript">
+        let copy = document.querySelector(".sectors-slide").cloneNode(true);
+        document.querySelector(".sectors").appendChild(copy); // For Home Slider Image Copy
+    </script>
 @endpush
