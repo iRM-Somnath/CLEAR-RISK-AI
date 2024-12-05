@@ -15,10 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('slug')->unique(); 
             $table->string('page_name'); 
-            $table->string('hero_title'); 
-            $table->string('hero_description'); 
-            $table->string('hero_image'); 
-            $table->text('content'); 
+            $table->string('page_title'); 
+            $table->string('page_description');  
             $table->timestamps();
         });
     }
