@@ -12,7 +12,7 @@
     {{-- <div class="d-flex justify-center z-50 align-middle"> </div> --}}
     <div class="row px-5 flex-lg-row-reverse align-items-center">
         <div class="col-10 col-sm-8 col-lg-6 circlegif">
-            <img src="{{ asset('front//assets/images/Optimized-Images/hero image.webp') }}" alt="
+            <img src="{{ asset('front//assets/images/gif/home_page_gif.webp') }}" alt="
           class="d-block
                 mx-lg-auto img-fluid" alt="ClearRiskGif" />
         </div>
@@ -88,7 +88,7 @@
 
         <div class="row findout-img-cards">
 
-            <div class="findout-img col-xl-6 col-lg-12 col-md-12 d-flex">
+            <div class="findout-img  col-xl-6 col-lg-12 col-md-12 d-flex">
                 <img src="{{ asset('front/assets/images/Optimized-Images/WhyChooseUs.webp') }}" class=""
                     alt="ClearRisk"/>
                     

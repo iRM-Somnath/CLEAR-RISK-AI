@@ -26,8 +26,8 @@ class SiteManagement extends Controller
     try {
         // Validate the incoming request
         $validated = $request->validate([
-            'logo' => 'nullable|image',
-            'favicon' => 'nullable|image',
+            'logo' => 'nullable|image|mimes:png|max:2048',
+            'favicon' => 'nullable|image|mimes:png|max:2048',
             'smtp_user_id' => 'required',
             'smtp_password' => 'required',
             'smtp_port' => 'required',
@@ -43,8 +43,8 @@ class SiteManagement extends Controller
 
             
             $oldData = SiteSettings::find(1); // Fetch the existing record with id = 1
-            $logo = null;
-            $favicon = null;
+            $logo = $oldData->logo ?? null;
+            $favicon = $oldData->favicon ?? null;
 
             // Handle logo upload
             if ($request->hasFile('logo')) {
@@ -83,7 +83,7 @@ class SiteManagement extends Controller
                 return response()->json([
                     'status' => TRUE,
                     'message' => 'Data updated successfully!',
-                    'redirect' => '',
+                    'redirect' => 'site-settings',
                 ]);
             } else {
                 // If no record with id = 1 exists, create a new record
@@ -105,7 +105,7 @@ class SiteManagement extends Controller
                 return response()->json([
                     'status' => TRUE,
                     'message' => 'Data saved successfully!',
-                    'redirect' => '',
+                    'redirect' => 'site-settings',
                 ]);
             }
         }

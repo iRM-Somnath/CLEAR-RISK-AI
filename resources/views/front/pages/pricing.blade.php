@@ -30,16 +30,25 @@
             </div>
 
             <div class="d-flex pricing-btns">
+               
                 @forelse ( $productData as $item )
                     <button id="product-btn-{{ $loop->index + 1 }}"
-                        class="btn btn-outline-dark me-2 rounded-pill product" data-product-id="{{ $item->id }}""
+                        class="btn btn-outline-dark me-2 rounded-pill product" data-product-id="{{ $item->id }}"
                         type="button">
                         {{ $item->name }}
                     </button>
                 @empty
 
                 @endforelse
-
+                @if(!empty($productData))
+                  <button id="product-btn-both"
+                    class="btn btn-outline-dark me-2 rounded-pill product" data-product-id="both"
+                    type="button">Both
+                    
+                  </button>
+                    
+                @endif
+                  
             </div>
 
           </div>
