@@ -32,19 +32,11 @@
               About Us
             </h1>
             <p class="lead">
-              At Clear Risk, we believe that IT and risk management should be
-              effortless. That's why we offer solutions that are easy to use,
-              easy to buy, and simply the most straightforward you'll find.
-              <br />
-              Our mission is to provide the simplest, most effective answers to
-              your business needs. We're committed to quality and client
-              satisfaction, ensuring every project not only meets but exceeds
-              your expectations.
-              <br />
-              With reliable support and a genuine passion for IT consulting and
-              risk management, we stay ahead of the curve so you can too. Let us
-              simplify your challenges and deliver the confidence you need to
-              succeed.
+              At ClearRisk, we make IT consulting and risk management effortless. Our solutions are designed to be simple, effective, and tailored to help your business tackle challenges head-on.
+              <br/>
+              We’re passionate about delivering tools that work seamlessly, ensuring every project exceeds your expectations. With a focus on quality and client satisfaction, we’re here to help you navigate risks and streamline operations with ease.
+              <br/>
+              By staying ahead of industry trends, we empower you to stay ahead too. Let ClearRisk transform complexity into clarity and provide the confidence you need to succeed.
             </p>
           </div>
         </div>

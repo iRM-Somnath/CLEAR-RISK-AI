@@ -21,11 +21,7 @@
                 Intelligent Risk Management<br>for Bold Leaders.
             </h1>
             <p class="lead hero-desc">
-                At ClearRisk, we empower businesses to navigate uncertainties with precision. Our AI-driven risk management
-                solutions provide actionable insights, helping leaders mitigate potential threats and drive success with
-                confidence.
-                <br>
-                Stay proactive, stay ahead, and lead with clarity.
+                ClearRisk turns uncertainty into opportunity. With AI-driven insights, we help businesses stay ahead, mitigate risks, and lead confidently. Empower your decisions, outpace the unexpected, and thrive with clarity.
             </p>
             <div class="d-grid gap-2 d-md-flex justify-content-md-start">
                 <button type="button" class="btn btn btn-dark rounded-pill" data-bs-toggle="modal"
@@ -99,13 +95,10 @@
 
                 <div class="card col-md-12 col-12">
                     <div class="card-heading">
-                        Identify and handle additional risks
+                        Stay Ahead of Emerging Risks:
                     </div>
                     <div class="bio">
-                        Remain at the forefront of the contemporary landscape
-                        characterized by escalating risk demands by smooth and
-                        effectively integrating and coordinating teams, stakeholders,
-                        data and processes.
+                        Seamlessly align teams, data, and processes to tackle the ever-evolving risk landscape.
                     </div>
                     <!-- <div class="gap-2 d-md-flex justify-content-md-start">
                                                           <button
@@ -120,13 +113,11 @@
 
                 <div class="card col-md-12 col-12">
                     <div class="card-heading">
-                        Operate more efficiently to achieve a greater impact.
+                        Achieve Unmatched Efficiency:
                     </div>
 
                     <div class="bio">
-                        Achieve transformative efficiencies by utilizing comprehensive,
-                        purpose-built workflows, advanced automation technologies, and
-                        in-depth analytics to their fullest potential.
+                        Harness automation, purpose-built workflows, and analytics to unlock transformative results.
                     </div>
                     <!-- <div class=" gap-2 d-md-flex justify-content-md-start">
                                                           <button
@@ -141,13 +132,11 @@
 
                 <div class="card col-md-12 col-12">
                     <div class="card-heading">
-                        Foster ownership and accountability at the front line.
+                        Inspire Accountability at Every Level:
                     </div>
 
                     <div class="bio">
-                        Establish strong and productive partnerships with stakeholders
-                        throughout the organization by leveraging exceptional
-                        collaboration capabilities.
+                        Cultivate ownership and collaboration with stakeholders across your organization.
                     </div>
                     <!-- <div class=" gap-2 d-md-flex justify-content-md-start">
                                                           <button
@@ -187,16 +176,12 @@
 
                     <div class="bio">
                         <div class="bio-data">
-                            ClearRisk's Audit Management solution simplifies the entire audit process, ensuring compliance
-                            and
-                            reducing risk exposure. This tool provides seamless tracking, reporting, and auditing
-                            capabilities
-                            to maintain transparency and meet regulatory standards with ease.
+                            ClearRisk’s Audit Management simplifies audits, ensuring compliance and reducing risks. Effortlessly track, report, and manage documentation to stay transparent and meet regulatory standards.
                         </div>
                         <ul>
-                            <li>Streamline internal and external audit processes</li>
-                            <li>Automate report generation and compliance tracking</li>
-                            <li>Centralize audit records and documentation</li>
+                            <li>Streamline Processes: Simplify internal and external audits.</li>
+                            <li>Automate Compliance: Generate reports and track requirements with ease.</li>
+                            <li>Centralize Records: Keep all audit data organized in one place.</li>
                         </ul>
 
 
@@ -221,15 +206,13 @@
 
                     <div class="bio">
                         <div class="bio-data">
-                            Our Enterprise Risk Management platform provides comprehensive tools to identify, assess, and
-                            mitigate risks across your organization. With real-time reporting and collaboration features,
-                            ClearRisk’s solution ensures your business stays ahead of potential threats.
+                            ClearRisk’s Enterprise Risk Management platform empowers organizations to identify, assess, and mitigate risks with ease. Real-time reporting and collaboration tools keep your business ahead of potential threats.
                         </div>
 
                         <ul>
-                            <li>Holistic approach to risk identification and assessment</li>
-                            <li>Real-time dashboards for monitoring and reporting</li>
-                            <li>Scalable solutions for organizations of any size</li>
+                            <li>Comprehensive Risk Assessment: Take a holistic approach to identifying and managing risks.</li>
+                            <li>Real-Time Insights: Monitor and report with intuitive dashboards.</li>
+                            <li>Scalable Solutions: Designed to fit organizations of any size.</li>
                         </ul>
                     </div>
                 </div>
