@@ -13,15 +13,17 @@
     <div class="row px-5 flex-lg-row-reverse align-items-center">
         <div class="col-10 col-sm-8 col-lg-6 circlegif">
             <img src="{{ asset('front//assets/images/gif/home_page_gif.webp') }}" alt="
-          class="d-block
-                mx-lg-auto img-fluid" alt="ClearRiskGif" />
+          class="d-block mx-lg-auto
+                img-fluid" alt="ClearRiskGif" />
         </div>
         <div class="col-lg-6 hero-text-area d-flex flex-column gap-10">
             <h1 class="display-5 fw-bold lh-1 mb-3 main-heading-dark">
                 Intelligent Risk Management<br>for Bold Leaders.
             </h1>
             <p class="lead hero-desc">
-                ClearRisk turns uncertainty into opportunity. With AI-driven insights, we help businesses stay ahead, mitigate risks, and lead confidently. Empower your decisions, outpace the unexpected, and thrive with clarity.
+                ClearRisk turns uncertainty into opportunity. With AI-driven insights, we help businesses stay ahead,
+                mitigate risks, and lead confidently. Empower your decisions, outpace the unexpected, and thrive with
+                clarity.
             </p>
             <div class="d-grid gap-2 d-md-flex justify-content-md-start">
                 <button type="button" class="btn btn btn-dark rounded-pill" data-bs-toggle="modal"
@@ -86,8 +88,8 @@
 
             <div class="findout-img  col-xl-6 col-lg-12 col-md-12 d-flex">
                 <img src="{{ asset('front/assets/images/Optimized-Images/WhyChooseUs.webp') }}" class=""
-                    alt="ClearRisk"/>
-                    
+                    alt="ClearRisk" />
+
             </div>
 
 
@@ -101,14 +103,14 @@
                         Seamlessly align teams, data, and processes to tackle the ever-evolving risk landscape.
                     </div>
                     <!-- <div class="gap-2 d-md-flex justify-content-md-start">
-                                                          <button
-                                                            type="button"
-                                                            class="btn btn btn-dark rounded-pill d-flex align-items-center gap-2"
-                                                          >
-                                                            Learn More
-                                                            <img src="../assets/svgs/Right-Long-Arrow.svg" alt="" />
-                                                          </button>
-                                                        </div> -->
+                                                              <button
+                                                                type="button"
+                                                                class="btn btn btn-dark rounded-pill d-flex align-items-center gap-2"
+                                                              >
+                                                                Learn More
+                                                                <img src="../assets/svgs/Right-Long-Arrow.svg" alt="" />
+                                                              </button>
+                                                            </div> -->
                 </div>
 
                 <div class="card col-md-12 col-12">
@@ -120,14 +122,14 @@
                         Harness automation, purpose-built workflows, and analytics to unlock transformative results.
                     </div>
                     <!-- <div class=" gap-2 d-md-flex justify-content-md-start">
-                                                          <button
-                                                            type="button"
-                                                            class="btn btn btn-dark rounded-pill d-flex align-items-center gap-2"
-                                                          >
-                                                            Learn More
-                                                            <img src="../assets/svgs/Right-Long-Arrow.svg" alt="" />
-                                                          </button>
-                                                        </div> -->
+                                                              <button
+                                                                type="button"
+                                                                class="btn btn btn-dark rounded-pill d-flex align-items-center gap-2"
+                                                              >
+                                                                Learn More
+                                                                <img src="../assets/svgs/Right-Long-Arrow.svg" alt="" />
+                                                              </button>
+                                                            </div> -->
                 </div>
 
                 <div class="card col-md-12 col-12">
@@ -139,14 +141,14 @@
                         Cultivate ownership and collaboration with stakeholders across your organization.
                     </div>
                     <!-- <div class=" gap-2 d-md-flex justify-content-md-start">
-                                                          <button
-                                                            type="button"
-                                                            class="btn btn btn-dark rounded-pill d-flex align-items-center gap-2"
-                                                          >
-                                                            Learn More
-                                                            <img src="../assets/svgs/Right-Long-Arrow.svg" alt="" />
-                                                          </button>
-                                                        </div> -->
+                                                              <button
+                                                                type="button"
+                                                                class="btn btn btn-dark rounded-pill d-flex align-items-center gap-2"
+                                                              >
+                                                                Learn More
+                                                                <img src="../assets/svgs/Right-Long-Arrow.svg" alt="" />
+                                                              </button>
+                                                            </div> -->
                 </div>
 
             </div>
@@ -168,7 +170,7 @@
         <div class="product-cards row d-flex justify-content-around px-5">
 
             <div class="card product-card col-xl-5 col-lg-12 col-md-12 col-sm-12 col-12">
-                <div class="text">
+                {{-- <div class="text">
                     <div class="card-heading product-card-heading">
                         <img src="{{ asset('front/assets/svgs/Frame.svg') }}" alt="" />
                         Audit Management
@@ -176,7 +178,9 @@
 
                     <div class="bio">
                         <div class="bio-data">
-                            ClearRisk’s Audit Management simplifies audits, ensuring compliance and reducing risks. Effortlessly track, report, and manage documentation to stay transparent and meet regulatory standards.
+                            ClearRisk’s Audit Management simplifies audits, ensuring compliance and reducing risks.
+                            Effortlessly track, report, and manage documentation to stay transparent and meet regulatory
+                            standards.
                         </div>
                         <ul>
                             <li>Streamline Processes: Simplify internal and external audits.</li>
@@ -186,7 +190,12 @@
 
 
                     </div>
-                </div>
+                </div> --}}
+
+                <a href="{{ url('/audit-management') }}" ><img class="w-100"
+                    src="{{ asset('front/assets\images\Optimized-Images\AuditManagement_ClickHome.webp') }}"
+                    alt="" /></a>
+
                 <div class="d-grid gap-2 d-md-flex justify-content-md-start">
                     <a href="{{ url('/audit-management') }}" class="text-decoration-none">
                         <button type="button" class="btn btn btn-dark rounded-pill d-flex align-items-center gap-2">
@@ -197,8 +206,8 @@
 
                 </div>
             </div>
-            <div class="card product-card col-xl-5 col-lg-12 col-md-12 col-sm-12 col-12">
-                <div class="text">
+            <div class="card product-card col-xl-5 col-lg-12 col-md-12 col-sm-12 col-12 flex align-middle">
+                {{-- <div class="text">
                     <div class="card-heading product-card-heading">
                         <img src="{{ asset('front/assets/svgs/Frame1.svg') }}" alt="" />
                         Enterprise Risk Management
@@ -215,7 +224,11 @@
                             <li>Scalable Solutions: Designed to fit organizations of any size.</li>
                         </ul>
                     </div>
-                </div>
+                </div> --}}
+
+                <a href="{{ url('/enterprise-risk-management') }}" ><img class="w-100"
+                    src="{{ asset('front/assets\images\Optimized-Images\EnterpriseRiskManagement_ClickHome.webp') }}"
+                    alt="" /></a>
 
                 <div class="d-grid gap-2 d-md-flex justify-content-md-start">
                     <a href="{{ url('/enterprise-risk-management') }}" class="text-decoration-none">
@@ -249,7 +262,7 @@
                             </button>
                         </h2>
                         <div id="collapse-{{ $loop->iteration }}"
-                            class="accordion-collapse collapse {{ $loop->iteration == 1 ?  : '' }}"
+                            class="accordion-collapse collapse {{ $loop->iteration == 1 ?: '' }}"
                             aria-labelledby="heading-{{ $loop->iteration }}" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
                                 Ans. {{ $item->answer }}

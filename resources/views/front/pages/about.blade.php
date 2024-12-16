@@ -33,9 +33,11 @@
             </h1>
             <p class="lead">
               At ClearRisk, we make IT consulting and risk management effortless. Our solutions are designed to be simple, effective, and tailored to help your business tackle challenges head-on.
-              <br/>
+              <br>
+              <br>
               We’re passionate about delivering tools that work seamlessly, ensuring every project exceeds your expectations. With a focus on quality and client satisfaction, we’re here to help you navigate risks and streamline operations with ease.
-              <br/>
+              <br>
+              <br>
               By staying ahead of industry trends, we empower you to stay ahead too. Let ClearRisk transform complexity into clarity and provide the confidence you need to succeed.
             </p>
           </div>
