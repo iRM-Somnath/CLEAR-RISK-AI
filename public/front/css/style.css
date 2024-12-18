@@ -103,6 +103,13 @@ body {
 
 .circlegif {
     /* transform: translate(60px, -60px); */
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.circlegif img {
+    width: 80%;
 }
 
 .hero-desc {
@@ -165,12 +172,22 @@ body {
     animation: slide 15s infinite linear;
 }
 
-.findout-img{
+.findout-img {
     justify-content: center;
 }
 
 .findout-img img {
     /* width: 80%; */
+    aspect-ratio: 3/2;
+    object-fit: contain;
+}
+
+.about-img {
+    justify-content: center;
+}
+
+.about-img img {
+    width: 80%;
     aspect-ratio: 3/2;
     object-fit: contain;
 }
@@ -561,9 +578,6 @@ form {
     margin: 50px 0px;
 }
 
-
-
-
 /* Change the color of pagination links to black */
 .pagination .page-link {
     color: black; /* Set link color to black */
@@ -643,30 +657,54 @@ p.copyright {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.8); /* Optional: Adds a semi-transparent white background */
+    background-color: rgba(
+        255,
+        255,
+        255,
+        0.8
+    ); /* Optional: Adds a semi-transparent white background */
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 9999; /* Ensures the loader appears on top of all content */
-  }
-  
-  /* Spinner styles */
-  #loader .spinner {
+}
+
+/* Spinner styles */
+#loader .spinner {
     border: 10px solid #f3f3f3; /* Light grey */
     border-top: 10px solid #000000; /* Black top border */
     border-radius: 50%;
     width: 100px;
     height: 100px;
     animation: spin 2s linear infinite;
-  }
-  
-  /* Spinner rotation animation */
-  @keyframes spin {
+}
+
+/* Spinner rotation animation */
+@keyframes spin {
     0% {
-      transform: rotate(0deg);
+        transform: rotate(0deg);
     }
     100% {
-      transform: rotate(360deg);
+        transform: rotate(360deg);
     }
-  }
-  
+}
+
+.phone-number-field {
+    /* margin-bottom: 1rem;  */
+}
+
+.phone-no-group {
+    margin-bottom: 1rem;
+}
+
+.phoneNumbersContainer {
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.pro-image{
+    width: 100%;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+}

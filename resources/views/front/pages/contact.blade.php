@@ -21,9 +21,9 @@
             </div>
 
             <!-- <div class="AM-vid d-flex gap-100 justify-content-center ">
-                                                            <video src="../assets/videos/AM-Video.mp4" controls></video>
-                                                            <video src="../assets/videos/AM-Video.mp4" controls></video>
-                                                          </div> -->
+                                                                    <video src="../assets/videos/AM-Video.mp4" controls></video>
+                                                                    <video src="../assets/videos/AM-Video.mp4" controls></video>
+                                                                  </div> -->
 
             <div class="product d-flex align-items-start px-5 justify-content-around row">
 
@@ -40,7 +40,7 @@
                             </p class="lead">
                         </div> --}}
 
-                        <div class="contact-us-details phoneNumber d-flex align-items-center  gap-10">
+                        {{-- <div class="contact-us-details phoneNumber d-flex align-items-center  gap-10">
                             <img src="{{ asset('front/assets/svgs/Black-phone.svg') }}" alt="" />
                             <p class="lead">US: 1-425-864-2958</p class="lead">
                         </div>
@@ -58,7 +58,18 @@
                         <div class="contact-us-details mailId d-flex align-items-center gap-10">
                             <img src="{{ asset('front/assets/svgs/Black-mail.svg') }}" alt="" />
                             <p class="lead">hello@clearrisk.ai</p class="lead">
-                        </div>
+                        </div> --}}
+
+                        @php
+                            $contactDetails = json_decode($oldData->phone_no, true);
+                        @endphp
+
+                        @forelse(($contactDetails as $detail)
+                            <div class="contact-us-details phoneNumber d-flex align-items-center  gap-10">
+                                <img src="{{ asset('front/assets/svgs/Black-phone.svg') }}" alt="" />
+                                <p class="lead">{{ $detail['country'] }}: {{ $detail['phone_no'] }}</p class="lead">
+                            </div>
+                        @endforelse
                     </div>
 
                 </div>
