@@ -192,11 +192,11 @@
                     </div>
                 </div> --}}
 
-                <a href="{{ url('/audit-management') }}" ><img class="w-100"
+                <a href="{{ url('/audit-management') }}" ><img class="pro-image"
                     src="{{ asset('front/assets\images\Optimized-Images\AuditManagement_ClickHome.webp') }}"
                     alt="" /></a>
 
-                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start home-pro-btn">
                     <a href="{{ url('/audit-management') }}" class="text-decoration-none">
                         <button type="button" class="btn btn btn-dark rounded-pill d-flex align-items-center gap-2">
                             View More
@@ -226,7 +226,7 @@
                     </div>
                 </div> --}}
 
-                <a href="{{ url('/enterprise-risk-management') }}" ><img class="w-100"
+                <a href="{{ url('/enterprise-risk-management') }}" ><img class="pro-image"
                     src="{{ asset('front/assets\images\Optimized-Images\EnterpriseRiskManagement_ClickHome.webp') }}"
                     alt="" /></a>
 

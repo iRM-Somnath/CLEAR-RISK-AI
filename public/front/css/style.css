@@ -702,3 +702,9 @@ p.copyright {
     display: flex;
     flex-direction: column;
 }
+
+.pro-image{
+    width: 100%;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+}
