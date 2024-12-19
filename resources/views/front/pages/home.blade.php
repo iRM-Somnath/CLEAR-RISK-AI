@@ -192,9 +192,9 @@
                     </div>
                 </div> --}}
 
-                <a href="{{ url('/audit-management') }}" ><img class="pro-image"
+                {{-- <a href="{{ url('/audit-management') }}" ><img class="pro-image"
                     src="{{ asset('front/assets\images\Optimized-Images\AuditManagement_ClickHome.webp') }}"
-                    alt="" /></a>
+                    alt="" /></a> --}}
 
                 <div class="d-grid gap-2 d-md-flex justify-content-md-start home-pro-btn">
                     <a href="{{ url('/audit-management') }}" class="text-decoration-none">
