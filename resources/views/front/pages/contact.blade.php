@@ -61,15 +61,18 @@
                         </div> --}}
 
                         @php
-                            $contactDetails = json_decode($oldData->phone_no, true);
+                            
+                            $contactDetails = json_decode($oldData->phone_no, TRUE);
+                            // dd($contactDetails);
                         @endphp
-
-                        @forelse(($contactDetails as $detail)
+                            
+                        @foreach($contactDetails  as $key => $value)
+                            
                             <div class="contact-us-details phoneNumber d-flex align-items-center  gap-10">
                                 <img src="{{ asset('front/assets/svgs/Black-phone.svg') }}" alt="" />
-                                <p class="lead">{{ $detail['country'] }}: {{ $detail['phone_no'] }}</p class="lead">
+                                <p class="lead">{{ $value["country"] }}: {{ $value["phone_no"] }}</p class="lead">
                             </div>
-                        @endforelse
+                        @endforeach
                     </div>
 
                 </div>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\front;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Contact;
+use App\Models\SiteSettings;
 
 
 class ContactUs extends Controller
@@ -12,13 +13,11 @@ class ContactUs extends Controller
     public function index()
     {
         $title = "Contact Us";
-        return view('front.pages.contact', compact("title"));
+        $oldData = SiteSettings::find(1);
+        return view('front.pages.contact', compact("title","oldData"));
     }
 
-    // public function submit(Request $request) {
-    //     print_r($request->input());
-
-    // }
+    
 
     public function submit(Request $request)
     {

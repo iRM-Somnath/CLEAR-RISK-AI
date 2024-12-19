@@ -34,6 +34,14 @@ class DatabaseSeeder extends Seeder
             'updated_by' => 1,
         ]);
 
+        Product::factory()->create([
+            'name' => 'Both',
+            'description' => NULL,
+            'status' => '1',
+            'created_by' => 1,
+            'updated_by' => 1,
+        ]);
+
         SiteSettings::factory()->create([
             'logo' => null,
             'favicon' => null,

@@ -40,14 +40,14 @@
                 @empty
 
                 @endforelse
-                @if(!empty($productData))
+                {{-- @if(!empty($productData))
                   <button id="product-btn-both"
                     class="btn btn-outline-dark me-2 rounded-pill product" data-product-id="both"
                     type="button">Both
                     
                   </button>
                     
-                @endif
+                @endif --}}
                   
             </div>
 
