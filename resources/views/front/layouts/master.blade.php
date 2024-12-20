@@ -174,8 +174,9 @@
                 <h4>Subscribe to our Newsletter!</h4>
                 <div class="email-input-field d-flex gap-10">
                     <!-- <label for="customInput" class="form-label">Your Name</label> -->
-                    <input type="text" id="customInput" class="form-control" placeholder="Your email" />
-                    <button type="submit" class="email-submit-btn">
+                    @csrf
+                    <input type="text" id="customInput" class="form-control" name="email" placeholder="Your email" />
+                    <button type="button" class="email-submit-btn" id="subscribeButton">
                         <img src="{{ asset('front/assets/svgs/Right-Long-Arrow.svg') }}" alt="" />
                     </button>
                 </div>
@@ -188,6 +189,47 @@
 
     <script src="{{ asset('front/js/bootstrap.bundle.js') }}"></script>
     <script src="{{ asset('front/js/script.js') }}"></script>
+
+ <script>
+   const subscribeBtn = document.getElementById('subscribeButton');
+   subscribeBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const emailInput = document.getElementById('customInput').value;
+      const email = emailInput.trim();  // Get the email value
+
+        // Validate the email input
+        if (!validateEmail(email)) {
+            console.log("Please enter a valid email address.", "error");
+            return;  // Exit if the email is invalid
+        }
+
+        
+   })
+
+  function validateEmail(email) {
+    // Regular expression for validating email
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return emailPattern.test(email);
+  }
+
+  function postData(dataJson,url){
+    fetch(`${baseUrl}subscribed-newsletter`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(dataJson)
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+    })
+    .catch(error => {
+        console.error('There was an error with the POST request:', error);
+    });
+  }
+</script>
+
     @stack('scripts')
 </body>
 
