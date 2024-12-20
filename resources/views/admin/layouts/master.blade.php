@@ -215,7 +215,7 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="nav-parent  {{ Request::segment(2)==='blogs'?'nav-expanded nav-active':'' }}">
+                                {{-- <li class="nav-parent  {{ Request::segment(2)==='blogs'?'nav-expanded nav-active':'' }}">
                                     <a href="javascript:void(0)">
                                         <i class="fa fa-forward" aria-hidden="true"></i>
                                         <span>Home Management</span>
@@ -232,7 +232,8 @@
                                             </a>
                                         </li>
                                     </ul>
-                                </li>
+                                </li> --}}
+                                
                                 <li class="{{ Request::segment(2)==='site-settings'?'nav-active':'' }}">
                                     <a href="{{ route("admin.site-settings") }}">
                                         <i class="fa fa-gear" aria-hidden="true"></i>

@@ -7,8 +7,9 @@ use App\Http\Controllers\admin\PricingManagement;
 use App\Http\Controllers\admin\EventManagement;
 use App\Http\Controllers\admin\FaqsManagement;
 use App\Http\Controllers\admin\BlogManagement;
-use App\Http\Controllers\admin\HomeManagement;
+// use App\Http\Controllers\admin\HomeManagement;
 use App\Http\Controllers\admin\SiteManagement;
+use App\Http\Controllers\admin\SubscribedNewsletterController;
 
 
 
@@ -18,7 +19,7 @@ use App\Http\Controllers\front\About;
 use App\Http\Controllers\front\AuditManagement;
 use App\Http\Controllers\front\EnterpriseRiskManagement;
 use App\Http\Controllers\front\Pricing;
-use App\Http\Controllers\front\ContactUS;
+use App\Http\Controllers\front\ContactUs;
 use App\Http\Controllers\front\Blogs;
 use App\Http\Controllers\front\Events;
 
@@ -35,7 +36,7 @@ Route::get('/enterprise-risk-management', [EnterpriseRiskManagement::class, 'ind
 Route::get('/pricing', [Pricing::class, 'index'])->name('pricing');
 Route::post('/get-plans', [Pricing::class, 'getPlans'])->name('get-plans');
 
-Route::get('/contact-us', [ContactUS::class, 'index'])->name('contactUS-us');
+Route::get('/contact-us', [ContactUs::class, 'index'])->name('contactUS-us');
 // Route::post('/submit', [Contact::class, 'submit'])->name('contact-us');
 // Route::post('/contact-us', [Contact::class, 'submit'])->name('contact-form');
 
@@ -46,7 +47,7 @@ Route::get('/blogs/{slug}', [Blogs::class, 'singleBlog'])->name('blogs.show');
 Route::get('/events', [Events::class, 'index'])->name('events.index');
 
 Route::get('/HomeCms', [Events::class, 'index'])->name('events.index');
-
+Route::post('subscribed-newsletter', [SubscribedNewsletterController::class, 'save'])->name('subscribed_newsletters');
 
 Route::prefix('admin')->group(function () {
     Route::get('login', [Authenticate::class, 'login'])->name('admin.login');
@@ -84,14 +85,16 @@ Route::prefix('admin')->group(function () {
             Route::get('/edit/{id}', [BlogManagement::class, 'add'])->name('admin.blogs.edit');
         });
 
-        Route::prefix('home')->group(function () {
-            Route::get('/list', [HomeManagement::class, 'index'])->name('admin.blogs.list');
-            Route::get('/add', [BlogManagement::class, 'add'])->name('admin.blogs.add');
-            Route::post('/save', [BlogManagement::class, 'save'])->name('admin.blogs.save');
-            Route::get('/edit/{id}', [BlogManagement::class, 'add'])->name('admin.blogs.edit');
-        });
+        // Route::prefix('home')->group(function () {
+        //     Route::get('/list', [HomeManagement::class, 'index'])->name('admin.blogs.list');
+        //     Route::get('/add', [BlogManagement::class, 'add'])->name('admin.blogs.add');
+        //     Route::post('/save', [BlogManagement::class, 'save'])->name('admin.blogs.save');
+        //     Route::get('/edit/{id}', [BlogManagement::class, 'add'])->name('admin.blogs.edit');
+        // });
 
         Route::get('/site-settings', [SiteManagement::class, 'index'])->name('admin.site-settings');
         Route::post('/site-settings/save', [SiteManagement::class, 'save'])->name('admin.site-settings.save');
+
+       
     });
 });

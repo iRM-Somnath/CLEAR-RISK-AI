@@ -73,6 +73,11 @@
                                 <p class="lead">{{ $value["country"] }}: {{ $value["phone_no"] }}</p class="lead">
                             </div>
                         @endforeach
+
+                        <div class="contact-us-details mailId d-flex align-items-center gap-10">
+                            <img src="{{ asset('front/assets/svgs/Black-mail.svg') }}" alt="" />
+                            <p class="lead">hello@clearrisk.ai</p class="lead">
+                        </div>
                     </div>
 
                 </div>
