@@ -6,7 +6,7 @@
     <!-- Basic -->
     <meta charset="UTF-8">
 
-    <title>CLEAR RISK : {{ $title??'' }}</title>
+    <title>CLEAR RISK : {{ $title ?? '' }}</title>
     <meta name="keywords" content="HTML5 Admin Template" />
     <meta name="description" content="Porto Admin - Responsive HTML5 Template">
     <meta name="author" content="okler.net">
@@ -53,8 +53,8 @@
         <header class="header">
             <div class="logo-container">
                 <a href="../1.7.0" class="logo">
-                    <img src="{{asset('front/assets/images/Optimized-Images/navimage-66dad39351057.webp')}}" width="75" height="35"
-                        alt="Clear-Risk Admin" />
+                    <img src="{{ asset('front/assets/images/Optimized-Images/navimage-66dad39351057.webp') }}"
+                        width="75" height="35" alt="Clear-Risk Admin" />
                 </a>
                 <div class="visible-xs toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html"
                     data-fire-event="sidebar-left-opened">
@@ -74,7 +74,8 @@
                                 class="img-circle"
                                 data-lock-picture="{{ asset('admin/assets/images/!logged-user.jpg ') }}" />
                         </figure>
-                        <div class="profile-info" data-lock-name="{{ Auth::user()->name }}" data-lock-email="{{ Auth::user()->email }}">
+                        <div class="profile-info" data-lock-name="{{ Auth::user()->name }}"
+                            data-lock-email="{{ Auth::user()->email }}">
                             <span class="name">{{ Auth::user()->name }}</span>
                             <span class="role">Administrator</span>
                         </div>
@@ -124,97 +125,119 @@
                         <nav id="menu" class="nav-main" role="navigation">
 
                             <ul class="nav nav-main">
-                                <li class="{{ Request::segment(2)==='dashboard'?'nav-active':'' }}">
-                                    <a href="{{ route("admin.dashboard") }}">
+                                <li class="{{ Request::segment(2) === 'dashboard' ? 'nav-active' : '' }}">
+                                    <a href="{{ route('admin.dashboard') }}">
                                         <i class="fa fa-home" aria-hidden="true"></i>
                                         <span>Dashboard</span>
                                     </a>
                                 </li>
-                                <li class="nav-parent {{ Request::segment(2)==='pricing'?'nav-expanded nav-active':'' }}">
+                                <li
+                                    class="nav-parent {{ Request::segment(2) === 'pricing' ? 'nav-expanded nav-active' : '' }}">
                                     <a href="javascript:void(0)">
                                         <i class="fa fa-forward" aria-hidden="true"></i>
                                         <span>Pricing Management</span>
                                     </a>
                                     <ul class="nav nav-children">
-                                        <li class="{{ (Request::segment(2)==='pricing' && Request::segment(3)==='list')?'nav-active':'' }}">
-                                            <a href="{{ route("admin.pricing.list") }}">
+                                        <li
+                                            class="{{ Request::segment(2) === 'pricing' && Request::segment(3) === 'list' ? 'nav-active' : '' }}">
+                                            <a href="{{ route('admin.pricing.list') }}">
                                                 List
                                             </a>
                                         </li>
-                                        <li class="{{ (Request::segment(2)==='pricing' && Request::segment(3)==='add')?'nav-active':'' }}">
-                                            <a href="{{ route("admin.pricing.add") }}">
-                                               add
+                                        <li
+                                            class="{{ Request::segment(2) === 'pricing' && Request::segment(3) === 'add' ? 'nav-active' : '' }}">
+                                            <a href="{{ route('admin.pricing.add') }}">
+                                                add
                                             </a>
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="nav-parent {{ Request::segment(2)==='event'?'nav-expanded nav-active':'' }}">
+                                <li
+                                    class="nav-parent {{ Request::segment(2) === 'event' ? 'nav-expanded nav-active' : '' }}">
                                     <a href="javascript:void(0)">
                                         <i class="fa fa-forward" aria-hidden="true"></i>
                                         <span>Event Management</span>
                                     </a>
                                     <ul class="nav nav-children">
-                                        <li class="{{ (Request::segment(2)==='event' && Request::segment(3)==='list')?'nav-active':'' }}">
-                                            <a href="{{ route("admin.event.list") }}">
+                                        <li
+                                            class="{{ Request::segment(2) === 'event' && Request::segment(3) === 'list' ? 'nav-active' : '' }}">
+                                            <a href="{{ route('admin.event.list') }}">
                                                 List
                                             </a>
                                         </li>
-                                        <li class="{{ (Request::segment(2)==='event' && Request::segment(3)==='add')?'nav-active':'' }}">
-                                            <a href="{{ route("admin.event.add") }}">
-                                               add
+                                        <li
+                                            class="{{ Request::segment(2) === 'event' && Request::segment(3) === 'add' ? 'nav-active' : '' }}">
+                                            <a href="{{ route('admin.event.add') }}">
+                                                add
                                             </a>
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="nav-parent  {{ Request::segment(2)==='faqs'?'nav-expanded nav-active':'' }}">
+                                <li
+                                    class="nav-parent  {{ Request::segment(2) === 'faqs' ? 'nav-expanded nav-active' : '' }}">
                                     <a href="javascript:void(0)">
                                         <i class="fa fa-forward" aria-hidden="true"></i>
                                         <span>FAQ Management</span>
                                     </a>
                                     <ul class="nav nav-children">
-                                        <li class="{{  (Request::segment(2)==='faqs' && Request::segment(3)==='list')?'nav-active':'' }}">
-                                            <a href="{{ route("admin.faqs.list") }}">
+                                        <li
+                                            class="{{ Request::segment(2) === 'faqs' && Request::segment(3) === 'list' ? 'nav-active' : '' }}">
+                                            <a href="{{ route('admin.faqs.list') }}">
                                                 List
                                             </a>
                                         </li>
-                                        <li class="{{ (Request::segment(2)==='faqs' && Request::segment(3)==='add')?'nav-active':'' }}">
-                                            <a href="{{ route("admin.faqs.add") }}">
-                                               add
+                                        <li
+                                            class="{{ Request::segment(2) === 'faqs' && Request::segment(3) === 'add' ? 'nav-active' : '' }}">
+                                            <a href="{{ route('admin.faqs.add') }}">
+                                                add
                                             </a>
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="nav-parent  {{ Request::segment(2)==='blogs'?'nav-expanded nav-active':'' }}">
+                                <li
+                                    class="nav-parent  {{ Request::segment(2) === 'blogs' ? 'nav-expanded nav-active' : '' }}">
                                     <a href="javascript:void(0)">
                                         <i class="fa fa-forward" aria-hidden="true"></i>
                                         <span>Blog Management</span>
                                     </a>
                                     <ul class="nav nav-children">
-                                        <li class="{{ (Request::segment(2)==='blogs' && Request::segment(3)==='list')?'nav-active':'' }}">
-                                            <a href="{{ route("admin.blogs.list") }}">
+                                        <li
+                                            class="{{ Request::segment(2) === 'blogs' && Request::segment(3) === 'list' ? 'nav-active' : '' }}">
+                                            <a href="{{ route('admin.blogs.list') }}">
                                                 List
                                             </a>
                                         </li>
-                                        <li class="{{ (Request::segment(2)==='blogs' && Request::segment(3)==='add')?'nav-active':'' }}">
-                                            <a href="{{ route("admin.blogs.add") }}">
-                                               add
+                                        <li
+                                            class="{{ Request::segment(2) === 'blogs' && Request::segment(3) === 'add' ? 'nav-active' : '' }}">
+                                            <a href="{{ route('admin.blogs.add') }}">
+                                                add
                                             </a>
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="nav-parent  {{ Request::segment(2)==='blogs'?'nav-expanded nav-active':'' }}">
+                                <li
+                                    class="nav-parent  {{ Request::segment(2) === 'contactUS-us' ? 'nav-expanded nav-active' : '' }}">
                                     <a href="javascript:void(0)">
                                         <i class="fa fa-forward" aria-hidden="true"></i>
                                         <span>Contact Us Management</span>
                                     </a>
                                     <ul class="nav nav-children">
-                                        <li class="{{ (Request::segment(2)==='blogs' && Request::segment(3)==='list')?'nav-active':'' }}">
-                                            <a href="{{ route("admin.blogs.list") }}">
+                                        <li
+                                            class="{{ Request::segment(2) === 'contactUS-us' && Request::segment(3) === 'list' ? 'nav-active' : '' }}">
+                                            <a href="{{ route('contactUS-us') }}">
                                                 List
                                             </a>
                                         </li>
                                     </ul>
                                 </li>
+                                <li class="{{ Request::segment(2) === 'subscribed-newsletter' ? 'nav-active' : '' }}">
+                                    <a href="{{ route('admin.subscribed-newsletters.list') }}">
+                                        <i class="fa fa-forward" aria-hidden="true"></i>
+                                        <span>Subscribed Emails</span>
+                                    </a>
+                                </li>
+                               
+                                
                                 {{-- <li class="nav-parent  {{ Request::segment(2)==='blogs'?'nav-expanded nav-active':'' }}">
                                     <a href="javascript:void(0)">
                                         <i class="fa fa-forward" aria-hidden="true"></i>
@@ -233,9 +256,9 @@
                                         </li>
                                     </ul>
                                 </li> --}}
-                                
-                                <li class="{{ Request::segment(2)==='site-settings'?'nav-active':'' }}">
-                                    <a href="{{ route("admin.site-settings") }}">
+
+                                <li class="{{ Request::segment(2) === 'site-settings' ? 'nav-active' : '' }}">
+                                    <a href="{{ route('admin.site-settings') }}">
                                         <i class="fa fa-gear" aria-hidden="true"></i>
                                         <span>Site Settings</span>
                                     </a>
@@ -266,7 +289,7 @@
 
             <section role="main" class="content-body">
                 <header class="page-header">
-                    <h2>{{ $title??'' }}</h2>
+                    <h2>{{ $title ?? '' }}</h2>
 
                     {{-- <div class="right-wrapper pull-right">
                         <ol class="breadcrumbs">

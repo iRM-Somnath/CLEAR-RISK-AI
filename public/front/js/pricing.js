@@ -13,14 +13,11 @@ const productId = document.getElementsByClassName('product');
     toggleButtonStyle(firstElementProduct);  // Set initial button style
     dataJson.productId = firstElementProduct.getAttribute('data-product-id');
     updateProduct(dataJson);
-
-    console.log(dataJson);
 })();
 
 planType.addEventListener('change', function(event) {
     dataJson.planType = planType.checked ? "2" : "1";
     updateProduct(dataJson);
-    console.log(dataJson);
 });
 
 for (let i = 0; i < productId.length; i++) {
@@ -32,7 +29,6 @@ for (let i = 0; i < productId.length; i++) {
         toggleButtonStyle(event.target);
 
         updateProduct(dataJson);
-        console.log(dataJson);
     });
 }
 

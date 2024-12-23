@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('subscribed_newsletters', function (Blueprint $table) {
             $table->id();
             $table->string('email')->unique();
+            $table->enum('status', [0, 1, 3])->default(1)->comment('0 = inactive, 1 = active, 3 = deleted');
             $table->timestamps();
         });
     }

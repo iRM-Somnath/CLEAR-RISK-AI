@@ -708,3 +708,15 @@ p.copyright {
     aspect-ratio: 3/2;
     object-fit: contain;
 }
+
+/* 
+#footer-alert {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+
+#footer-alert.show {
+    display: block;
+    opacity: 1;
+} */
