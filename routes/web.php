@@ -22,6 +22,7 @@ use App\Http\Controllers\front\Pricing;
 use App\Http\Controllers\front\ContactUs;
 use App\Http\Controllers\front\Blogs;
 use App\Http\Controllers\front\Events;
+use App\Http\Controllers\front\SubscribedEmails;
 
 
 
@@ -47,7 +48,8 @@ Route::get('/blogs/{slug}', [Blogs::class, 'singleBlog'])->name('blogs.show');
 Route::get('/events', [Events::class, 'index'])->name('events.index');
 
 Route::get('/HomeCms', [Events::class, 'index'])->name('events.index');
-Route::post('subscribed-newsletter', [SubscribedNewsletterController::class, 'save'])->name('subscribed_newsletters');
+
+Route::post('subscribed-emails', [SubscribedEmails::class, 'save'])->name('subscribed-emails');
 
 Route::prefix('admin')->group(function () {
     Route::get('login', [Authenticate::class, 'login'])->name('admin.login');
@@ -95,6 +97,8 @@ Route::prefix('admin')->group(function () {
         Route::get('/site-settings', [SiteManagement::class, 'index'])->name('admin.site-settings');
         Route::post('/site-settings/save', [SiteManagement::class, 'save'])->name('admin.site-settings.save');
 
-       
+        Route::get('/subscribed-newsletter', [SubscribedNewsletterController::class, 'index'])->name('admin.subscribed-newsletters.list');
+        Route::post('/subscribed-newsletter', [SubscribedNewsletterController::class, 'save'])->name('admin.subscribed-newsletters.save');
+    
     });
 });

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\front;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -8,15 +8,8 @@ use App\Models\SubscribedNewsletter;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
-class SubscribedNewsletterController extends Controller
+class SubscribedEmails extends Controller
 {
-    // Show the form for subscribing
-    public function create()
-    {
-        // Return the view where the user can subscribe to the newsletter
-        $title = "Newsletter Subscription";
-        return view('admin.pages.subscribed-newsletters.create', compact('title'));
-    }
 
     // Handle the form submission and store the email
     public function save(Request $request)
@@ -42,12 +35,11 @@ class SubscribedNewsletterController extends Controller
                 return response()->json([
                     'status' => true,
                     'message' => 'You have successfully subscribed to the newsletter!',
-                    'redirect' => route('subscribed_newsletters.create'),
                 ]);
             }
         } catch (\Exception $e) {
             DB::rollBack(); // Rollback the transaction in case of error
-
+            // dd($e);
             // Return an error response with the exception message
             return response()->json([
                 'status' => false,
