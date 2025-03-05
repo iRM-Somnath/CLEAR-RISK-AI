@@ -18,7 +18,7 @@
                 @csrf
                 <div class="panel-body">
                     <div class="row">
-                        <div class="col-sm-4">
+                        <div class="col-sm-3">
                             <div class="form-group">
                                 <label class="control-label">Choose Product</label>
                                 <select class="form-control mb-md" name="choose_product">
@@ -32,7 +32,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-sm-3">
                             <div class="form-group">
                                 <label class="control-label">Choose plan type</label>
                                 <select class="form-control mb-md" name="choose_plans">
@@ -42,7 +42,13 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label class="control-label">Original Price</label>
+                                <input type="text" name="original_price" class="form-control checkDecimal requiredCheck " data-check="Original Price" value="{{ !is_null($oldData)?$oldData->original_price:'' }}">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
                             <div class="form-group">
                                 <label class="control-label">Price</label>
                                 <input type="text" name="price" class="form-control checkDecimal requiredCheck " data-check="Price" value="{{ !is_null($oldData)?$oldData->price:'' }}">

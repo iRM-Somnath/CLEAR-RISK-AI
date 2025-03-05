@@ -292,7 +292,9 @@ body {
     border-radius: 5px;
     padding: 5px;
     animation: pricing-shake 0.5s ease-in-out 1; /* Apply the shake animation */
+    display: ruby;
 }
+.new-price{font-size: xx-large;}
 
 @keyframes pricing-shake {
     0% {

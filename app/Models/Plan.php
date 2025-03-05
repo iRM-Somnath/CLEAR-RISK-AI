@@ -14,6 +14,7 @@ class Plan extends Model
         'description',
         'status',
         'price',
+        'original_price',
         'plan_type',
         'created_by',
         'updated_by',

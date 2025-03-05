@@ -40,6 +40,7 @@ class PricingManagement extends Controller
             $validated = $request->validate([
                 'choose_product' => 'required',
                 'choose_plans' => 'required',
+                'original_price' => 'required',
                 'price' => 'required',
                 'title' => 'required',
                 'description' => 'required',
@@ -53,14 +54,17 @@ class PricingManagement extends Controller
                             'redirect' => '',
                         ]);
                     endif;
+                    // DB::enableQueryLog();
                     Plan::create([
                         "product_id" => $request->input('choose_product'),
                         "plan_type" => $request->input('choose_plans'),
+                        "original_price" => $request->input('original_price'),
                         "price" => $request->input('price'),
                         "name" => $request->input('title'),
                         "description" => $request->input('description'),
                         "created_by" => Auth::user()->id,
                     ]);
+                    // dd(DB::getQueryLog());
                     DB::commit();
                     return response()->json([
                         'status' => TRUE,
@@ -78,6 +82,7 @@ class PricingManagement extends Controller
                     Plan::where('id', $request->input('updateId'))->update([
                         "product_id" => $request->input('choose_product'),
                         "plan_type" => $request->input('choose_plans'),
+                        "original_price" => $request->input('original_price'),
                         "price" => $request->input('price'),
                         "name" => $request->input('title'),
                         "description" => $request->input('description'),
