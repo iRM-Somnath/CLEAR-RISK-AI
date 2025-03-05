@@ -62,9 +62,12 @@ function updateProduct(dataJson) {
                 <div class="text">
                     <div class="card-heading product-card-heading product-name">${item.name}</div>
                     <div class="card-heading product-card-heading product-price">
-                        <p class="new-price">$${item.price}</p> 
-                        <s class="orginal-price">$${item.price}</s>
-                    </div>
+                        <p class="new-price">$${item.price}</p> `;
+                    if(item.show_original_price==1){
+                       html+=`<s class="orginal-price">$${item.original_price}</s>`
+                    }
+                    
+                html+=`</div>
                     <div class="bio">
                     ${item.description}
                     </div>
