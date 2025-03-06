@@ -38,7 +38,7 @@
                     @forelse ($data as $item)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
-                            <td>{{ $item->product_id == 1 ? 'Internal Audit Management' : 'Enterprise Risk Management' }}</td>
+                            <td>{{ $item?->products?->name}}</td>
                             <td>
                                 {{ $item->plan_type == 1 ? 'Monthly' : 'Yearly' }}
 
