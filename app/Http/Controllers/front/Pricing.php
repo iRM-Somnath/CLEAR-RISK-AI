@@ -27,12 +27,7 @@ class Pricing extends Controller
             ]);
             if ($validated):
                 // DB::enableQueryLog();
-                $data = Plan::where('status', '1')->where('plan_type', $request->planType);
-                if($request->productId == "3"):
-                    $data = $data->get();
-                else:
-                    $data = $data->where('product_id', $request->productId)->get();
-                endif;
+                $data = Plan::where('status', '1')->where('plan_type', $request->planType)->where('product_id', $request->productId)->get();
                 // dd(DB::getQueryLog());
                 if ($data->count() > 0):
                     return response()->json([
