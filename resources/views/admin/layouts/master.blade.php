@@ -20,7 +20,6 @@
 
     <!-- Vendor CSS -->
     <link rel="stylesheet" href="{{ asset('admin/assets/vendor/bootstrap/css/bootstrap.css') }}" />
-
     <link rel="stylesheet" href="{{ asset('admin/assets/vendor/font-awesome/css/font-awesome.css') }}" />
     <link rel="stylesheet" href="{{ asset('admin/assets/vendor/magnific-popup/magnific-popup.css') }}" />
     <link rel="stylesheet"
@@ -236,8 +235,8 @@
                                         <span>Subscribed Emails</span>
                                     </a>
                                 </li>
-                               
-                                
+
+
                                 {{-- <li class="nav-parent  {{ Request::segment(2)==='blogs'?'nav-expanded nav-active':'' }}">
                                     <a href="javascript:void(0)">
                                         <i class="fa fa-forward" aria-hidden="true"></i>

@@ -1,3 +1,6 @@
+@push('admin-css')
+    <link rel="stylesheet" href="{{ asset('admin/assets/vendor/jquery-datatables-bs3/assets/css/datatables.css') }}" />
+@endpush
 @extends('admin.layouts.master')
 @section('content')
     <section class="panel">
@@ -10,7 +13,7 @@
             {{-- <h2 class="panel-title">Ajax</h2> --}}
         </header>
         <div class="panel-body">
-            <table class="table table-bordered table-striped">
+            <table class="table table-bordered table-striped" id="datatable-default">
                 <thead>
                     <tr>
                         <th width="5%">Sl No.</th>
@@ -73,9 +76,12 @@
             </table>
         </div>
     </section>
-    
+
 @endsection
 @push('admin-js')
+<script src="{{ asset('admin/assets/vendor/jquery-datatables/media/js/jquery.dataTables.js') }} "></script>
+<script src="{{ asset('admin/assets/javascripts/tables/examples.datatables.default.js')}}"></script>
+<script src="{{ asset('admin/assets/vendor/jquery-datatables/media/js/dataTables.bootstrap.js') }} "></script>
 <script>
     $(document).on('click',".showprice",function(event) {
         // event.preventDefault();
