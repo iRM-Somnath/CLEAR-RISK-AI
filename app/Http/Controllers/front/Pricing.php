@@ -27,7 +27,7 @@ class Pricing extends Controller
             ]);
             if ($validated):
                 // DB::enableQueryLog();
-                $data = Plan::where('status', '1')->where('plan_type', $request->planType)->where('product_id', $request->productId)->get();
+                $data = Plan::where('status', '1')->where('plan_type', $request->planType)->where('product_id', $request->productId)->orderby("sequence","asc")->get();
                 // dd(DB::getQueryLog());
                 if ($data->count() > 0):
                     return response()->json([
