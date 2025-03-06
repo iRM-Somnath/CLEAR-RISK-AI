@@ -47,7 +47,7 @@ class PricingManagement extends Controller
             ]);
             if ($validated):
                 if (empty($request->input('updateId'))):
-                    if (Plan::whereRaw("LOWER(`name`) = '" . strtolower($request->title) . "'")->where('plan_type','=',$request->input('choose_plans'))->where('status', '!=', 3)->exists()):
+                    if (Plan::whereRaw("LOWER(`name`) = '" . strtolower($request->title) . "'")->where('plan_type','=',$request->input('choose_plans'))->where('product_id','=',$request->input('choose_product'))->where('status', '!=', 3)->exists()):
                         return response()->json([
                             'status' => FALSE,
                             'message' => 'Plan already exists!',
@@ -72,10 +72,10 @@ class PricingManagement extends Controller
                         'redirect' => 'pricing/list',
                     ]);
                 else:
-                    if (Plan::whereRaw("LOWER(`name`) = '" . strtolower($request->title) . "'")->where('plan_type','=',$request->input('choose_plans'))->where('status', '!=', 3)->where('id', '<>', $request->input('updateId'))->exists()):
+                    if (Plan::whereRaw("LOWER(`name`) = '" . strtolower($request->title) . "'")->where('plan_type','=',$request->input('choose_plans'))->where('product_id','=',$request->input('choose_product'))->where('status', '!=', 3)->where('id', '<>', $request->input('updateId'))->exists()):
                         return response()->json([
                             'status' => FALSE,
-                            'message' => 'Question already exists!',
+                            'message' => 'Plan already exists!',
                             'redirect' => '',
                         ]);
                     endif;
