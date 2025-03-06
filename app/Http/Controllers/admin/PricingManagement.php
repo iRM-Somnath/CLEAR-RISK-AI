@@ -86,7 +86,7 @@ class PricingManagement extends Controller
                         "price" => $request->input('price'),
                         "name" => $request->input('title'),
                         "description" => $request->input('description'),
-                        "created_by" => Auth::user()->id,
+                        "updated_by" => Auth::user()->id,
                     ]);
                     DB::commit();
                     return response()->json([
@@ -95,6 +95,44 @@ class PricingManagement extends Controller
                         'redirect' => 'pricing/list',
                     ]);
                 endif;
+            else:
+                return response()->json([
+                    'status' => FALSE,
+                    'message' => 'All data are not present in the request!',
+                    'redirect' => '',
+                ]);
+            endif;
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return response()->json([
+                'status' => FALSE,
+                'message' => 'Oops Sank! Something went wrong',
+                'redirect' => '',
+                'error' => $e->getMessage()
+            ]);
+        }
+    }
+
+    public function showPrice(Request $request){
+        DB::beginTransaction();
+        $validated = $request->validate([
+            'id' => 'required|numeric',
+            'value' => 'required|numeric',
+        ]);
+        try{
+            if ($validated):
+                // DB::enableQueryLog();
+                Plan::where('id', $request->input('id'))->update([
+                    'show_original_price' => $request->input('value'),
+                ]);
+                DB::commit();
+                // dd(DB::getQueryLog());
+                return response()->json([
+                    'status' => TRUE,
+                    'message' => 'Request performed successfully!',
+                    'redirect' => 'pricing/list',
+                    'data' => (object)[],
+                ]);
             else:
                 return response()->json([
                     'status' => FALSE,

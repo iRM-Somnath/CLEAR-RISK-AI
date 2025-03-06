@@ -64,6 +64,7 @@ Route::prefix('admin')->group(function () {
             Route::get('/add', [PricingManagement::class, 'add'])->name('admin.pricing.add');
             Route::post('/save', [PricingManagement::class, 'save'])->name('admin.pricing.save');
             Route::get('/edit/{id}', [PricingManagement::class, 'add'])->name('admin.pricing.edit');
+            Route::post('/show-price', [PricingManagement::class, 'showPrice'])->name('admin.pricing.show-original-price');
         });
 
         Route::prefix('event')->group(function () {
@@ -99,6 +100,6 @@ Route::prefix('admin')->group(function () {
 
         Route::get('/subscribed-newsletter', [SubscribedNewsletterController::class, 'index'])->name('admin.subscribed-newsletters.list');
         Route::post('/subscribed-newsletter', [SubscribedNewsletterController::class, 'save'])->name('admin.subscribed-newsletters.save');
-    
+
     });
 });

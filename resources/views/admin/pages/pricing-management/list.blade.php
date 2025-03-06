@@ -21,7 +21,6 @@
                         <th width="10%">Plan Type</th>
                         <th width="25%">Plan Name</th>
                         <th width="25%">Description</th>
-                        {{-- <th width="5%">Currency</th> --}}
                         <th width="5%">Original Price</th>
                         <th width="5%">Price</th>
                         <th width="10%">Show Original Price</th>
@@ -35,6 +34,7 @@
                     </tr>
                 </thead>
                 <tbody>
+                    
                     @forelse ($data as $item)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
@@ -47,11 +47,12 @@
                             <td>{!! $item->description !!}</td>
                             <td>{!! $item->original_price !!}</td>
                             <td>{{ $item->price }}</td>
-                            <td><input type="checkbox" class="showprice" data-row-id="{{$item->id}}" data-key="id" data-table="plans" data-col="show_original_price"></td>
+                            <td><input type="checkbox" class="showprice" data-row-id="{{$item->id}}" {{ ($item->show_original_price == '1')?'checked':'' }}></td>
                             <td>{{ date('d-m-Y h:i A', strtotime($item->created_at)) }}</td>
                             <td>{{ $item?->creator?->name ?? 'N/A' }}</td>
-                            <td>{{ $item?->lastUpdator?->name ?? 'N/A' }}</td>
+
                             <td>{{ date('d-m-Y h:i A', strtotime($item->updated_at)) }}</td>
+                            <td>{{ $item?->lastUpdator?->name ?? 'N/A' }}</td>
                             <td>
                                 @if ($item->status == 1)
                                     <span class="label label-success change-status" id="{{ $item->id }}"
@@ -91,7 +92,50 @@
         }else{
             isChecked = 0
         }
-        console.log(isChecked)
+        const dataJSON = {
+            id: $(this).data('row-id'),
+            value: isChecked,
+            _token
+        }
+        $.confirm({
+            icon: "fa fa-spinner fa-spin",
+            title: "Confirm!",
+            content: "Do you really want to do this ?",
+            type: "orange",
+            typeAnimated: true,
+            buttons: {
+                confirm: function () {
+                    $.ajax({
+                        type: "POST",
+                            headers:{},
+                            url: baseUrl + "pricing/show-price",
+                            data: dataJSON,
+                            dataType: "JSON",
+                            success: function (data) {
+                                if (data.status) {
+                                    $.alert({
+                                        icon: "fa fa-check",
+                                        title: "Success!",
+                                        content: data.message,
+                                        type: "green",
+                                        typeAnimated: true,
+                                    });
+
+                                }
+                            }
+                        });
+                },
+                cancel: function () {
+                    $.alert({
+                    icon: "fa fa-times",
+                    title: "Canceled!",
+                    content: "Process canceled",
+                    type: "purple",
+                    typeAnimated: true,
+                    });
+                }
+            }
+        });
 
     })
 </script>
