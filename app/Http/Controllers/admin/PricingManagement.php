@@ -40,7 +40,7 @@ class PricingManagement extends Controller
             $validated = $request->validate([
                 'choose_product' => 'required',
                 'choose_plans' => 'required',
-                'original_price' => 'required',
+                // 'original_price' => '',
                 'price' => 'required',
                 'title' => 'required',
                 'description' => 'required',
