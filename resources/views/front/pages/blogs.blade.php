@@ -15,7 +15,7 @@
         <div class="heading d-flex flex-column align-items-center gap-10">
             <h1 class="display-5 lh-1 mb-3 main-heading-dark">Our Blog</h1>
             <p class="text-center">
-                Welcome to TRPGLOBAL! We are your trusted partners in the world of
+                Welcome to ClearRisk! We are your trusted partners in the world of
                 Technology Risk Management, offering expert advice and tailored
                 solutions to optimize your company’s journey.
             </p>
@@ -42,7 +42,7 @@
                         <div class="blog-icon d-flex blog-icon gap-1">
                             <img src="{{asset('front/assets/svgs/calendar-days-solid (1).svg')}}" alt="" />
                             <p>{{date('d/m/Y', strtotime($item->published_date)) }}</p>
-                        </div> 
+                        </div>
                     </div>
                     <p>  {{ \Str::words(strip_tags($item->content), 20, '...') }}</p>
 
