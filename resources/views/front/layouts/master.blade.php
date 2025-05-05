@@ -5,6 +5,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="icon" href="{{ asset('front/favicons/favicon.ico') }}" sizes="16x16" type="image/x-icon">
+    <link rel="icon" href="{{ asset('front/favicons/favicon-16x16.png') }}" sizes="16x16" type="image/png">
+    <link rel="icon" href="{{ asset('front/favicons/favicon-32x32.png') }}" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="{{ asset('front/favicons/apple-touch-icon.png') }}">
+    <link rel="icon" sizes="192x192" href="{{ asset('front/favicons/android-chrome-192x192.png') }}">
+    <link rel="icon" sizes="512X512" href="{{ asset('front/favicons/android-chrome-512x512.png') }}">
+
     @stack('meta-tags')
     <title>{{ $title ? $title : '' }}</title>
     <link rel="stylesheet" href="{{ asset('front/css/style.css') }}" />
@@ -199,7 +206,7 @@
                 document.querySelector('#alert-desc').textContent = "Kindly enter a valid e-Mail Id !";
                 setTimeout(() => {
                     footerAlertBox.style.display = 'none'; // Hide completely after fade-out
-                }, 3000); 
+                }, 3000);
                 return; // Exit if the email is invalid
             }
             postData({
@@ -234,11 +241,11 @@
                         footerAlertBox.style.display = 'block';
                         footerAlertBox.classList.remove("alert-success");
                         footerAlertBox.classList.add('alert-danger');
-                        document.querySelector('#alert-desc').textContent =  data.error;  
+                        document.querySelector('#alert-desc').textContent =  data.error;
                     }
                     setTimeout(() => {
                              footerAlertBox.style.display = 'none'; // Hide completely after fade-out
-                    }, 3000); 
+                    }, 3000);
                 })
                 .catch(error => {
                     console.error('There was an error with the POST request:', error);
