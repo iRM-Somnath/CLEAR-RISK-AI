@@ -14,6 +14,7 @@ class Blog extends Model
         'image',
         'image_original_name',
         'content',
+        'slug',
         'author',
         'published_date',
         'meta_tags',
