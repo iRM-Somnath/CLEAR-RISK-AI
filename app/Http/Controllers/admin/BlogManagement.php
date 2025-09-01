@@ -50,7 +50,7 @@ class BlogManagement extends Controller
             if ($validated) {
                 $imageName = null;
                 $imageOriginalName = null;
-
+                $slug = Str::slug($request->title);
                 // Handle image upload if an image file is provided
                 if ($request->hasFile('image')) {
                     $image = $request->file('image');
@@ -61,7 +61,7 @@ class BlogManagement extends Controller
 
                 if (empty($request->input('updateId'))) {
                     // Check if the blog title already exists (case-insensitive)
-                    if (Blog::whereRaw("LOWER(`title`) = '" . strtolower($request->title) . "'")
+                    if (Blog::whereRaw("LOWER(`slug`) = '" . strtolower($slug) . "'")
                         ->where('status', '!=', 3)
                         ->exists()) {
                         return response()->json([
@@ -75,7 +75,7 @@ class BlogManagement extends Controller
                     Blog::create([
                         "title" => $request->title,
                         "image" => $imageName,
-                        "slug" => Str::slug($request->title),
+                        "slug" => $slug,
                         "image_original_name" => $imageOriginalName,
                         "content" => $request->content,
                         "author" => $request->author,
@@ -95,7 +95,7 @@ class BlogManagement extends Controller
                     ]);
                 } else {
                     // Check for duplicate title excluding the current blog being updated
-                    if (Blog::whereRaw("LOWER(`title`) = '" . strtolower($request->title) . "'")
+                    if (Blog::whereRaw("LOWER(`slug`) = '" . strtolower($slug) . "'")
                         ->where('status', '!=', 3)
                         ->where('id', '<>', $request->input('updateId'))
                         ->exists()) {
@@ -119,7 +119,7 @@ class BlogManagement extends Controller
                     // Update the existing blog post
                     $updateData = [
                         "title" => $request->title,
-                        "slug" => Str::slug($request->title),
+                        "slug" => $slug,
                         "content" => $request->content,
                         "author" => $request->author,
                         "published_date" => $request->published_date,
