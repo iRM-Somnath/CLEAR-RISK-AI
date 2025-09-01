@@ -609,18 +609,14 @@ form {
 .blog-img {
     width: 100%;
     height: 230px;
-    object-fit: cover;
+    /* object-fit: cover; */
 }
 
 .blog-icon img {
     width: 20px;
 }
 
-.blog-img {
-    width: 100%;
-    height: 230px;
-    object-fit: cover;
-}
+
 
 .blog-detail-img img {
     /* width: 80%; */
@@ -711,7 +707,7 @@ p.copyright {
     object-fit: contain;
 }
 
-/* 
+/*
 #footer-alert {
     display: none;
     opacity: 0;

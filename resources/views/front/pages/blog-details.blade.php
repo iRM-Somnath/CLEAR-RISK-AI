@@ -12,8 +12,8 @@
                 {{ $blog->title ?? '' }}
             </h1>
             <div class="blog-detail-img d-flex">
-                <img src="{{  !is_null($blog)?asset('uploads/blog/'.$blog->image ):"" }}" class="" alt="ClearRiskGif"
-                    width="700" height="500" loading="lazy" />
+                <img src="{{  !is_null($blog)?asset('uploads/blog/'.$blog->image ):"" }}" class="" alt="{{$blog->meta_title}}"
+                    loading="lazy" />
             </div>
 
             {!! $blog->content !!}
