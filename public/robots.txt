@@ -1,2 +1,3 @@
 User-agent: *
 Disallow:
+Sitemap: https://clearrisk.ai/sitemap.xml

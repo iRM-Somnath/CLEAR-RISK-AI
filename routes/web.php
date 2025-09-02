@@ -47,7 +47,7 @@ Route::get('/blogs/{slug}', [Blogs::class, 'singleBlog'])->name('blogs.show');
 
 Route::get('/events', [Events::class, 'index'])->name('events.index');
 
-Route::get('/HomeCms', [Events::class, 'index'])->name('events.index');
+// Route::get('/HomeCms', [Events::class, 'index'])->name('events.index');
 
 Route::post('subscribed-emails', [SubscribedEmails::class, 'save'])->name('subscribed-emails');
 

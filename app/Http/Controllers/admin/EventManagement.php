@@ -45,7 +45,7 @@ class EventManagement extends Controller
                 'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
                 'organizer' => 'required|string|max:255',
                 'location' => 'required|string|max:255',
-                'meeting_url' => 'required|url',
+                'meeting_url' => 'nullable|url',
                 'start_date' => 'required|date',
                 'end_date' => 'required|date|after_or_equal:start_date',
             ]);

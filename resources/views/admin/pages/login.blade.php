@@ -101,7 +101,7 @@
                             </div>
                         </div>
 
-                        <span class="mt-lg mb-lg line-thru text-center text-uppercase">
+                        {{-- <span class="mt-lg mb-lg line-thru text-center text-uppercase">
                             <span>or</span>
                         </span>
 
@@ -111,7 +111,7 @@
                             <a class="btn btn-twitter mb-md ml-xs mr-xs">Connect with <i class="fa fa-twitter"></i></a>
                         </div>
 
-                        <p class="text-center">Don't have an account yet? <a href="pages-signup.html">Sign Up!</a></p>
+                        <p class="text-center">Don't have an account yet? <a href="pages-signup.html">Sign Up!</a></p> --}}
 
                     </form>
                 </div>
