@@ -1,0 +1,167 @@
+@extends('front.layouts.master')
+@section('content')
+
+    @push('meta-tags')
+        <meta name="title" content="Contact ClearRisk.AI | Grow Your Business with Risk Management Solutions">
+        <meta name="description"
+            content="Get in touch with ClearRisk.AI today for expert support in growing your business. Reach out for personalized risk management solutions in audit management and enterprise risk management. Contact us via phone, email, or by submitting the contact form on this page.">
+        <meta name="keywords"
+            content="Contact ClearRisk, ClearRisk.AI support, risk management contact, business growth support, audit management inquiries, enterprise risk management inquiries, contact form, ClearRisk phone, ClearRisk email, ClearRisk UK office">
+    @endpush
+
+    <!-- Contact Us Page -->
+
+    <div class="Contact-us-page-container">
+        <div class="col-10 co-sm-8 col-lg-6 w-100 d-flex flex-column gap-20">
+
+            <div class="heading d-flex gap-10 justify-content-center">
+                <h1 class="display-5 fw-bold lh-1 mb-3 main-heading-gray">
+                    Contact ClearRisk.AI Today
+                </h1>
+            </div>
+
+            <!-- <div class="AM-vid d-flex gap-100 justify-content-center ">
+                                                        <video src="../assets/videos/AM-Video.mp4" controls></video>
+                                                        <video src="../assets/videos/AM-Video.mp4" controls></video>
+                                                      </div> -->
+
+            <div class="product d-flex align-items-start px-5 justify-content-around row">
+
+                <div class="col-xl-6 col-lg-6 col-md-10 col-sm-12 col-12 d-flex flex-column gap-20">
+                    <h1 class="display-5 fw-bold lh-1 mb-3 main-heading-dark ">
+                        We support you to grow your business
+                    </h1>
+                    <div class="d-flex flex-column gap-20">
+                        {{-- <div class="address d-flex align-items-center gap-20">
+                            <img src="../assets/svgs/Black-location.svg" alt="" />
+                            <p class="lead">
+                                Suite 1 Second Floor EverdeneHouse Deansleigh Road, Bournemouth,
+                                England, BH7 7DU, United Kingdom
+                            </p class="lead">
+                        </div> --}}
+
+                        <div class="contact-us-details phoneNumber d-flex align-items-center  gap-10">
+                            <img src="{{ asset('front/assets/svgs/Black-phone.svg') }}" alt="" />
+                            <p class="lead">US: 1-425-864-2958</p class="lead">
+                        </div>
+
+                        <div class="contact-us-details phoneNumber d-flex align-items-center gap-10">
+                            <img src="{{ asset('front/assets/svgs/Black-phone.svg') }}" alt="" />
+                            <p class="lead">Germany: 49-176-2590-8274</p class="lead">
+                        </div>
+
+                        <div class="contact-us-details phoneNumber d-flex align-items-center gap-10">
+                            <img src="{{ asset('front/assets/svgs/Black-phone.svg') }}" alt="" />
+                            <p class="lead">UK: 44-7768-012397</p class="lead">
+                        </div>
+
+                        <div class="contact-us-details mailId d-flex align-items-center gap-10">
+                            <img src="{{ asset('front/assets/svgs/Black-mail.svg') }}" alt="" />
+                            <p class="lead">hello@clearrisk.ai</p class="lead">
+                        </div>
+                    </div>
+
+                </div>
+
+                <form class="col-lg-5 d-flex justify-content-center flex-column gap-20" action="submit" method="POST">
+                    @csrf
+                    <h4 class="text-center">Get Started with your Favorite Services</h4>
+                    <div class="row">
+                        <div class="mb-3 col-md-6">
+                            <input type="text" class="form-control" id="first_name" name="first_name"
+                                placeholder="First name*">
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <input type="text" class="form-control" id="last_name" name="last_name"
+                                placeholder="Last name*">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="mb-3 col-md-6">
+                            <input type="text" class="form-control" id="phone_number" name="phone_number"
+                                placeholder="Your phone number*">
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <input type="text" class="form-control" id="email" name="email"
+                                placeholder="Your email*">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="mb-3 col-md-6">
+                            <input type="text" class="form-control" id="designation" name="designation"
+                                placeholder="Your designation*">
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <input type="text" class="form-control" id="country" name="country" placeholder="Country*">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="mb-3">
+                            {{-- <label for="exampleFormControlTextarea1" class="form-label"></label> --}}
+                            <textarea class="form-control" placeholder="Your message*" id="message" name="message" rows="3"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="row px-3">
+                        {{-- <label>Request Demo:</label> --}}
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Audit Management
+                            </label>
+                        </div>
+                        <div class="form-check mb-4 ">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Enterprise Risk Management
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                I agree to the terms and conditions
+                            </label>
+                        </div>
+                    </div>
+
+
+                    <div class="d-grid gap-2 d-md-flex justify-content">
+                        <button id="toastSubmitbBtn" type="button"
+                            class="btn btn btn-dark rounded-pill d-flex align-items-center gap-2">
+                            Submit
+                            <img src="{{ asset('front/assets/svgs/Right-Long-Arrow.svg') }}" alt="" />
+                        </button>
+                    </div>
+                </form>
+
+
+                {{-- toast --}}
+
+                <div id="toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast-header">
+                        <img src="..." class="rounded me-2" alt="...">
+                        <strong class="me-auto">Success!</strong>
+                        <small>time</small>
+                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                    <div class="toast-body">
+                        The message was sent.
+                    </div>
+                </div>
+
+                {{-- <div class="elfsight-app-ac002fc6-841f-40ac-a83f-2dd27a1c1f68 col-xl-6 col-lg-6 col-md-10 col-sm-12 col-12"
+                    data-elfsight-app-lazy>
+                </div> --}}
+
+            </div>
+        </div>
+    </div>
+
+@stop
+
+@push('scripts')
+    <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+@endpush
